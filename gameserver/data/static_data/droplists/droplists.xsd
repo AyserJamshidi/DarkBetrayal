@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../import.xsd"/>
+	<xs:include schemaLocation="../global_types.xsd"/>
+	<xs:element name="drop" type="dropT"/>
+	<xs:element name="droplist" type="dropListT"/>
+	<xs:element name="droplists" type="dropListsT"/>
+	<xs:complexType name="dropListsT">
+		<xs:sequence>
+			<xs:element ref="droplist" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dropListT">
+		<xs:attribute name="droplist_id" type="xs:int" use="required"/>
+		<xs:sequence>
+			<xs:element ref="drop" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="race" type="Race"/>
+		<xs:attribute name="use_category" type="xs:boolean"/>
+		<xs:attribute name="name" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="dropT">
+		<xs:sequence/>
+		<xs:attribute name="item_id" type="xs:int" use="required"/>
+		<xs:attribute name="min_amount" type="xs:int" use="required"/>
+		<xs:attribute name="max_amount" type="xs:int" use="required"/>
+		<xs:attribute name="chance" type="xs:float" use="required"/>
+		<xs:attribute name="no_reduce" type="xs:boolean"/>
+		<xs:attribute name="eachmember" type="xs:boolean"/>
+	</xs:complexType>
+</xs:schema>

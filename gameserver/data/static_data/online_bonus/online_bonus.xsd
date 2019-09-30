@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../global_types.xsd"/>
+	<xs:include schemaLocation="../import.xsd"/>
+	<xs:element name="online_bonus_data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="import" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="bonus" type="Bonus" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Bonus">
+		<xs:sequence>
+			<xs:element name="reward_item" type="RewardItem" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="time_mins" type="xs:int"/>
+		<xs:attribute name="reward_toll" type="xs:int"/>
+		<xs:attribute name="reward_kinah" type="xs:int"/>
+		<xs:attribute name="random" type="xs:boolean"/>
+		<xs:attribute name="reset_time" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="RewardItem">
+		<xs:attribute name="id" type="xs:int"/>
+		<xs:attribute name="amount" type="xs:int"/>
+	</xs:complexType>
+</xs:schema>

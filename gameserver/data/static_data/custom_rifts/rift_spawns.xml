@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  - This file is part of Neon-Eleanor project
+  -
+  - This is proprietary software. See the EULA file distributed with
+  - this project for additional information regarding copyright ownership.
+  -
+  - Copyright (c) 2011-2013, Neon-Eleanor Team. All rights reserved.
+-->
+<!-- @hex1r0 -->
+<rift_spawns> 
+    <spawn id="1">
+      
+      <races>
+        <race>ASMODIANS</race>
+        <race>ELYOS</race>
+      </races>
+      
+      <sources>
+        <pos mapId="110010000" x="1322" y="1511" z="568"/>
+      </sources>
+
+      <targets>
+        <pos locId="Насан [PvP]" mapId="300030000" x="456" y="951" z="328" h="0" handler="com.ne.gs.modules.pvpdarkpoetaeta.Teleporter"/>
+      </targets>
+
+
+      <time>
+        <from>0 0 12 ? * MON,TUE,WED,THU,FRI *</from>
+        <to>0 0 13 ? * MON,TUE,WED,THU,FRI *</to>
+      </time>
+
+    </spawn>
+</rift_spawns>

@@ -1,0 +1,1384 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  - This file is part of Neon-Eleanor project
+  -
+  - This is proprietary software. See the EULA file distributed with
+  - this project for additional information regarding copyright ownership.
+  -
+  - Copyright (c) 2011-2013, Neon-Eleanor Team. All rights reserved.
+-->
+<!-- @hex1r0 -->
+<items>
+  <item id="3000001" dscId="360001" lifetime="122400"/>
+  <item id="3000002" dscId="360002" lifetime="122400"/>
+  <item id="3000003" dscId="360003" lifetime="122400"/>
+  <item id="3000004" dscId="360004" type="CHAIR" lifetime="122400"/>
+  <item id="3000005" dscId="360005" type="CHAIR" lifetime="122400"/>
+  <item id="3000006" dscId="360006"/>
+  <item id="3000007" dscId="360007" type="STORAGE" storageId="60"/>
+  <item id="3000008" dscId="360008"/>
+  <item id="3000009" dscId="360009"/>
+  <item id="3000010" dscId="360010"/>
+  <item id="3000011" dscId="360011"/>
+  <item id="3000012" dscId="360012"/>
+  <item id="3000013" dscId="360013"/>
+  <item id="3000014" dscId="360014"/>
+  <item id="3000015" dscId="360015"/>
+  <item id="3000016" dscId="360016" type="MAILBOX"/>
+  <item id="3000017" dscId="360017"/>
+  <item id="3000024" dscId="784539"/>
+  <item id="3000025" dscId="784540"/>
+  <item id="3000026" dscId="784541"/>
+  <item id="3000027" dscId="784542"/>
+  <item id="3000028" dscId="784543"/>
+  <item id="3000029" dscId="790562"/>
+  <item id="3000030" dscId="796841" lifetime="7344000"/>
+  <item id="3000031" dscId="790557"/>
+  <item id="3000032" dscId="790558"/>
+  <item id="3000033" dscId="790559"/>
+  <item id="3000034" dscId="790560"/>
+  <item id="3000035" dscId="790561"/>
+  <item id="3000036" dscId="796942" lifetime="7344000"/>
+  <item id="3000037" dscId="796944" lifetime="7344000"/>
+  <item id="3000038" dscId="796946" lifetime="7344000"/>
+  <item id="3000039" dscId="796948" lifetime="7344000"/>
+  <item id="3000040" dscId="796950"/>
+  <item id="3000041" dscId="796952"/>
+  <item id="3000042" dscId="790556"/>
+  <item id="3000043" dscId="796952"/>
+  <item id="3000044" dscId="796942"/>
+  <item id="3000045" dscId="796944"/>
+  <item id="3000046" dscId="796946"/>
+  <item id="3000047" dscId="796948"/>
+  <item id="3001000" dscId="461892" type="NPC" lifetime="3672000" npcId="810013"/>
+  <item id="3001001" dscId="461893" type="NPC" lifetime="3672000" npcId="810014"/>
+  <item id="3001002" dscId="461894" type="NPC" lifetime="3672000" npcId="810015"/>
+  <item id="3001003" dscId="461895" type="NPC" lifetime="3672000" npcId="810016"/>
+  <item id="3005000" dscId="784729"/>
+  <item id="3005001" dscId="784730"/>
+  <item id="3005002" dscId="784731"/>
+  <item id="3005003" dscId="784732"/>
+  <item id="3005004" dscId="784733"/>
+  <item id="3005005" dscId="790569"/>
+  <item id="3005006" dscId="796842" lifetime="7344000"/>
+  <item id="3005007" dscId="790564"/>
+  <item id="3005008" dscId="790565"/>
+  <item id="3005009" dscId="790566"/>
+  <item id="3005010" dscId="790567"/>
+  <item id="3005011" dscId="790568"/>
+  <item id="3005012" dscId="796954" lifetime="7344000"/>
+  <item id="3005013" dscId="796956" lifetime="7344000"/>
+  <item id="3005014" dscId="796958" lifetime="7344000"/>
+  <item id="3005015" dscId="796960" lifetime="7344000"/>
+  <item id="3005016" dscId="796962"/>
+  <item id="3005017" dscId="796964"/>
+  <item id="3005018" dscId="790563"/>
+  <item id="3005019" dscId="796964"/>
+  <item id="3005020" dscId="796954"/>
+  <item id="3005021" dscId="796956"/>
+  <item id="3005022" dscId="796958"/>
+  <item id="3005023" dscId="796960"/>
+  <item id="3010000" dscId="784544"/>
+  <item id="3010001" dscId="784545"/>
+  <item id="3010002" dscId="784546"/>
+  <item id="3010003" dscId="784547"/>
+  <item id="3010004" dscId="784548"/>
+  <item id="3010005" dscId="790570"/>
+  <item id="3015000" dscId="784734"/>
+  <item id="3015001" dscId="784735"/>
+  <item id="3015002" dscId="784736"/>
+  <item id="3015003" dscId="784737"/>
+  <item id="3015004" dscId="784738"/>
+  <item id="3015005" dscId="790571"/>
+  <item id="3020000" dscId="790572"/>
+  <item id="3020001" dscId="790573" lifetime="7344000"/>
+  <item id="3020002" dscId="790574" lifetime="7344000"/>
+  <item id="3020003" dscId="790575" lifetime="7344000"/>
+  <item id="3020004" dscId="790576" lifetime="7344000"/>
+  <item id="3020005" dscId="790577"/>
+  <item id="3020006" dscId="790578"/>
+  <item id="3020007" dscId="790579" lifetime="7344000"/>
+  <item id="3020008" dscId="790580" lifetime="7344000"/>
+  <item id="3020009" dscId="790581" lifetime="7344000"/>
+  <item id="3020010" dscId="790582" lifetime="7344000"/>
+  <item id="3020011" dscId="790583" lifetime="7344000"/>
+  <item id="3020012" dscId="790584" lifetime="1836000"/>
+  <item id="3020013" dscId="790585" lifetime="1836000"/>
+  <item id="3020014" dscId="790586" lifetime="7344000"/>
+  <item id="3020015" dscId="790587" lifetime="7344000"/>
+  <item id="3020016" dscId="790588"/>
+  <item id="3020017" dscId="790589" lifetime="1836000"/>
+  <item id="3020018" dscId="790590" lifetime="1836000"/>
+  <item id="3020019" dscId="790591" lifetime="1836000"/>
+  <item id="3020020" dscId="791075"/>
+  <item id="3020021" dscId="791076"/>
+  <item id="3020022" dscId="791077"/>
+  <item id="3020023" dscId="791078"/>
+  <item id="3020024" dscId="796887" lifetime="7344000"/>
+  <item id="3020025" dscId="796888" lifetime="7344000"/>
+  <item id="3020026" dscId="796889" lifetime="7344000"/>
+  <item id="3020027" dscId="796890" lifetime="7344000"/>
+  <item id="3020028" dscId="796891" lifetime="7344000"/>
+  <item id="3020029" dscId="796892" lifetime="7344000"/>
+  <item id="3020030" dscId="790573"/>
+  <item id="3020031" dscId="790582"/>
+  <item id="3020032" dscId="790583"/>
+  <item id="3025000" dscId="790592"/>
+  <item id="3025001" dscId="790593" lifetime="7344000"/>
+  <item id="3025002" dscId="790594" lifetime="7344000"/>
+  <item id="3025003" dscId="790595" lifetime="7344000"/>
+  <item id="3025004" dscId="790596"/>
+  <item id="3025005" dscId="790597"/>
+  <item id="3025006" dscId="790598"/>
+  <item id="3025007" dscId="790599"/>
+  <item id="3025008" dscId="790600" lifetime="7344000"/>
+  <item id="3025009" dscId="790601" lifetime="7344000"/>
+  <item id="3025010" dscId="790602" lifetime="7344000"/>
+  <item id="3025011" dscId="790603" lifetime="7344000"/>
+  <item id="3025012" dscId="790604" lifetime="1836000"/>
+  <item id="3025013" dscId="790605" lifetime="1836000"/>
+  <item id="3025014" dscId="790606"/>
+  <item id="3025015" dscId="790607"/>
+  <item id="3025016" dscId="790608"/>
+  <item id="3025017" dscId="790609" lifetime="1836000"/>
+  <item id="3025018" dscId="790610" lifetime="1836000"/>
+  <item id="3025019" dscId="790611" lifetime="1836000"/>
+  <item id="3025020" dscId="791083"/>
+  <item id="3025021" dscId="791084"/>
+  <item id="3030000" dscId="791085"/>
+  <item id="3030001" dscId="791091"/>
+  <item id="3030002" dscId="791092"/>
+  <item id="3030003" dscId="791093"/>
+  <item id="3030004" dscId="791094"/>
+  <item id="3030005" dscId="791095"/>
+  <item id="3030006" dscId="791096"/>
+  <item id="3030007" dscId="791097"/>
+  <item id="3030008" dscId="791098"/>
+  <item id="3030009" dscId="791099"/>
+  <item id="3030010" dscId="791100"/>
+  <item id="3030011" dscId="791101"/>
+  <item id="3030012" dscId="791102"/>
+  <item id="3030013" dscId="791103"/>
+  <item id="3030014" dscId="791104"/>
+  <item id="3030015" dscId="791105"/>
+  <item id="3030016" dscId="791106"/>
+  <item id="3030017" dscId="791107"/>
+  <item id="3030018" dscId="791108"/>
+  <item id="3030019" dscId="791109"/>
+  <item id="3030020" dscId="791110"/>
+  <item id="3030021" dscId="791111"/>
+  <item id="3030022" dscId="791112"/>
+  <item id="3030023" dscId="791113"/>
+  <item id="3030024" dscId="791114"/>
+  <item id="3030025" dscId="791115"/>
+  <item id="3030026" dscId="791116"/>
+  <item id="3030027" dscId="791117" lifetime="7344000"/>
+  <item id="3030028" dscId="791118" lifetime="7344000"/>
+  <item id="3030029" dscId="791119" lifetime="7344000"/>
+  <item id="3030030" dscId="791120" lifetime="7344000"/>
+  <item id="3030031" dscId="791121" lifetime="7344000"/>
+  <item id="3030032" dscId="791122" lifetime="7344000"/>
+  <item id="3030033" dscId="791123" lifetime="7344000"/>
+  <item id="3030034" dscId="791124" lifetime="7344000"/>
+  <item id="3030035" dscId="791125" lifetime="7344000"/>
+  <item id="3030036" dscId="791126" lifetime="7344000"/>
+  <item id="3030037" dscId="791127"/>
+  <item id="3030038" dscId="791128"/>
+  <item id="3030039" dscId="791129"/>
+  <item id="3030040" dscId="791130"/>
+  <item id="3030041" dscId="791131"/>
+  <item id="3030042" dscId="793555"/>
+  <item id="3030043" dscId="793556"/>
+  <item id="3030044" dscId="793557"/>
+  <item id="3030045" dscId="796653" lifetime="3672000"/>
+  <item id="3030046" dscId="796654" lifetime="3672000"/>
+  <item id="3030047" dscId="796655" lifetime="3672000"/>
+  <item id="3030048" dscId="797900" lifetime="7344000"/>
+  <item id="3030049" dscId="797901" lifetime="7344000"/>
+  <item id="3030050" dscId="797902" lifetime="7344000"/>
+  <item id="3030051" dscId="797903" lifetime="7344000"/>
+  <item id="3035000" dscId="791089"/>
+  <item id="3035001" dscId="796653" lifetime="3672000"/>
+  <item id="3035002" dscId="796654" lifetime="3672000"/>
+  <item id="3035003" dscId="796655" lifetime="3672000"/>
+  <item id="3040000" dscId="794542"/>
+  <item id="3040001" dscId="794543"/>
+  <item id="3040002" dscId="794544"/>
+  <item id="3040003" dscId="794545"/>
+  <item id="3040004" dscId="794546"/>
+  <item id="3040005" dscId="794547"/>
+  <item id="3040006" dscId="794548"/>
+  <item id="3040007" dscId="794549"/>
+  <item id="3040008" dscId="794550"/>
+  <item id="3040009" dscId="794551"/>
+  <item id="3040010" dscId="794552"/>
+  <item id="3040011" dscId="794553"/>
+  <item id="3040012" dscId="794554"/>
+  <item id="3040013" dscId="794555"/>
+  <item id="3040014" dscId="794556"/>
+  <item id="3040015" dscId="794557"/>
+  <item id="3040016" dscId="794558"/>
+  <item id="3040017" dscId="794559"/>
+  <item id="3040018" dscId="794560"/>
+  <item id="3040019" dscId="794561"/>
+  <item id="3040020" dscId="794562"/>
+  <item id="3040021" dscId="794563"/>
+  <item id="3040022" dscId="794564"/>
+  <item id="3040023" dscId="794565"/>
+  <item id="3040024" dscId="794566"/>
+  <item id="3040025" dscId="794567"/>
+  <item id="3040026" dscId="794568"/>
+  <item id="3040027" dscId="794569"/>
+  <item id="3040028" dscId="794570"/>
+  <item id="3040029" dscId="794571"/>
+  <item id="3040030" dscId="795272"/>
+  <item id="3040031" dscId="795273"/>
+  <item id="3040032" dscId="790622"/>
+  <item id="3040033" dscId="790628"/>
+  <item id="3045000" dscId="794572"/>
+  <item id="3045001" dscId="794573"/>
+  <item id="3045002" dscId="794574"/>
+  <item id="3045003" dscId="794575"/>
+  <item id="3045004" dscId="794576"/>
+  <item id="3045005" dscId="794577"/>
+  <item id="3045006" dscId="794578"/>
+  <item id="3045007" dscId="794579"/>
+  <item id="3045008" dscId="794580"/>
+  <item id="3045009" dscId="794581"/>
+  <item id="3045010" dscId="794582"/>
+  <item id="3045011" dscId="794583"/>
+  <item id="3045012" dscId="794584"/>
+  <item id="3045013" dscId="794585"/>
+  <item id="3045014" dscId="794586"/>
+  <item id="3045015" dscId="794587"/>
+  <item id="3045016" dscId="794588"/>
+  <item id="3045017" dscId="794589"/>
+  <item id="3045018" dscId="794590"/>
+  <item id="3045019" dscId="794591"/>
+  <item id="3045020" dscId="794592"/>
+  <item id="3045021" dscId="794593"/>
+  <item id="3045022" dscId="794594"/>
+  <item id="3045023" dscId="794595"/>
+  <item id="3045024" dscId="794596"/>
+  <item id="3045025" dscId="794597"/>
+  <item id="3045026" dscId="794598"/>
+  <item id="3045027" dscId="794599"/>
+  <item id="3045028" dscId="794600"/>
+  <item id="3045029" dscId="794601"/>
+  <item id="3050001" dscId="794792" type="PICTURE"/>
+  <item id="3050002" dscId="794793" type="PICTURE"/>
+  <item id="3100000" dscId="796825" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3100001" dscId="796826" type="STORAGE" lifetime="7344000" storageId="62"/>
+  <item id="3100002" dscId="796827" type="STORAGE" lifetime="7344000" storageId="68"/>
+  <item id="3100003" dscId="796828" type="STORAGE" lifetime="7344000" storageId="69"/>
+  <item id="3100004" dscId="796829" type="STORAGE" lifetime="7344000" storageId="60"/>
+  <item id="3100005" dscId="796830" type="STORAGE" lifetime="7344000" storageId="63"/>
+  <item id="3100006" dscId="796831" type="STORAGE" lifetime="7344000" storageId="70"/>
+  <item id="3100007" dscId="796832" type="STORAGE" lifetime="7344000" storageId="71"/>
+  <item id="3100008" dscId="796966" type="STORAGE" lifetime="3672000" storageId="60"/>
+  <item id="3100009" dscId="796968" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3100010" dscId="796970" type="STORAGE" lifetime="7344000" storageId="68"/>
+  <item id="3100011" dscId="796972" type="STORAGE" lifetime="7344000" storageId="70"/>
+  <item id="3100012" dscId="797148" type="STORAGE" lifetime="3672000" storageId="68"/>
+  <item id="3100013" dscId="784581" type="STORAGE" lifetime="7344000" storageId="60"/>
+  <item id="3100014" dscId="784582" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3100015" dscId="784583" type="STORAGE" lifetime="7344000" storageId="68"/>
+  <item id="3100016" dscId="790612" type="STORAGE" lifetime="7344000" storageId="70"/>
+  <item id="3100017" dscId="790613" type="STORAGE" lifetime="7344000" storageId="60"/>
+  <item id="3100018" dscId="790614" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3100019" dscId="790615" type="STORAGE" lifetime="7344000" storageId="68"/>
+  <item id="3100020" dscId="790616" type="STORAGE" lifetime="7344000" storageId="70"/>
+  <item id="3100021" dscId="796968" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3105000" dscId="796833" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3105001" dscId="796834" type="STORAGE" lifetime="7344000" storageId="62"/>
+  <item id="3105002" dscId="796835" type="STORAGE" lifetime="7344000" storageId="68"/>
+  <item id="3105003" dscId="796836" type="STORAGE" lifetime="7344000" storageId="69"/>
+  <item id="3105004" dscId="796837" type="STORAGE" lifetime="7344000" storageId="60"/>
+  <item id="3105005" dscId="796838" type="STORAGE" lifetime="7344000" storageId="63"/>
+  <item id="3105006" dscId="796839" type="STORAGE" lifetime="7344000" storageId="70"/>
+  <item id="3105007" dscId="796840" type="STORAGE" lifetime="7344000" storageId="71"/>
+  <item id="3105008" dscId="784581" type="STORAGE" lifetime="122400" storageId="62"/>
+  <item id="3105009" dscId="784582" type="STORAGE" lifetime="122400" storageId="61"/>
+  <item id="3105010" dscId="784583" type="STORAGE" lifetime="122400" storageId="61"/>
+  <item id="3105011" dscId="790612" type="STORAGE" lifetime="122400" storageId="60"/>
+  <item id="3105012" dscId="790613" type="STORAGE" lifetime="122400" storageId="60"/>
+  <item id="3105013" dscId="790614" type="STORAGE" lifetime="122400" storageId="63"/>
+  <item id="3105014" dscId="790615" type="STORAGE" lifetime="122400" storageId="63"/>
+  <item id="3105015" dscId="790616" type="STORAGE" lifetime="122400" storageId="64"/>
+  <item id="3105016" dscId="784771" type="STORAGE" lifetime="122400" storageId="65"/>
+  <item id="3105017" dscId="784772" type="STORAGE" lifetime="122400" storageId="66"/>
+  <item id="3105018" dscId="784773" type="STORAGE" lifetime="122400" storageId="67"/>
+  <item id="3105019" dscId="790617" type="STORAGE" lifetime="122400" storageId="71"/>
+  <item id="3105020" dscId="790618" type="STORAGE" lifetime="122400" storageId="73"/>
+  <item id="3105021" dscId="790619" type="STORAGE" lifetime="122400" storageId="75"/>
+  <item id="3105022" dscId="790620" type="STORAGE" lifetime="122400" storageId="77"/>
+  <item id="3105023" dscId="790621" type="STORAGE" lifetime="122400" storageId="79"/>
+  <item id="3105024" dscId="796974" type="STORAGE" lifetime="3672000" storageId="60"/>
+  <item id="3105025" dscId="796976" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3105026" dscId="796978" type="STORAGE" lifetime="7344000" storageId="68"/>
+  <item id="3105027" dscId="796980" type="STORAGE" lifetime="7344000" storageId="70"/>
+  <item id="3105028" dscId="797149" type="STORAGE" lifetime="3672000" storageId="68"/>
+  <item id="3105029" dscId="784771" type="STORAGE" lifetime="7344000" storageId="60"/>
+  <item id="3105030" dscId="784772" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3105031" dscId="784773" type="STORAGE" lifetime="7344000" storageId="68"/>
+  <item id="3105032" dscId="790617" type="STORAGE" lifetime="7344000" storageId="70"/>
+  <item id="3105033" dscId="790618" type="STORAGE" lifetime="7344000" storageId="60"/>
+  <item id="3105034" dscId="790619" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3105035" dscId="790620" type="STORAGE" lifetime="7344000" storageId="68"/>
+  <item id="3105036" dscId="790621" type="STORAGE" lifetime="7344000" storageId="70"/>
+  <item id="3105037" dscId="796976" type="STORAGE" lifetime="7344000" storageId="61"/>
+  <item id="3110000" dscId="784576"/>
+  <item id="3110001" dscId="784577"/>
+  <item id="3110002" dscId="784578"/>
+  <item id="3110003" dscId="784579"/>
+  <item id="3110004" dscId="784580"/>
+  <item id="3110005" dscId="790622" lifetime="7344000"/>
+  <item id="3110006" dscId="790623"/>
+  <item id="3110007" dscId="790624"/>
+  <item id="3110008" dscId="790625"/>
+  <item id="3110009" dscId="790626"/>
+  <item id="3110010" dscId="790627"/>
+  <item id="3110011" dscId="790628" lifetime="7344000"/>
+  <item id="3110012" dscId="796656" lifetime="3672000"/>
+  <item id="3110013" dscId="796657" lifetime="3672000"/>
+  <item id="3110014" dscId="796658" lifetime="3672000"/>
+  <item id="3110015" dscId="796982" lifetime="7344000"/>
+  <item id="3110016" dscId="796984" lifetime="7344000"/>
+  <item id="3110017" dscId="796986" lifetime="7344000"/>
+  <item id="3110018" dscId="796988"/>
+  <item id="3110019" dscId="796990"/>
+  <item id="3110020" dscId="796992"/>
+  <item id="3110021" dscId="796992"/>
+  <item id="3110022" dscId="790622"/>
+  <item id="3110023" dscId="790628"/>
+  <item id="3110024" dscId="796982"/>
+  <item id="3110025" dscId="796984"/>
+  <item id="3110026" dscId="796986"/>
+  <item id="3115000" dscId="784766"/>
+  <item id="3115001" dscId="784767"/>
+  <item id="3115002" dscId="784768"/>
+  <item id="3115003" dscId="784769"/>
+  <item id="3115004" dscId="784770"/>
+  <item id="3115005" dscId="790629" lifetime="7344000"/>
+  <item id="3115006" dscId="790630"/>
+  <item id="3115007" dscId="790631"/>
+  <item id="3115008" dscId="790632"/>
+  <item id="3115009" dscId="790633"/>
+  <item id="3115010" dscId="790634"/>
+  <item id="3115011" dscId="790635" lifetime="7344000"/>
+  <item id="3115012" dscId="796656" lifetime="3672000"/>
+  <item id="3115013" dscId="796657" lifetime="3672000"/>
+  <item id="3115014" dscId="796658" lifetime="3672000"/>
+  <item id="3115015" dscId="796994" lifetime="7344000"/>
+  <item id="3115016" dscId="796996" lifetime="7344000"/>
+  <item id="3115017" dscId="796998" lifetime="7344000"/>
+  <item id="3115018" dscId="797000"/>
+  <item id="3115019" dscId="797002"/>
+  <item id="3115020" dscId="797004"/>
+  <item id="3115021" dscId="797004"/>
+  <item id="3115022" dscId="796994"/>
+  <item id="3115023" dscId="796996"/>
+  <item id="3115024" dscId="796998"/>
+  <item id="3120000" dscId="784584" type="CHAIR"/>
+  <item id="3120001" dscId="784585" type="CHAIR"/>
+  <item id="3120002" dscId="784586" type="CHAIR"/>
+  <item id="3120003" dscId="784587" type="CHAIR"/>
+  <item id="3120004" dscId="784588" type="CHAIR"/>
+  <item id="3120005" dscId="790636" type="CHAIR"/>
+  <item id="3120006" dscId="796843" type="CHAIR" lifetime="7344000"/>
+  <item id="3120007" dscId="790638" type="CHAIR"/>
+  <item id="3120008" dscId="790639" type="CHAIR"/>
+  <item id="3120009" dscId="790640" type="CHAIR"/>
+  <item id="3120010" dscId="790641" type="CHAIR"/>
+  <item id="3120011" dscId="790642" type="CHAIR"/>
+  <item id="3120012" dscId="795260" type="CHAIR"/>
+  <item id="3120013" dscId="795261" type="CHAIR"/>
+  <item id="3120014" dscId="795266" type="CHAIR"/>
+  <item id="3120015" dscId="795267" type="CHAIR"/>
+  <item id="3120016" dscId="796659" type="CHAIR" lifetime="3672000"/>
+  <item id="3120017" dscId="797006" type="CHAIR" lifetime="7344000"/>
+  <item id="3120018" dscId="797008" type="CHAIR" lifetime="7344000"/>
+  <item id="3120019" dscId="797010" type="CHAIR" lifetime="7344000"/>
+  <item id="3120020" dscId="797012" type="CHAIR" lifetime="7344000"/>
+  <item id="3120021" dscId="797014" type="CHAIR"/>
+  <item id="3120022" dscId="797016" type="CHAIR"/>
+  <item id="3120023" dscId="790637" type="CHAIR"/>
+  <item id="3120024" dscId="797016" type="CHAIR"/>
+  <item id="3120025" dscId="797908" type="CHAIR" lifetime="7344000"/>
+  <item id="3120026" dscId="797909" type="CHAIR" lifetime="7344000"/>
+  <item id="3120027" dscId="797910" type="CHAIR" lifetime="7344000"/>
+  <item id="3120028" dscId="797911" type="CHAIR" lifetime="7344000"/>
+  <item id="3120029" dscId="797006" type="CHAIR"/>
+  <item id="3120030" dscId="797008" type="CHAIR"/>
+  <item id="3120031" dscId="797010" type="CHAIR"/>
+  <item id="3120032" dscId="797012" type="CHAIR"/>
+  <item id="3125000" dscId="784774" type="CHAIR"/>
+  <item id="3125001" dscId="784775" type="CHAIR"/>
+  <item id="3125002" dscId="784776" type="CHAIR"/>
+  <item id="3125003" dscId="784777" type="CHAIR"/>
+  <item id="3125004" dscId="784778" type="CHAIR"/>
+  <item id="3125005" dscId="790643" type="CHAIR"/>
+  <item id="3125006" dscId="796844" type="CHAIR" lifetime="7344000"/>
+  <item id="3125007" dscId="790645" type="CHAIR"/>
+  <item id="3125008" dscId="790646" type="CHAIR"/>
+  <item id="3125009" dscId="790647" type="CHAIR"/>
+  <item id="3125010" dscId="790648" type="CHAIR"/>
+  <item id="3125011" dscId="790649" type="CHAIR"/>
+  <item id="3125012" dscId="796659" type="CHAIR" lifetime="3672000"/>
+  <item id="3125013" dscId="797018" type="CHAIR" lifetime="7344000"/>
+  <item id="3125014" dscId="797020" type="CHAIR" lifetime="7344000"/>
+  <item id="3125015" dscId="797022" type="CHAIR" lifetime="7344000"/>
+  <item id="3125016" dscId="797024" type="CHAIR" lifetime="7344000"/>
+  <item id="3125017" dscId="797026" type="CHAIR"/>
+  <item id="3125018" dscId="797028" type="CHAIR"/>
+  <item id="3125019" dscId="790644" type="CHAIR"/>
+  <item id="3125020" dscId="797028" type="CHAIR"/>
+  <item id="3125021" dscId="797018" type="CHAIR"/>
+  <item id="3125022" dscId="797020" type="CHAIR"/>
+  <item id="3125023" dscId="797022" type="CHAIR"/>
+  <item id="3125024" dscId="797024" type="CHAIR"/>
+  <item id="3130000" dscId="784571" type="CHAIR"/>
+  <item id="3130001" dscId="784572" type="CHAIR"/>
+  <item id="3130002" dscId="784573" type="CHAIR"/>
+  <item id="3130003" dscId="784574" type="CHAIR"/>
+  <item id="3130004" dscId="784575" type="CHAIR"/>
+  <item id="3130005" dscId="790650" type="CHAIR" lifetime="7344000"/>
+  <item id="3130006" dscId="790651" type="CHAIR" lifetime="7344000"/>
+  <item id="3130007" dscId="790652" type="CHAIR"/>
+  <item id="3130008" dscId="790653" type="CHAIR"/>
+  <item id="3130009" dscId="790654" type="CHAIR"/>
+  <item id="3130010" dscId="790655" type="CHAIR"/>
+  <item id="3130011" dscId="790656" type="CHAIR" lifetime="7344000"/>
+  <item id="3130012" dscId="795262" type="CHAIR"/>
+  <item id="3130013" dscId="795263" type="CHAIR"/>
+  <item id="3130014" dscId="795269" type="CHAIR"/>
+  <item id="3130015" dscId="796660" type="CHAIR" lifetime="3672000"/>
+  <item id="3130016" dscId="796857" type="CHAIR" lifetime="7344000"/>
+  <item id="3130017" dscId="796858" type="CHAIR"/>
+  <item id="3130018" dscId="796859" type="CHAIR"/>
+  <item id="3130019" dscId="796860" type="CHAIR"/>
+  <item id="3130020" dscId="796861" type="CHAIR"/>
+  <item id="3130021" dscId="796862" type="CHAIR" lifetime="7344000"/>
+  <item id="3130022" dscId="797030" type="CHAIR" lifetime="7344000"/>
+  <item id="3130023" dscId="797032" type="CHAIR" lifetime="7344000"/>
+  <item id="3130024" dscId="797034" type="CHAIR"/>
+  <item id="3130025" dscId="797036" type="CHAIR"/>
+  <item id="3130026" dscId="797038" type="CHAIR" lifetime="7344000"/>
+  <item id="3130027" dscId="797040" type="CHAIR"/>
+  <item id="3130028" dscId="797042" type="CHAIR"/>
+  <item id="3130029" dscId="797044" type="CHAIR" lifetime="7344000"/>
+  <item id="3130030" dscId="797046" type="CHAIR"/>
+  <item id="3130031" dscId="797048" type="CHAIR"/>
+  <item id="3130032" dscId="797050" type="CHAIR" lifetime="7344000"/>
+  <item id="3130033" dscId="797052" type="CHAIR"/>
+  <item id="3130034" dscId="797054" type="CHAIR"/>
+  <item id="3130035" dscId="797056" type="CHAIR" lifetime="7344000"/>
+  <item id="3130036" dscId="797058" type="CHAIR"/>
+  <item id="3130037" dscId="797060" type="CHAIR"/>
+  <item id="3130038" dscId="797060" type="CHAIR"/>
+  <item id="3130039" dscId="797916" type="CHAIR" lifetime="7344000"/>
+  <item id="3130040" dscId="797917" type="CHAIR" lifetime="7344000"/>
+  <item id="3130041" dscId="797918" type="CHAIR" lifetime="7344000"/>
+  <item id="3130042" dscId="797919" type="CHAIR" lifetime="7344000"/>
+  <item id="3130043" dscId="797030" type="CHAIR"/>
+  <item id="3130044" dscId="797032" type="CHAIR"/>
+  <item id="3130045" dscId="797038" type="CHAIR"/>
+  <item id="3130046" dscId="797044" type="CHAIR"/>
+  <item id="3130047" dscId="797050" type="CHAIR"/>
+  <item id="3130048" dscId="797056" type="CHAIR"/>
+  <item id="3135000" dscId="784761" type="CHAIR"/>
+  <item id="3135001" dscId="784762" type="CHAIR"/>
+  <item id="3135002" dscId="784763" type="CHAIR"/>
+  <item id="3135003" dscId="784764" type="CHAIR"/>
+  <item id="3135004" dscId="784765" type="CHAIR"/>
+  <item id="3135005" dscId="790657" type="CHAIR"/>
+  <item id="3135006" dscId="790658" type="CHAIR"/>
+  <item id="3135007" dscId="790659" type="CHAIR"/>
+  <item id="3135008" dscId="790660" type="CHAIR"/>
+  <item id="3135009" dscId="790661" type="CHAIR"/>
+  <item id="3135010" dscId="790662" type="CHAIR"/>
+  <item id="3135011" dscId="790663" type="CHAIR"/>
+  <item id="3135012" dscId="795264" type="CHAIR"/>
+  <item id="3135013" dscId="795265" type="CHAIR"/>
+  <item id="3135014" dscId="796660" type="CHAIR" lifetime="3672000"/>
+  <item id="3135015" dscId="796869" type="CHAIR" lifetime="7344000"/>
+  <item id="3135016" dscId="796870" type="CHAIR"/>
+  <item id="3135017" dscId="796871" type="CHAIR"/>
+  <item id="3135018" dscId="796872" type="CHAIR"/>
+  <item id="3135019" dscId="796873" type="CHAIR"/>
+  <item id="3135020" dscId="796874" type="CHAIR"/>
+  <item id="3135021" dscId="797062" type="CHAIR" lifetime="7344000"/>
+  <item id="3135022" dscId="797064" type="CHAIR" lifetime="7344000"/>
+  <item id="3135023" dscId="797066" type="CHAIR"/>
+  <item id="3135024" dscId="797068" type="CHAIR"/>
+  <item id="3135025" dscId="797070" type="CHAIR" lifetime="7344000"/>
+  <item id="3135026" dscId="797072" type="CHAIR"/>
+  <item id="3135027" dscId="797074" type="CHAIR"/>
+  <item id="3135028" dscId="797076" type="CHAIR" lifetime="7344000"/>
+  <item id="3135029" dscId="797078" type="CHAIR"/>
+  <item id="3135030" dscId="797080" type="CHAIR"/>
+  <item id="3135031" dscId="797082" type="CHAIR" lifetime="7344000"/>
+  <item id="3135032" dscId="797084" type="CHAIR"/>
+  <item id="3135033" dscId="797086" type="CHAIR"/>
+  <item id="3135034" dscId="797088" type="CHAIR" lifetime="7344000"/>
+  <item id="3135035" dscId="797090" type="CHAIR"/>
+  <item id="3135036" dscId="797092" type="CHAIR"/>
+  <item id="3135037" dscId="797092" type="CHAIR"/>
+  <item id="3135038" dscId="797062" type="CHAIR"/>
+  <item id="3135039" dscId="797064" type="CHAIR"/>
+  <item id="3135040" dscId="797070" type="CHAIR"/>
+  <item id="3135041" dscId="797076" type="CHAIR"/>
+  <item id="3135042" dscId="797082" type="CHAIR"/>
+  <item id="3135043" dscId="797088" type="CHAIR"/>
+  <item id="3141000" dscId="796661" lifetime="3672000"/>
+  <item id="3141001" dscId="797924" lifetime="7344000"/>
+  <item id="3141002" dscId="797925" lifetime="7344000"/>
+  <item id="3141003" dscId="797926" lifetime="7344000"/>
+  <item id="3141004" dscId="797927" lifetime="7344000"/>
+  <item id="3141500" dscId="796661" lifetime="3672000"/>
+  <item id="3150000" dscId="796662" lifetime="3672000"/>
+  <item id="3155000" dscId="796662" lifetime="3672000"/>
+  <item id="3160000" dscId="790664"/>
+  <item id="3160001" dscId="790665"/>
+  <item id="3160002" dscId="790666"/>
+  <item id="3160003" dscId="790667"/>
+  <item id="3160004" dscId="796881" lifetime="7344000"/>
+  <item id="3160005" dscId="796882" lifetime="7344000"/>
+  <item id="3160006" dscId="796883" lifetime="7344000"/>
+  <item id="3165000" dscId="790668"/>
+  <item id="3165001" dscId="790669"/>
+  <item id="3165002" dscId="790670"/>
+  <item id="3165003" dscId="790671"/>
+  <item id="3170000" dscId="784594"/>
+  <item id="3170001" dscId="784595"/>
+  <item id="3170002" dscId="784596"/>
+  <item id="3170003" dscId="784597"/>
+  <item id="3170004" dscId="784598"/>
+  <item id="3170005" dscId="784599"/>
+  <item id="3170006" dscId="784600"/>
+  <item id="3170007" dscId="784601"/>
+  <item id="3170008" dscId="784602"/>
+  <item id="3170009" dscId="784603"/>
+  <item id="3170010" dscId="784604"/>
+  <item id="3170011" dscId="784605"/>
+  <item id="3170012" dscId="784606"/>
+  <item id="3170013" dscId="784607"/>
+  <item id="3170014" dscId="784608"/>
+  <item id="3170015" dscId="784609"/>
+  <item id="3170016" dscId="784610"/>
+  <item id="3170017" dscId="784611"/>
+  <item id="3170018" dscId="784612"/>
+  <item id="3170019" dscId="784613"/>
+  <item id="3170020" dscId="784614"/>
+  <item id="3170021" dscId="784615"/>
+  <item id="3170022" dscId="784616"/>
+  <item id="3170023" dscId="784617"/>
+  <item id="3170024" dscId="784618"/>
+  <item id="3170025" dscId="784619"/>
+  <item id="3170026" dscId="784620"/>
+  <item id="3170027" dscId="784621"/>
+  <item id="3170028" dscId="790402"/>
+  <item id="3170029" dscId="790403"/>
+  <item id="3170030" dscId="790404"/>
+  <item id="3170031" dscId="790405"/>
+  <item id="3170032" dscId="790406"/>
+  <item id="3170033" dscId="790407"/>
+  <item id="3170034" dscId="790408"/>
+  <item id="3170035" dscId="790409"/>
+  <item id="3170036" dscId="790410"/>
+  <item id="3170037" dscId="790411"/>
+  <item id="3170038" dscId="790412"/>
+  <item id="3170039" dscId="790413"/>
+  <item id="3170040" dscId="790414"/>
+  <item id="3170041" dscId="790415"/>
+  <item id="3170042" dscId="790416"/>
+  <item id="3170043" dscId="790417"/>
+  <item id="3170044" dscId="790418"/>
+  <item id="3170045" dscId="790419"/>
+  <item id="3170046" dscId="790672"/>
+  <item id="3170047" dscId="790673"/>
+  <item id="3170048" dscId="790674"/>
+  <item id="3170049" dscId="790675"/>
+  <item id="3170050" dscId="790676"/>
+  <item id="3170051" dscId="790677"/>
+  <item id="3170052" dscId="790678"/>
+  <item id="3170053" dscId="790679"/>
+  <item id="3170054" dscId="790680"/>
+  <item id="3170055" dscId="790681"/>
+  <item id="3170056" dscId="790682"/>
+  <item id="3170057" dscId="790683"/>
+  <item id="3170058" dscId="790684"/>
+  <item id="3170059" dscId="790685"/>
+  <item id="3170060" dscId="792764"/>
+  <item id="3170061" dscId="792765"/>
+  <item id="3170062" dscId="792766"/>
+  <item id="3170063" dscId="792767"/>
+  <item id="3170064" dscId="793240"/>
+  <item id="3170065" dscId="793241"/>
+  <item id="3170066" dscId="793242"/>
+  <item id="3170067" dscId="793243"/>
+  <item id="3170068" dscId="793244"/>
+  <item id="3170069" dscId="793245"/>
+  <item id="3170070" dscId="790673"/>
+  <item id="3170071" dscId="790673"/>
+  <item id="3170072" dscId="790673"/>
+  <item id="3170073" dscId="790674"/>
+  <item id="3170074" dscId="790674"/>
+  <item id="3170075" dscId="790674"/>
+  <item id="3170076" dscId="793520"/>
+  <item id="3170077" dscId="793521"/>
+  <item id="3170078" dscId="793522"/>
+  <item id="3170079" dscId="793523"/>
+  <item id="3170080" dscId="793524"/>
+  <item id="3170081" dscId="793525"/>
+  <item id="3170082" dscId="793526"/>
+  <item id="3170083" dscId="793527"/>
+  <item id="3170084" dscId="796663" lifetime="3672000"/>
+  <item id="3170085" dscId="796664" lifetime="3672000"/>
+  <item id="3170086" dscId="796665" lifetime="3672000"/>
+  <item id="3170087" dscId="796666" lifetime="3672000"/>
+  <item id="3175000" dscId="784784"/>
+  <item id="3175001" dscId="784785"/>
+  <item id="3175002" dscId="784786"/>
+  <item id="3175003" dscId="784787"/>
+  <item id="3175004" dscId="784788"/>
+  <item id="3175005" dscId="784789"/>
+  <item id="3175006" dscId="784790"/>
+  <item id="3175007" dscId="784791"/>
+  <item id="3175008" dscId="784792"/>
+  <item id="3175009" dscId="784793"/>
+  <item id="3175010" dscId="784794"/>
+  <item id="3175011" dscId="784795"/>
+  <item id="3175012" dscId="784796"/>
+  <item id="3175013" dscId="784797"/>
+  <item id="3175014" dscId="784798"/>
+  <item id="3175015" dscId="784799"/>
+  <item id="3175016" dscId="784800"/>
+  <item id="3175017" dscId="784801"/>
+  <item id="3175018" dscId="784802"/>
+  <item id="3175019" dscId="784803"/>
+  <item id="3175020" dscId="784804"/>
+  <item id="3175021" dscId="784805"/>
+  <item id="3175022" dscId="784806"/>
+  <item id="3175023" dscId="784807"/>
+  <item id="3175024" dscId="784808"/>
+  <item id="3175025" dscId="784809"/>
+  <item id="3175026" dscId="784810"/>
+  <item id="3175027" dscId="784811"/>
+  <item id="3175028" dscId="790438"/>
+  <item id="3175029" dscId="790439"/>
+  <item id="3175030" dscId="790440"/>
+  <item id="3175031" dscId="790441"/>
+  <item id="3175032" dscId="790686"/>
+  <item id="3175033" dscId="790687"/>
+  <item id="3175034" dscId="790688"/>
+  <item id="3175035" dscId="790689"/>
+  <item id="3175036" dscId="790690"/>
+  <item id="3175037" dscId="790691"/>
+  <item id="3175038" dscId="790692"/>
+  <item id="3175039" dscId="790693"/>
+  <item id="3175040" dscId="790694"/>
+  <item id="3175041" dscId="790695"/>
+  <item id="3175042" dscId="790696"/>
+  <item id="3175043" dscId="790697"/>
+  <item id="3175044" dscId="790698"/>
+  <item id="3175045" dscId="790699"/>
+  <item id="3175046" dscId="793246"/>
+  <item id="3175047" dscId="790687"/>
+  <item id="3175048" dscId="790687"/>
+  <item id="3175049" dscId="790687"/>
+  <item id="3175050" dscId="790689"/>
+  <item id="3175051" dscId="790689"/>
+  <item id="3175052" dscId="790689"/>
+  <item id="3175053" dscId="793524"/>
+  <item id="3175054" dscId="793525"/>
+  <item id="3175055" dscId="793526"/>
+  <item id="3175056" dscId="793527"/>
+  <item id="3175057" dscId="793520"/>
+  <item id="3175058" dscId="793521"/>
+  <item id="3175059" dscId="793522"/>
+  <item id="3175060" dscId="793523"/>
+  <item id="3175061" dscId="796663" lifetime="3672000"/>
+  <item id="3175062" dscId="796664" lifetime="3672000"/>
+  <item id="3175063" dscId="796665" lifetime="3672000"/>
+  <item id="3175064" dscId="796666" lifetime="3672000"/>
+  <item id="3190001" dscId="791972" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051519"/>
+  <item id="3190002" dscId="791973" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051504"/>
+  <item id="3190003" dscId="791974" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051520"/>
+  <item id="3190004" dscId="791975" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051521"/>
+  <item id="3190005" dscId="791976" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051522"/>
+  <item id="3190006" dscId="791977" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051523"/>
+  <item id="3190007" dscId="791978" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051524"/>
+  <item id="3190008" dscId="791979" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051525"/>
+  <item id="3190009" dscId="791980" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051526"/>
+  <item id="3190010" dscId="791981" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051527"/>
+  <item id="3190011" dscId="791982" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051528"/>
+  <item id="3190012" dscId="791983" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051529"/>
+  <item id="3190013" dscId="791984" type="USABLE" lifetime="3060000" warmup="5000" cooldown="180" usages="400" consumeItemId="186000159" consumeCount="1" rewardId="188051562" finalRewardId="188051555"/>
+  <item id="3190014" dscId="791985" type="USABLE" lifetime="2448000" warmup="5000" cooldown="180" usages="300" consumeItemId="186000159" consumeCount="1" rewardId="188051557" finalRewardId="188051538"/>
+  <item id="3190015" dscId="791986" type="USABLE" lifetime="4896000" warmup="5000" cooldown="180" usages="700" consumeItemId="186000159" consumeCount="1" rewardId="188051560" finalRewardId="188051535"/>
+  <item id="3190016" dscId="791987" type="USABLE" lifetime="6120000" warmup="5000" cooldown="180" usages="900" consumeItemId="186000159" consumeCount="1" rewardId="188051559" finalRewardId="188051532"/>
+  <item id="3190017" dscId="791988" type="USABLE" lifetime="1836000" warmup="5000" cooldown="180" usages="270" consumeItemId="186000159" consumeCount="1" rewardId="188051558" finalRewardId="188051544"/>
+  <item id="3190018" dscId="791989" type="USABLE" warmup="5000" cooldown="180" usages="5" consumeItemId="186000159" consumeCount="1"/>
+  <item id="3190019" dscId="791990" type="USABLE" warmup="5000" cooldown="180" usages="5" consumeItemId="186000159" consumeCount="1"/>
+  <item id="3190020" dscId="791991" type="USABLE" lifetime="26928000" warmup="5000" cooldown="180" usages="3600" consumeItemId="186000159" consumeCount="1" rewardId="188051561" finalRewardId="188051554"/>
+  <item id="3190021" dscId="461855" type="NPC" lifetime="3672000" npcId="810011"/>
+  <item id="3190022" dscId="461892" type="NPC" lifetime="3672000" npcId="810013"/>
+  <item id="3190023" dscId="461894" type="NPC" lifetime="3672000" npcId="810015"/>
+  <item id="3190024" dscId="794686" type="USABLE" lifetime="3427200" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051601"/>
+  <item id="3190025" dscId="794796" type="JUKE_BOX"/>
+  <item id="3190026" dscId="794797" lifetime="7344000"/>
+  <item id="3190027" dscId="794798" lifetime="7344000"/>
+  <item id="3190028" dscId="794799" lifetime="7344000"/>
+  <item id="3190029" dscId="794800" lifetime="7344000"/>
+  <item id="3190030" dscId="794801" lifetime="7344000"/>
+  <item id="3190031" dscId="794802" lifetime="7344000"/>
+  <item id="3190032" dscId="794803" lifetime="7344000"/>
+  <item id="3190033" dscId="794804" lifetime="7344000"/>
+  <item id="3190034" dscId="796750" type="USABLE" lifetime="3672000" warmup="3000" cooldown="10" usages="20" rewardId="160010196" finalRewardId="188051654"/>
+  <item id="3190035" dscId="797201" type="USABLE" lifetime="856800" warmup="3000" usages="3" daily="1" rewardId="188051683" finalRewardId="188051684"/>
+  <item id="3190036" dscId="797202" type="USABLE" lifetime="856800" warmup="3000" usages="3" daily="1" rewardId="188051688" finalRewardId="188051689"/>
+  <item id="3190037" dscId="797203" type="NPC" lifetime="3672000" npcId="810033"/>
+  <item id="3190038" dscId="797204" type="NPC" lifetime="3672000" npcId="810035"/>
+  <item id="3190039" dscId="797775" type="USABLE" warmup="5000" cooldown="180" usages="30" consumeItemId="186000159" consumeCount="1" rewardId="188051657" finalRewardId="188051713"/>
+  <item id="3190040" dscId="797697" type="USABLE" warmup="5000" cooldown="180" usages="400" consumeItemId="186000159" consumeCount="1" rewardId="188051562" finalRewardId="188051555"/>
+  <item id="3190041" dscId="797698" type="USABLE" warmup="5000" cooldown="180" usages="300" consumeItemId="186000159" consumeCount="1" rewardId="188051748" finalRewardId="188051739"/>
+  <item id="3190042" dscId="797779" type="USABLE" warmup="5000" cooldown="180" usages="150" consumeItemId="186000159" consumeCount="1" rewardId="188051560" finalRewardId="188051535"/>
+  <item id="3190043" dscId="797699" type="USABLE" warmup="5000" cooldown="180" usages="600" consumeItemId="186000159" consumeCount="1" rewardId="188051747" finalRewardId="188051738"/>
+  <item id="3190044" dscId="797700" type="USABLE" warmup="5000" cooldown="180" usages="80" consumeItemId="186000159" consumeCount="1" rewardId="188051746" finalRewardId="188051737"/>
+  <item id="3190045" dscId="797701" type="USABLE" warmup="5000" cooldown="180" usages="3600" consumeItemId="186000159" consumeCount="1" rewardId="188051561" finalRewardId="188051554"/>
+  <item id="3190046" dscId="797702" type="USABLE" warmup="5000" cooldown="180" usages="100" consumeItemId="186000159" consumeCount="1" rewardId="188051745" finalRewardId="188051736"/>
+  <item id="3190047" dscId="797683" type="JUKE_BOX"/>
+  <item id="3190048" dscId="798046" type="USABLE" warmup="3000" usages="1" daily="1" rewardId="188051763" finalRewardId="188051764"/>
+  <item id="3190049" dscId="798047" type="USABLE" warmup="3000" usages="5" daily="1" rewardId="188051765" finalRewardId="188051766"/>
+  <item id="3190050" dscId="798118" type="USABLE" lifetime="3672000" warmup="3000" cooldown="10" usages="20" rewardId="160010216" finalRewardId="188051784"/>
+  <item id="3195000" dscId="791992" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051519"/>
+  <item id="3195001" dscId="791993" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051504"/>
+  <item id="3195002" dscId="791994" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051520"/>
+  <item id="3195003" dscId="791995" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051521"/>
+  <item id="3195004" dscId="791996" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051522"/>
+  <item id="3195005" dscId="791997" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051523"/>
+  <item id="3195006" dscId="791998" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051524"/>
+  <item id="3195007" dscId="791999" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051525"/>
+  <item id="3195008" dscId="792000" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051526"/>
+  <item id="3195009" dscId="792001" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051527"/>
+  <item id="3195010" dscId="792002" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051528"/>
+  <item id="3195011" dscId="792003" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051530"/>
+  <item id="3195012" dscId="792004" type="USABLE" lifetime="3060000" warmup="5000" cooldown="180" usages="400" consumeItemId="186000159" consumeCount="1" rewardId="188051562" finalRewardId="188051555"/>
+  <item id="3195013" dscId="792005" type="USABLE" lifetime="2448000" warmup="5000" cooldown="180" usages="300" consumeItemId="186000159" consumeCount="1" rewardId="188051557" finalRewardId="188051538"/>
+  <item id="3195014" dscId="792006" type="USABLE" lifetime="4896000" warmup="5000" cooldown="180" usages="700" consumeItemId="186000159" consumeCount="1" rewardId="188051560" finalRewardId="188051535"/>
+  <item id="3195015" dscId="792007" type="USABLE" lifetime="6120000" warmup="5000" cooldown="180" usages="900" consumeItemId="186000159" consumeCount="1" rewardId="188051559" finalRewardId="188051532"/>
+  <item id="3195016" dscId="792008" type="USABLE" lifetime="1836000" warmup="5000" cooldown="180" usages="270" consumeItemId="186000159" consumeCount="1" rewardId="188051558" finalRewardId="188051544"/>
+  <item id="3195017" dscId="792009" type="USABLE" warmup="5000" cooldown="180" usages="5" consumeItemId="186000159" consumeCount="1"/>
+  <item id="3195018" dscId="792010" type="USABLE" warmup="5000" cooldown="180" usages="5" consumeItemId="186000159" consumeCount="1"/>
+  <item id="3195019" dscId="792011" type="USABLE" lifetime="26928000" warmup="5000" cooldown="180" usages="3600" consumeItemId="186000159" consumeCount="1" rewardId="188051561" finalRewardId="188051554"/>
+  <item id="3195020" dscId="461856" type="NPC" lifetime="3672000" npcId="810012"/>
+  <item id="3195021" dscId="461893" type="NPC" lifetime="3672000" npcId="810014"/>
+  <item id="3195022" dscId="461895" type="NPC" lifetime="3672000" npcId="810016"/>
+  <item id="3195023" dscId="794687" type="USABLE" lifetime="3427200" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051601"/>
+  <item id="3195024" dscId="791972" type="USABLE" lifetime="856800" warmup="2000" daily="1" consumeItemId="152000911" consumeCount="1"/>
+  <item id="3195025" dscId="791973" type="USABLE" lifetime="856800" warmup="2000" daily="1" consumeItemId="152000911" consumeCount="1"/>
+  <item id="3195026" dscId="791974" type="USABLE" lifetime="856800" warmup="2000" daily="1" consumeItemId="152000911" consumeCount="2"/>
+  <item id="3195027" dscId="791975" type="USABLE" lifetime="856800" daily="1" consumeItemId="152000911" consumeCount="3"/>
+  <item id="3195028" dscId="791976" type="USABLE" lifetime="856800" usages="3" daily="1" equippedItemId="122001274" rewardId="152000911" finalRewardId="152000914"/>
+  <item id="3195029" dscId="791977" type="USABLE" lifetime="856800" usages="3" daily="1" equippedItemId="122001274" rewardId="152000911" finalRewardId="152000914"/>
+  <item id="3195030" dscId="791978" type="USABLE" lifetime="856800" warmup="2000" cooldown="60" consumeItemId="152000911" consumeCount="1"/>
+  <item id="3195031" dscId="791979" type="USABLE" lifetime="856800" warmup="2000" cooldown="180" consumeItemId="152000911" consumeCount="1"/>
+  <item id="3195032" dscId="791980" type="USABLE" lifetime="856800" warmup="2000" cooldown="1200" consumeItemId="152000911" consumeCount="2"/>
+  <item id="3195033" dscId="791981" type="USABLE" lifetime="856800" consumeItemId="152000911" consumeCount="3"/>
+  <item id="3195034" dscId="791982" type="USABLE" lifetime="856800" equippedItemId="122001274"/>
+  <item id="3195035" dscId="791983" type="USABLE" lifetime="856800" equippedItemId="122001274"/>
+  <item id="3195036" dscId="791984" type="USABLE" warmup="2000" cooldown="5" usages="5" consumeItemId="152000911" consumeCount="1" rewardId="152000912" finalRewardId="152000914"/>
+  <item id="3195037" dscId="791985" type="USABLE" warmup="2000" cooldown="10" usages="6" consumeItemId="152000911" consumeCount="2" rewardId="152000912" finalRewardId="152000914"/>
+  <item id="3195038" dscId="791986" type="USABLE" cooldown="15" usages="5" equippedItemId="122001274" rewardId="152000911" finalRewardId="152000914"/>
+  <item id="3195039" dscId="791987" type="USABLE" cooldown="20" usages="6" equippedItemId="122001274" rewardId="152000911" finalRewardId="152000914"/>
+  <item id="3195040" dscId="791988" type="USABLE" warmup="2000" usages="5" consumeItemId="152000911" consumeCount="1" rewardId="152000912" finalRewardId="152000914"/>
+  <item id="3195041" dscId="791989" type="USABLE" warmup="2000" usages="6" consumeItemId="152000911" consumeCount="2" rewardId="152000912" finalRewardId="152000914"/>
+  <item id="3195042" dscId="791990" type="USABLE" usages="7" equippedItemId="122001274" rewardId="152000911" finalRewardId="152000914"/>
+  <item id="3195043" dscId="791991" type="USABLE" cooldown="1200" usages="8" equippedItemId="122001274" rewardId="152000911" finalRewardId="152000914"/>
+  <item id="3195044" dscId="794686" type="USABLE" lifetime="856800" equippedItemId="122001274"/>
+  <item id="3195045" dscId="791993" type="USABLE" lifetime="856800" warmup="2000" daily="1" consumeItemId="152000911" consumeCount="1"/>
+  <item id="3195046" dscId="791994" type="USABLE" lifetime="856800" warmup="2000" daily="1" consumeItemId="152000911" consumeCount="2"/>
+  <item id="3195047" dscId="791995" type="USABLE" lifetime="856800" daily="1" consumeItemId="152000911" consumeCount="3"/>
+  <item id="3195048" dscId="791996" type="USABLE" lifetime="856800" usages="3" daily="1" equippedItemId="122001275" rewardId="152000913"/>
+  <item id="3195049" dscId="791997" type="USABLE" lifetime="856800" usages="3" daily="1" equippedItemId="122001275" rewardId="152000913"/>
+  <item id="3195050" dscId="791998" type="USABLE" lifetime="856800" warmup="2000" consumeItemId="152000911" consumeCount="1"/>
+  <item id="3195051" dscId="791999" type="USABLE" lifetime="856800" warmup="2000" consumeItemId="152000911" consumeCount="1"/>
+  <item id="3195052" dscId="792000" type="USABLE" lifetime="856800" warmup="2000" consumeItemId="152000911" consumeCount="2"/>
+  <item id="3195053" dscId="792001" type="USABLE" lifetime="856800" consumeItemId="152000911" consumeCount="3"/>
+  <item id="3195054" dscId="792002" type="USABLE" lifetime="856800" equippedItemId="122001275"/>
+  <item id="3195055" dscId="792003" type="USABLE" lifetime="856800" equippedItemId="122001275"/>
+  <item id="3195056" dscId="792004" type="USABLE" warmup="5000" cooldown="30000" usages="10" equippedItemId="122001275" rewardId="186000146"/>
+  <item id="3195057" dscId="792005" type="USABLE" warmup="2000" usages="6" consumeItemId="152000911" consumeCount="2" rewardId="152000912" finalRewardId="152000914"/>
+  <item id="3195058" dscId="792006" type="USABLE" usages="5" equippedItemId="122001275"/>
+  <item id="3195059" dscId="792007" type="USABLE" usages="6" equippedItemId="122001275"/>
+  <item id="3195060" dscId="792008" type="USABLE" warmup="2000" usages="5" consumeItemId="152000911" consumeCount="1" rewardId="152000912" finalRewardId="152000914"/>
+  <item id="3195061" dscId="792009" type="USABLE" warmup="2000" usages="6" consumeItemId="152000911" consumeCount="2" rewardId="152000912" finalRewardId="152000914"/>
+  <item id="3195062" dscId="792010" type="USABLE" lifetime="7344000" warmup="2000" cooldown="1" rewardId="160002401"/>
+  <item id="3195063" dscId="792011" type="USABLE" usages="8" equippedItemId="122001275"/>
+  <item id="3195064" dscId="794687" type="USABLE" lifetime="856800" equippedItemId="122001275"/>
+  <item id="3195072" dscId="795937" type="USABLE" lifetime="856800" warmup="3000" usages="7" daily="1" rewardId="160010073"/>
+  <item id="3195073" dscId="795938" type="USABLE" lifetime="856800" warmup="3000" usages="7" daily="1" rewardId="160010073"/>
+  <item id="3195074" dscId="792012" type="USABLE" lifetime="1836000" warmup="5000" cooldown="180" usages="270" consumeItemId="186000159" consumeCount="1" rewardId="188051556" finalRewardId="188051541"/>
+  <item id="3195075" dscId="792013" type="USABLE" lifetime="1836000" warmup="5000" cooldown="180" usages="270" consumeItemId="186000159" consumeCount="1" rewardId="188051556" finalRewardId="188051541"/>
+  <item id="3195076" dscId="795394" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051602"/>
+  <item id="3195077" dscId="795396" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051602"/>
+  <item id="3195078" dscId="795395" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051603"/>
+  <item id="3195079" dscId="795397" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051603"/>
+  <item id="3195080" dscId="796289" type="USABLE" warmup="5000" cooldown="1800" usages="3000" consumeItemId="186000172" consumeCount="20" rewardId="188051613" finalRewardId="188051613"/>
+  <item id="3195081" dscId="796290" type="USABLE" warmup="5000" cooldown="1800" usages="1000" consumeItemId="186000172" consumeCount="10" rewardId="188051613" finalRewardId="188051613"/>
+  <item id="3195082" dscId="791078"/>
+  <item id="3195083" dscId="791089"/>
+  <item id="3195084" dscId="796752" type="USABLE" lifetime="3060000" warmup="5000" cooldown="180" usages="400" consumeItemId="186000159" consumeCount="1" rewardId="188051656" finalRewardId="188051658"/>
+  <item id="3195085" dscId="796753" type="USABLE" lifetime="3060000" warmup="5000" cooldown="180" usages="700" consumeItemId="186000159" consumeCount="1" rewardId="188051657" finalRewardId="188051659"/>
+  <item id="3195086" dscId="796754" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051671"/>
+  <item id="3195087" dscId="796755" type="USABLE" lifetime="2448000" warmup="5000" cooldown="180" usages="320" consumeItemId="186000159" consumeCount="1" rewardId="188051667" finalRewardId="188051663"/>
+  <item id="3195088" dscId="796777" type="USABLE" lifetime="2448000" warmup="5000" cooldown="180" usages="320" consumeItemId="186000159" consumeCount="1" rewardId="188051668" finalRewardId="188051664"/>
+  <item id="3195089" dscId="796756" type="USABLE" lifetime="1836000" warmup="5000" cooldown="180" usages="270" consumeItemId="186000159" consumeCount="1" rewardId="188051669" finalRewardId="188051665"/>
+  <item id="3195090" dscId="796778" type="USABLE" lifetime="1836000" warmup="5000" cooldown="180" usages="270" consumeItemId="186000159" consumeCount="1" rewardId="188051670" finalRewardId="188051666"/>
+  <item id="3195091" dscId="797205" type="NPC" lifetime="3672000" npcId="810034"/>
+  <item id="3195092" dscId="797206" type="NPC" lifetime="3672000" npcId="810036"/>
+  <item id="3195093" dscId="797291" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="186000066"/>
+  <item id="3195094" dscId="797293" type="USABLE" lifetime="856800" warmup="3000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051694"/>
+  <item id="3195101" dscId="797703" type="USABLE" warmup="5000" cooldown="180" usages="400" consumeItemId="186000159" consumeCount="1" rewardId="188051562" finalRewardId="188051555"/>
+  <item id="3195102" dscId="797704" type="USABLE" warmup="5000" cooldown="180" usages="300" consumeItemId="186000159" consumeCount="1" rewardId="188051748" finalRewardId="188051739"/>
+  <item id="3195103" dscId="797780" type="USABLE" warmup="5000" cooldown="180" usages="150" consumeItemId="186000159" consumeCount="1" rewardId="188051560" finalRewardId="188051535"/>
+  <item id="3195104" dscId="797705" type="USABLE" warmup="5000" cooldown="180" usages="600" consumeItemId="186000159" consumeCount="1" rewardId="188051747" finalRewardId="188051738"/>
+  <item id="3195105" dscId="797706" type="USABLE" warmup="5000" cooldown="180" usages="80" consumeItemId="186000159" consumeCount="1" rewardId="188051746" finalRewardId="188051737"/>
+  <item id="3195106" dscId="797707" type="USABLE" warmup="5000" cooldown="180" usages="3600" consumeItemId="186000159" consumeCount="1" rewardId="188051561" finalRewardId="188051554"/>
+  <item id="3195107" dscId="797708" type="USABLE" warmup="5000" cooldown="180" usages="100" consumeItemId="186000159" consumeCount="1" rewardId="188051745" finalRewardId="188051736"/>
+  <item id="3195108" dscId="797709" type="USABLE" warmup="5000" cooldown="180" usages="250" consumeItemId="186000159" consumeCount="1" rewardId="188051656" finalRewardId="188051658"/>
+  <item id="3195109" dscId="797710" type="USABLE" warmup="5000" cooldown="180" usages="400" consumeItemId="186000159" consumeCount="1" rewardId="188051657" finalRewardId="188051659"/>
+  <item id="3195110" dscId="797711" type="USABLE" warmup="5000" cooldown="180" usages="150" consumeItemId="186000159" consumeCount="1" rewardId="188051667" finalRewardId="188051663"/>
+  <item id="3195111" dscId="797712" type="USABLE" warmup="5000" cooldown="180" usages="150" consumeItemId="186000159" consumeCount="1" rewardId="188051668" finalRewardId="188051664"/>
+  <item id="3195112" dscId="797713" type="USABLE" warmup="5000" cooldown="180" usages="100" consumeItemId="186000159" consumeCount="1" rewardId="188051669" finalRewardId="188051665"/>
+  <item id="3195113" dscId="797714" type="USABLE" warmup="5000" cooldown="180" usages="100" consumeItemId="186000159" consumeCount="1" rewardId="188051670" finalRewardId="188051666"/>
+  <item id="3200000" dscId="784556"/>
+  <item id="3200001" dscId="784557"/>
+  <item id="3200002" dscId="784558"/>
+  <item id="3200003" dscId="784559"/>
+  <item id="3200004" dscId="784560"/>
+  <item id="3200005" dscId="790446"/>
+  <item id="3200006" dscId="790700"/>
+  <item id="3200007" dscId="790701"/>
+  <item id="3200008" dscId="790702"/>
+  <item id="3200009" dscId="790703"/>
+  <item id="3200010" dscId="790704"/>
+  <item id="3200011" dscId="790705"/>
+  <item id="3200012" dscId="790706"/>
+  <item id="3200013" dscId="790707"/>
+  <item id="3200014" dscId="790708"/>
+  <item id="3200015" dscId="790709"/>
+  <item id="3200016" dscId="790710"/>
+  <item id="3200017" dscId="790711"/>
+  <item id="3200018" dscId="790712"/>
+  <item id="3200019" dscId="790713"/>
+  <item id="3200020" dscId="790714"/>
+  <item id="3200021" dscId="790715"/>
+  <item id="3200022" dscId="790716"/>
+  <item id="3200023" dscId="790717"/>
+  <item id="3200024" dscId="790718"/>
+  <item id="3205000" dscId="784746"/>
+  <item id="3205001" dscId="784747"/>
+  <item id="3205002" dscId="784748"/>
+  <item id="3205003" dscId="784749"/>
+  <item id="3205004" dscId="784750"/>
+  <item id="3205005" dscId="790719"/>
+  <item id="3205006" dscId="790720"/>
+  <item id="3205007" dscId="790721"/>
+  <item id="3205008" dscId="790722"/>
+  <item id="3205009" dscId="790723"/>
+  <item id="3205010" dscId="790724"/>
+  <item id="3205011" dscId="790725"/>
+  <item id="3205012" dscId="790726"/>
+  <item id="3205013" dscId="790727"/>
+  <item id="3205014" dscId="790728"/>
+  <item id="3205015" dscId="790729"/>
+  <item id="3205016" dscId="790730"/>
+  <item id="3205017" dscId="790731"/>
+  <item id="3205018" dscId="790732"/>
+  <item id="3205019" dscId="790733"/>
+  <item id="3205020" dscId="790734"/>
+  <item id="3205021" dscId="790735"/>
+  <item id="3205022" dscId="790736"/>
+  <item id="3205023" dscId="790737"/>
+  <item id="3210000" dscId="784553"/>
+  <item id="3210001" dscId="784554"/>
+  <item id="3210002" dscId="784555"/>
+  <item id="3210003" dscId="790738"/>
+  <item id="3210004" dscId="790739"/>
+  <item id="3210005" dscId="790740"/>
+  <item id="3210006" dscId="790741"/>
+  <item id="3210007" dscId="790742"/>
+  <item id="3210008" dscId="790743"/>
+  <item id="3210009" dscId="790744"/>
+  <item id="3210010" dscId="790745"/>
+  <item id="3210011" dscId="790746"/>
+  <item id="3210012" dscId="790747"/>
+  <item id="3210013" dscId="790748"/>
+  <item id="3210014" dscId="790749"/>
+  <item id="3210015" dscId="790750"/>
+  <item id="3215000" dscId="784743"/>
+  <item id="3215001" dscId="784744"/>
+  <item id="3215002" dscId="784745"/>
+  <item id="3215003" dscId="790751"/>
+  <item id="3215004" dscId="790752"/>
+  <item id="3215005" dscId="790753"/>
+  <item id="3215006" dscId="790754"/>
+  <item id="3215007" dscId="790755"/>
+  <item id="3215008" dscId="790756"/>
+  <item id="3215009" dscId="790757"/>
+  <item id="3215010" dscId="790758"/>
+  <item id="3215011" dscId="790759"/>
+  <item id="3215012" dscId="790760"/>
+  <item id="3215013" dscId="790761"/>
+  <item id="3215014" dscId="790762"/>
+  <item id="3215015" dscId="790763"/>
+  <item id="3300000" dscId="784589"/>
+  <item id="3300001" dscId="784590"/>
+  <item id="3300002" dscId="784591"/>
+  <item id="3300003" dscId="784592"/>
+  <item id="3300004" dscId="784593"/>
+  <item id="3300005" dscId="790764" lifetime="7344000"/>
+  <item id="3305000" dscId="784779"/>
+  <item id="3305001" dscId="784780"/>
+  <item id="3305002" dscId="784781"/>
+  <item id="3305003" dscId="784782"/>
+  <item id="3305004" dscId="784783"/>
+  <item id="3305005" dscId="790765"/>
+  <item id="3330000" dscId="791046" type="MAILBOX" lifetime="3672000"/>
+  <item id="3330001" dscId="791046" type="MAILBOX" lifetime="3672000"/>
+  <item id="3390001" dscId="792858" lifetime="7344000"/>
+  <item id="3390002" dscId="792859" lifetime="7344000"/>
+  <item id="3390003" dscId="792860" lifetime="7344000"/>
+  <item id="3390004" dscId="792861" lifetime="7344000"/>
+  <item id="3390005" dscId="792862" lifetime="7344000"/>
+  <item id="3390006" dscId="792863" lifetime="7344000"/>
+  <item id="3390007" dscId="792864" lifetime="7344000"/>
+  <item id="3390008" dscId="792865" lifetime="7344000"/>
+  <item id="3390009" dscId="792866" lifetime="7344000"/>
+  <item id="3390010" dscId="792867" lifetime="7344000"/>
+  <item id="3390011" dscId="792868" lifetime="7344000"/>
+  <item id="3390012" dscId="792869" lifetime="7344000"/>
+  <item id="3390013" dscId="792870" lifetime="7344000"/>
+  <item id="3390014" dscId="792871" lifetime="7344000"/>
+  <item id="3390015" dscId="792872" lifetime="7344000"/>
+  <item id="3390016" dscId="796668" lifetime="3672000"/>
+  <item id="3390017" dscId="796669" lifetime="3672000"/>
+  <item id="3395001" dscId="792873" lifetime="7344000"/>
+  <item id="3395002" dscId="792874" lifetime="7344000"/>
+  <item id="3395003" dscId="792875" lifetime="7344000"/>
+  <item id="3395004" dscId="792876" lifetime="7344000"/>
+  <item id="3395005" dscId="792877" lifetime="7344000"/>
+  <item id="3395006" dscId="792878" lifetime="7344000"/>
+  <item id="3395007" dscId="792879" lifetime="7344000"/>
+  <item id="3395008" dscId="792880" lifetime="7344000"/>
+  <item id="3395009" dscId="792881" lifetime="7344000"/>
+  <item id="3395010" dscId="792882" lifetime="7344000"/>
+  <item id="3395011" dscId="792883" lifetime="7344000"/>
+  <item id="3395012" dscId="792884" lifetime="7344000"/>
+  <item id="3395013" dscId="792885" lifetime="7344000"/>
+  <item id="3395014" dscId="792886" lifetime="7344000"/>
+  <item id="3395015" dscId="792887" lifetime="7344000"/>
+  <item id="3395016" dscId="796668" lifetime="3672000"/>
+  <item id="3395017" dscId="796669" lifetime="3672000"/>
+  <item id="3400000" dscId="784549"/>
+  <item id="3400001" dscId="784550"/>
+  <item id="3400002" dscId="784551"/>
+  <item id="3400003" dscId="784552"/>
+  <item id="3400004" dscId="790448"/>
+  <item id="3400005" dscId="790766" lifetime="7344000"/>
+  <item id="3400006" dscId="790767"/>
+  <item id="3400007" dscId="795268"/>
+  <item id="3405000" dscId="784739"/>
+  <item id="3405001" dscId="784740"/>
+  <item id="3405002" dscId="784741"/>
+  <item id="3405003" dscId="784742"/>
+  <item id="3405004" dscId="790768"/>
+  <item id="3405005" dscId="790769"/>
+  <item id="3410000" dscId="784561" type="CHAIR"/>
+  <item id="3410001" dscId="784562" type="CHAIR"/>
+  <item id="3410002" dscId="784563" type="CHAIR"/>
+  <item id="3410003" dscId="784564" type="CHAIR"/>
+  <item id="3410004" dscId="784565" type="CHAIR"/>
+  <item id="3410005" dscId="790770" type="CHAIR" lifetime="7344000"/>
+  <item id="3410006" dscId="796847" type="CHAIR" lifetime="7344000"/>
+  <item id="3410007" dscId="790772" type="CHAIR"/>
+  <item id="3410008" dscId="790773" type="CHAIR"/>
+  <item id="3410009" dscId="790774" type="CHAIR"/>
+  <item id="3410010" dscId="790775" type="CHAIR"/>
+  <item id="3410011" dscId="790776" type="CHAIR" lifetime="7344000"/>
+  <item id="3410012" dscId="794828" type="CHAIR" lifetime="856800"/>
+  <item id="3410013" dscId="795270" type="CHAIR"/>
+  <item id="3410014" dscId="795271" type="CHAIR"/>
+  <item id="3410015" dscId="797094" type="CHAIR" lifetime="7344000"/>
+  <item id="3410016" dscId="797096" type="CHAIR" lifetime="7344000"/>
+  <item id="3410017" dscId="797098" type="CHAIR" lifetime="7344000"/>
+  <item id="3410018" dscId="797100" type="CHAIR" lifetime="7344000"/>
+  <item id="3410019" dscId="797102" type="CHAIR"/>
+  <item id="3410020" dscId="797104" type="CHAIR"/>
+  <item id="3410021" dscId="790771" type="CHAIR"/>
+  <item id="3410022" dscId="797104" type="CHAIR"/>
+  <item id="3410023" dscId="790770" type="CHAIR"/>
+  <item id="3410024" dscId="790776" type="CHAIR"/>
+  <item id="3410025" dscId="797094" type="CHAIR"/>
+  <item id="3410026" dscId="797096" type="CHAIR"/>
+  <item id="3410027" dscId="797098" type="CHAIR"/>
+  <item id="3410028" dscId="797100" type="CHAIR"/>
+  <item id="3415000" dscId="784751" type="CHAIR"/>
+  <item id="3415001" dscId="784752" type="CHAIR"/>
+  <item id="3415002" dscId="784753" type="CHAIR"/>
+  <item id="3415003" dscId="784754" type="CHAIR"/>
+  <item id="3415004" dscId="784755" type="CHAIR"/>
+  <item id="3415005" dscId="790777" type="CHAIR" lifetime="7344000"/>
+  <item id="3415006" dscId="796848" type="CHAIR" lifetime="7344000"/>
+  <item id="3415007" dscId="790779" type="CHAIR"/>
+  <item id="3415008" dscId="790780" type="CHAIR"/>
+  <item id="3415009" dscId="790781" type="CHAIR"/>
+  <item id="3415010" dscId="790782" type="CHAIR"/>
+  <item id="3415011" dscId="790783" type="CHAIR" lifetime="7344000"/>
+  <item id="3415012" dscId="794829" type="CHAIR" lifetime="856800"/>
+  <item id="3415013" dscId="797106" type="CHAIR" lifetime="7344000"/>
+  <item id="3415014" dscId="797108" type="CHAIR" lifetime="7344000"/>
+  <item id="3415015" dscId="797110" type="CHAIR" lifetime="7344000"/>
+  <item id="3415016" dscId="797112" type="CHAIR" lifetime="7344000"/>
+  <item id="3415017" dscId="797114" type="CHAIR"/>
+  <item id="3415018" dscId="797116" type="CHAIR"/>
+  <item id="3415019" dscId="790778" type="CHAIR"/>
+  <item id="3415020" dscId="797116" type="CHAIR"/>
+  <item id="3415021" dscId="797106" type="CHAIR"/>
+  <item id="3415022" dscId="797108" type="CHAIR"/>
+  <item id="3415023" dscId="797110" type="CHAIR"/>
+  <item id="3415024" dscId="797112" type="CHAIR"/>
+  <item id="3420000" dscId="784566"/>
+  <item id="3420001" dscId="784567"/>
+  <item id="3420002" dscId="784568"/>
+  <item id="3420003" dscId="784569"/>
+  <item id="3420004" dscId="784570"/>
+  <item id="3420005" dscId="790784" lifetime="7344000"/>
+  <item id="3420006" dscId="796845" lifetime="7344000"/>
+  <item id="3420007" dscId="790786"/>
+  <item id="3420008" dscId="790787"/>
+  <item id="3420009" dscId="790788"/>
+  <item id="3420010" dscId="790789"/>
+  <item id="3420011" dscId="790790" lifetime="7344000"/>
+  <item id="3420012" dscId="794830" lifetime="856800"/>
+  <item id="3420013" dscId="794929" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002399"/>
+  <item id="3420014" dscId="794930" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002400"/>
+  <item id="3420015" dscId="794931" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002401"/>
+  <item id="3420016" dscId="794935" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002399"/>
+  <item id="3420017" dscId="794936" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002400"/>
+  <item id="3420018" dscId="794937" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002401"/>
+  <item id="3420019" dscId="795244" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002402"/>
+  <item id="3420020" dscId="795246" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002402"/>
+  <item id="3420021" dscId="797118" lifetime="7344000"/>
+  <item id="3420022" dscId="797120" lifetime="7344000"/>
+  <item id="3420023" dscId="797122" lifetime="7344000"/>
+  <item id="3420024" dscId="797124"/>
+  <item id="3420025" dscId="797126"/>
+  <item id="3420026" dscId="797128"/>
+  <item id="3420027" dscId="790785"/>
+  <item id="3420028" dscId="797128"/>
+  <item id="3420029" dscId="790784"/>
+  <item id="3420030" dscId="790790"/>
+  <item id="3420031" dscId="797118"/>
+  <item id="3420032" dscId="797120"/>
+  <item id="3420033" dscId="797122"/>
+  <item id="3425000" dscId="784756"/>
+  <item id="3425001" dscId="784757"/>
+  <item id="3425002" dscId="784758"/>
+  <item id="3425003" dscId="784759"/>
+  <item id="3425004" dscId="784760"/>
+  <item id="3425005" dscId="790791" lifetime="7344000"/>
+  <item id="3425006" dscId="796846" lifetime="7344000"/>
+  <item id="3425007" dscId="790793"/>
+  <item id="3425008" dscId="790794"/>
+  <item id="3425009" dscId="790795"/>
+  <item id="3425010" dscId="790796"/>
+  <item id="3425011" dscId="790797" lifetime="7344000"/>
+  <item id="3425012" dscId="794831" lifetime="856800"/>
+  <item id="3425013" dscId="794941" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002399"/>
+  <item id="3425014" dscId="794942" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002400"/>
+  <item id="3425015" dscId="794943" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002401"/>
+  <item id="3425016" dscId="794947" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002399"/>
+  <item id="3425017" dscId="794948" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002400"/>
+  <item id="3425018" dscId="794949" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002401"/>
+  <item id="3425019" dscId="795248" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002402"/>
+  <item id="3425020" dscId="795250" type="USABLE" lifetime="7344000" warmup="3000" cooldown="10" usages="50" rewardId="160002402"/>
+  <item id="3425021" dscId="797130" lifetime="7344000"/>
+  <item id="3425022" dscId="797132" lifetime="7344000"/>
+  <item id="3425023" dscId="797134" lifetime="7344000"/>
+  <item id="3425024" dscId="797136"/>
+  <item id="3425025" dscId="797138"/>
+  <item id="3425026" dscId="797140"/>
+  <item id="3425027" dscId="790792"/>
+  <item id="3425028" dscId="797140"/>
+  <item id="3425029" dscId="797130"/>
+  <item id="3425030" dscId="797132"/>
+  <item id="3425031" dscId="797134"/>
+  <item id="3490000" dscId="790450"/>
+  <item id="3490001" dscId="790451"/>
+  <item id="3490002" dscId="790452"/>
+  <item id="3490003" dscId="790453"/>
+  <item id="3490004" dscId="790454"/>
+  <item id="3490005" dscId="790455"/>
+  <item id="3490006" dscId="790456"/>
+  <item id="3490007" dscId="790457"/>
+  <item id="3490008" dscId="790458"/>
+  <item id="3490009" dscId="790459"/>
+  <item id="3490010" dscId="790460"/>
+  <item id="3490011" dscId="793247"/>
+  <item id="3490012" dscId="793248"/>
+  <item id="3495000" dscId="790461"/>
+  <item id="3495001" dscId="790462"/>
+  <item id="3495002" dscId="790463"/>
+  <item id="3495003" dscId="797733" type="USABLE" warmup="5000" cooldown="180" usages="20" consumeItemId="186000159" consumeCount="1" rewardId="188051749" finalRewardId="188051740"/>
+  <item id="3495004" dscId="797734" type="USABLE" warmup="5000" cooldown="180" usages="30" consumeItemId="186000159" consumeCount="1" rewardId="188051750" finalRewardId="188051741"/>
+  <item id="3495005" dscId="797735" type="USABLE" warmup="5000" cooldown="180" usages="40" consumeItemId="186000159" consumeCount="1" rewardId="188051751" finalRewardId="188051742"/>
+  <item id="3495006" dscId="797736" type="USABLE" warmup="5000" cooldown="180" usages="50" consumeItemId="186000159" consumeCount="1" rewardId="188051752" finalRewardId="188051743"/>
+  <item id="3495007" dscId="797737" type="USABLE" warmup="5000" cooldown="180" usages="60" consumeItemId="186000159" consumeCount="1" rewardId="188051753" finalRewardId="188051744"/>
+  <item id="3495008" dscId="797738" type="USABLE" warmup="5000" cooldown="180" usages="5" consumeItemId="186000159" consumeCount="1" rewardId="188051557" finalRewardId="152011095"/>
+  <item id="3495009" dscId="797739" type="USABLE" lifetime="856800" warmup="5000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051755"/>
+  <item id="3495010" dscId="797740" type="USABLE" lifetime="856800" warmup="5000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051754"/>
+  <item id="3495011" dscId="797741" type="USABLE" lifetime="856800" warmup="5000" daily="1" consumeItemId="186000166" consumeCount="1" rewardId="188051756"/>
+  <item id="3500000" dscId="903654" type="ROOF"/>
+  <item id="3500001" dscId="903655" type="ROOF"/>
+  <item id="3500002" dscId="903656" type="ROOF"/>
+  <item id="3500003" dscId="903657" type="ROOF"/>
+  <item id="3500004" dscId="903658" type="ROOF"/>
+  <item id="3501000" dscId="903659" type="OUTWALL"/>
+  <item id="3501001" dscId="903660" type="OUTWALL"/>
+  <item id="3501002" dscId="903661" type="OUTWALL"/>
+  <item id="3501003" dscId="903662" type="OUTWALL"/>
+  <item id="3501004" dscId="903663" type="OUTWALL"/>
+  <item id="3501005" dscId="903664" type="OUTWALL"/>
+  <item id="3501006" dscId="903665" type="OUTWALL"/>
+  <item id="3501007" dscId="903666" type="OUTWALL"/>
+  <item id="3501008" dscId="903667" type="OUTWALL"/>
+  <item id="3501009" dscId="903668" type="OUTWALL"/>
+  <item id="3502000" dscId="903669" type="FRAME"/>
+  <item id="3502001" dscId="903670" type="FRAME"/>
+  <item id="3502002" dscId="903671" type="FRAME"/>
+  <item id="3502003" dscId="903672" type="FRAME"/>
+  <item id="3503000" dscId="903673" type="DOOR"/>
+  <item id="3504000" dscId="903674" type="INWALL_1"/>
+  <item id="3504001" dscId="903675" type="INWALL_1"/>
+  <item id="3504002" dscId="903676" type="INWALL_1"/>
+  <item id="3504003" dscId="903677" type="INWALL_1"/>
+  <item id="3504004" dscId="903678" type="INWALL_1"/>
+  <item id="3504005" dscId="903679" type="INWALL_1"/>
+  <item id="3504006" dscId="903680" type="INWALL_1"/>
+  <item id="3504007" dscId="903681" type="INWALL_1"/>
+  <item id="3504008" dscId="903682" type="INWALL_1"/>
+  <item id="3504009" dscId="903683" type="INWALL_1"/>
+  <item id="3505000" dscId="903684" type="FLOOR_1"/>
+  <item id="3505001" dscId="904110" type="FLOOR_1"/>
+  <item id="3505002" dscId="797257" type="FLOOR_1"/>
+  <item id="3505003" dscId="797259" type="FLOOR_1"/>
+  <item id="3506000" dscId="903685" type="GARDEN"/>
+  <item id="3507000" dscId="903686" type="FENCE"/>
+  <item id="3507001" dscId="903687" type="FENCE"/>
+  <item id="3507002" dscId="903688" type="FENCE"/>
+  <item id="3510000" dscId="903689" type="ROOF"/>
+  <item id="3510001" dscId="903690" type="ROOF"/>
+  <item id="3510002" dscId="903691" type="ROOF"/>
+  <item id="3510003" dscId="903692" type="ROOF"/>
+  <item id="3510004" dscId="903693" type="ROOF"/>
+  <item id="3510005" dscId="903845" type="ROOF"/>
+  <item id="3511000" dscId="903694" type="OUTWALL"/>
+  <item id="3511001" dscId="903695" type="OUTWALL"/>
+  <item id="3511002" dscId="903696" type="OUTWALL"/>
+  <item id="3511003" dscId="903697" type="OUTWALL"/>
+  <item id="3511004" dscId="903698" type="OUTWALL"/>
+  <item id="3511005" dscId="903699" type="OUTWALL"/>
+  <item id="3511006" dscId="903700" type="OUTWALL"/>
+  <item id="3511007" dscId="903701" type="OUTWALL"/>
+  <item id="3511008" dscId="903702" type="OUTWALL"/>
+  <item id="3511009" dscId="903703" type="OUTWALL"/>
+  <item id="3511010" dscId="903846" type="OUTWALL"/>
+  <item id="3512000" dscId="903704" type="FRAME"/>
+  <item id="3512001" dscId="903705" type="FRAME"/>
+  <item id="3512002" dscId="903706" type="FRAME"/>
+  <item id="3512003" dscId="903707" type="FRAME"/>
+  <item id="3512004" dscId="903847" type="FRAME"/>
+  <item id="3513000" dscId="903708" type="DOOR"/>
+  <item id="3513001" dscId="903848" type="DOOR"/>
+  <item id="3514000" dscId="903709" type="INWALL_1"/>
+  <item id="3514001" dscId="903710" type="INWALL_1"/>
+  <item id="3514002" dscId="903711" type="INWALL_1"/>
+  <item id="3514003" dscId="903712" type="INWALL_1"/>
+  <item id="3514004" dscId="903713" type="INWALL_1"/>
+  <item id="3514005" dscId="903714" type="INWALL_1"/>
+  <item id="3514006" dscId="903715" type="INWALL_1"/>
+  <item id="3514007" dscId="903716" type="INWALL_1"/>
+  <item id="3514008" dscId="903717" type="INWALL_1"/>
+  <item id="3514009" dscId="903718" type="INWALL_1"/>
+  <item id="3514010" dscId="903849" type="INWALL_1"/>
+  <item id="3515000" dscId="903719" type="FLOOR_1"/>
+  <item id="3515001" dscId="903850" type="FLOOR_1"/>
+  <item id="3515002" dscId="904109" type="FLOOR_1"/>
+  <item id="3515003" dscId="797261" type="FLOOR_1"/>
+  <item id="3515004" dscId="797263" type="FLOOR_1"/>
+  <item id="3516000" dscId="903720" type="GARDEN"/>
+  <item id="3516001" dscId="903851" type="GARDEN"/>
+  <item id="3517000" dscId="903721" type="FENCE"/>
+  <item id="3517001" dscId="903722" type="FENCE"/>
+  <item id="3517002" dscId="903723" type="FENCE"/>
+  <item id="3517003" dscId="903852" type="FENCE"/>
+  <item id="3520000" dscId="903724" type="ROOF"/>
+  <item id="3520001" dscId="903725" type="ROOF"/>
+  <item id="3520002" dscId="903726" type="ROOF"/>
+  <item id="3520003" dscId="903727" type="ROOF"/>
+  <item id="3520004" dscId="903728" type="ROOF"/>
+  <item id="3520005" dscId="903853" type="ROOF"/>
+  <item id="3520006" dscId="903861" type="ROOF"/>
+  <item id="3521000" dscId="903729" type="OUTWALL"/>
+  <item id="3521001" dscId="903730" type="OUTWALL"/>
+  <item id="3521002" dscId="903731" type="OUTWALL"/>
+  <item id="3521003" dscId="903732" type="OUTWALL"/>
+  <item id="3521004" dscId="903733" type="OUTWALL"/>
+  <item id="3521005" dscId="903734" type="OUTWALL"/>
+  <item id="3521006" dscId="903735" type="OUTWALL"/>
+  <item id="3521007" dscId="903736" type="OUTWALL"/>
+  <item id="3521008" dscId="903737" type="OUTWALL"/>
+  <item id="3521009" dscId="903738" type="OUTWALL"/>
+  <item id="3521010" dscId="903854" type="OUTWALL"/>
+  <item id="3521011" dscId="903862" type="OUTWALL"/>
+  <item id="3522001" dscId="903739" type="FRAME"/>
+  <item id="3522002" dscId="903740" type="FRAME"/>
+  <item id="3522003" dscId="903741" type="FRAME"/>
+  <item id="3522004" dscId="903742" type="FRAME"/>
+  <item id="3522005" dscId="903855" type="FRAME"/>
+  <item id="3522006" dscId="903863" type="FRAME"/>
+  <item id="3523000" dscId="903743" type="DOOR"/>
+  <item id="3523001" dscId="903856" type="DOOR"/>
+  <item id="3523002" dscId="903864" type="DOOR"/>
+  <item id="3524000" dscId="903744" type="INWALL_1"/>
+  <item id="3524001" dscId="903745" type="INWALL_1"/>
+  <item id="3524002" dscId="903746" type="INWALL_1"/>
+  <item id="3524003" dscId="903747" type="INWALL_1"/>
+  <item id="3524004" dscId="903748" type="INWALL_1"/>
+  <item id="3524005" dscId="903749" type="INWALL_1"/>
+  <item id="3524006" dscId="903750" type="INWALL_1"/>
+  <item id="3524007" dscId="903751" type="INWALL_1"/>
+  <item id="3524008" dscId="903752" type="INWALL_1"/>
+  <item id="3524009" dscId="903753" type="INWALL_1"/>
+  <item id="3524010" dscId="903857" type="INWALL_1"/>
+  <item id="3524011" dscId="903865" type="INWALL_1"/>
+  <item id="3525000" dscId="903754" type="FLOOR_1"/>
+  <item id="3525001" dscId="903858" type="FLOOR_1"/>
+  <item id="3525002" dscId="903866" type="FLOOR_1"/>
+  <item id="3525003" dscId="904108" type="FLOOR_1"/>
+  <item id="3525004" dscId="797265" type="FLOOR_1"/>
+  <item id="3525005" dscId="797267" type="FLOOR_1"/>
+  <item id="3526000" dscId="903755" type="GARDEN"/>
+  <item id="3526001" dscId="903859" type="GARDEN"/>
+  <item id="3526002" dscId="903867" type="GARDEN"/>
+  <item id="3527000" dscId="903756" type="FENCE"/>
+  <item id="3527001" dscId="903757" type="FENCE"/>
+  <item id="3527002" dscId="903758" type="FENCE"/>
+  <item id="3527003" dscId="903860" type="FENCE"/>
+  <item id="3527004" dscId="903868" type="FENCE"/>
+  <item id="3533000" dscId="903759" type="DOOR"/>
+  <item id="3534000" dscId="903760" type="INWALL_1"/>
+  <item id="3534001" dscId="903761" type="INWALL_1"/>
+  <item id="3534002" dscId="903762" type="INWALL_1"/>
+  <item id="3534003" dscId="903763" type="INWALL_1"/>
+  <item id="3534004" dscId="903764" type="INWALL_1"/>
+  <item id="3534005" dscId="903765" type="INWALL_1"/>
+  <item id="3534006" dscId="903766" type="INWALL_1"/>
+  <item id="3534007" dscId="903767" type="INWALL_1"/>
+  <item id="3534008" dscId="903768" type="INWALL_1"/>
+  <item id="3534009" dscId="903769" type="INWALL_1"/>
+  <item id="3535000" dscId="903770" type="FLOOR_1"/>
+  <item id="3535001" dscId="904107" type="FLOOR_1"/>
+  <item id="3535002" dscId="797269" type="FLOOR_1"/>
+  <item id="3535003" dscId="797271" type="FLOOR_1"/>
+  <item id="3540000" dscId="903771" type="CHIMNEY"/>
+  <item id="3540001" dscId="903772" type="CHIMNEY"/>
+  <item id="3540002" dscId="903773" type="CHIMNEY"/>
+  <item id="3540003" dscId="903774" type="CHIMNEY"/>
+  <item id="3550000" dscId="903641" type="ROOF"/>
+  <item id="3550001" dscId="903642" type="ROOF"/>
+  <item id="3551000" dscId="903643" type="OUTWALL"/>
+  <item id="3551001" dscId="903644" type="OUTWALL"/>
+  <item id="3552000" dscId="903645" type="FRAME"/>
+  <item id="3552001" dscId="903646" type="FRAME"/>
+  <item id="3553000" dscId="903647" type="DOOR"/>
+  <item id="3554000" dscId="903651" type="INWALL_1"/>
+  <item id="3554001" dscId="903652" type="INWALL_1"/>
+  <item id="3554002" dscId="797207" type="INWALL_1"/>
+  <item id="3554003" dscId="797209" type="INWALL_1"/>
+  <item id="3554004" dscId="797211" type="INWALL_1"/>
+  <item id="3554005" dscId="797213" type="INWALL_1"/>
+  <item id="3554006" dscId="797215" type="INWALL_1"/>
+  <item id="3554007" dscId="797217" type="INWALL_1"/>
+  <item id="3554008" dscId="797273" type="INWALL_1"/>
+  <item id="3554009" dscId="797275" type="INWALL_1"/>
+  <item id="3555000" dscId="903653" type="FLOOR_1"/>
+  <item id="3555001" dscId="797251" type="FLOOR_1"/>
+  <item id="3555002" dscId="797253" type="FLOOR_1"/>
+  <item id="3555003" dscId="797255" type="FLOOR_1"/>
+  <item id="3556000" dscId="903648" type="GARDEN"/>
+  <item id="3557000" dscId="903649" type="FENCE"/>
+  <item id="3557001" dscId="903650" type="FENCE"/>
+  <item id="3557002" dscId="797287" type="FENCE"/>
+  <item id="3590000" dscId="904114" type="DOOR"/>
+  <item id="3590001" dscId="904115" type="DOOR"/>
+  <item id="3590002" dscId="904116" type="DOOR"/>
+  <item id="3590003" dscId="904117" type="DOOR"/>
+  <item id="3594000" dscId="904118" type="INWALL_1"/>
+  <item id="3594001" dscId="904119" type="INWALL_1"/>
+  <item id="3594002" dscId="904400" type="ROOF"/>
+  <item id="3594003" dscId="904401" type="ROOF"/>
+  <item id="3594004" dscId="904402" type="ROOF"/>
+  <item id="3594005" dscId="904403" type="ROOF"/>
+  <item id="3594006" dscId="904404" type="ROOF"/>
+  <item id="3594007" dscId="904405" type="ROOF"/>
+  <item id="3594008" dscId="904406" type="ROOF"/>
+  <item id="3594009" dscId="904407" type="ROOF"/>
+  <item id="3594010" dscId="904408" type="ROOF"/>
+  <item id="3594011" dscId="904409" type="ROOF"/>
+  <item id="3594012" dscId="904410" type="ROOF"/>
+  <item id="3594013" dscId="904411" type="ROOF"/>
+  <item id="3594014" dscId="904412" type="ROOF"/>
+  <item id="3594015" dscId="904413" type="ROOF"/>
+  <item id="3594016" dscId="904414" type="ROOF"/>
+  <item id="3594017" dscId="904415" type="ROOF"/>
+  <item id="3594018" dscId="904416" type="OUTWALL"/>
+  <item id="3594019" dscId="904417" type="OUTWALL"/>
+  <item id="3594020" dscId="904418" type="OUTWALL"/>
+  <item id="3594021" dscId="904419" type="OUTWALL"/>
+  <item id="3594022" dscId="904420" type="OUTWALL"/>
+  <item id="3594023" dscId="904421" type="OUTWALL"/>
+  <item id="3594024" dscId="904422" type="OUTWALL"/>
+  <item id="3594025" dscId="904423" type="OUTWALL"/>
+  <item id="3594026" dscId="904424" type="OUTWALL"/>
+  <item id="3594027" dscId="904425" type="OUTWALL"/>
+  <item id="3594028" dscId="904426" type="OUTWALL"/>
+  <item id="3594029" dscId="904427" type="OUTWALL"/>
+  <item id="3594030" dscId="904428" type="OUTWALL"/>
+  <item id="3594031" dscId="904429" type="OUTWALL"/>
+  <item id="3594032" dscId="904430" type="OUTWALL"/>
+  <item id="3594033" dscId="904431" type="OUTWALL"/>
+  <item id="3594034" dscId="904432" type="FRAME"/>
+  <item id="3594035" dscId="904433" type="FRAME"/>
+  <item id="3594036" dscId="904434" type="FRAME"/>
+  <item id="3594037" dscId="904435" type="FRAME"/>
+  <item id="3594038" dscId="904436" type="FRAME"/>
+  <item id="3594039" dscId="904437" type="FRAME"/>
+  <item id="3594040" dscId="904438" type="FRAME"/>
+  <item id="3594041" dscId="904439" type="FRAME"/>
+  <item id="3594042" dscId="904440" type="FRAME"/>
+  <item id="3594043" dscId="904441" type="FRAME"/>
+  <item id="3594044" dscId="904442" type="FRAME"/>
+  <item id="3594045" dscId="904443" type="FRAME"/>
+  <item id="3594046" dscId="904444" type="FRAME"/>
+  <item id="3594047" dscId="904445" type="FRAME"/>
+  <item id="3594048" dscId="904446" type="FRAME"/>
+  <item id="3594049" dscId="904447" type="FRAME"/>
+  <item id="3594050" dscId="904448" type="INWALL_1"/>
+  <item id="3594051" dscId="904449" type="INWALL_1"/>
+  <item id="3594052" dscId="904450" type="INWALL_1"/>
+  <item id="3594053" dscId="904451" type="INWALL_1"/>
+</items>

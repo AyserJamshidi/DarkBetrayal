@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<custom_quests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="custom_quests.xsd">
+	<custom_quest id="1" name="test" world_id="210010000" reset_after_days="1" amount_per_day="2">
+		<schedule start_date="0 0 5 ? * MON-MON *" end_date="0 10 5 ? * MON-MON *"/>
+		<start_properties min_level="99" max_level="99" race="ELYOS"/>
+		<end_properties player_kills="2" monster_kills="0" monster_id="0"/>
+		<announcements on_quest_start="1" on_quest_end="1" on_quest_restart="1"/>
+		<quest_rewards complete_count="1">
+			<rewards rank="1" ap="1">
+      			<random_rewards limit="2">
+					<item itemId="162000023" count="1"/>
+			        <item itemId="162000066" count="1"/>		
+      			</random_rewards>
+    		</rewards>
+		</quest_rewards>
+	</custom_quest>
+</custom_quests>

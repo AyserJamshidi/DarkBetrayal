@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  - This file is part of Neon-Eleanor project
+  -
+  - This is proprietary software. See the EULA file distributed with
+  - this project for additional information regarding copyright ownership.
+  -
+  - Copyright (c) 2011-2013, Neon-Eleanor Team. All rights reserved.
+-->
+<!-- @hex1r0 -->
+<spawns>
+    <!-- <spawn id="203736" respawn="5">
+      <positions policy="ANY">
+        <pos mapId="110010000" x="1343" y="1507" z="569" h="109"/>
+        <pos mapId="110010000" x="1345" y="1515" z="569" h="109"/>
+      </positions>
+      <time>
+        <from>0 0 0 ? * MON,TUE,WED,THU,FRI,SAT,SUN *</from>
+        <to>0 0 23 ? * MON,TUE,WED,THU,FRI,SAT,SUN *</to>
+      </time>
+    </spawn>-->
+</spawns>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  - This file is part of Neon-Eleanor project
+  -
+  - This is proprietary software. See the EULA file distributed with
+  - this project for additional information regarding copyright ownership.
+  -
+  - Copyright (c) 2011-2013, Neon-Eleanor Team. All rights reserved.
+-->
+<!-- @Jenelli -->
+<rate_config_loads> 
+    <!--<rate_config id="1">
+      <file>ratesHolidays.properties</file>
+      <time>
+        <from>0 0 12 ? * MON,TUE,WED,THU,FRI *</from>
+        <to>0 0 13 ? * MON,TUE,WED,THU,FRI *</to>
+      </time>
+
+    </rate_config>-->
+</rate_config_loads>

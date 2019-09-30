@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<online_bonus_data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="online_bonus.xsd">
+    <!-- time_mins число кратное 5 -->
+    <bonus time_mins="60" reward_toll="0" reward_kinah="0" random="true">
+        <reward_item id="186000143" amount="3"/>
+        <reward_item id="186000143" amount="5"/>
+    </bonus>
+	
+	<bonus time_mins="120" reward_toll="0" reward_kinah="0" random="false">
+        <reward_item id="186000051" amount="1"/>
+    </bonus>
+	
+	<bonus time_mins="180" reward_toll="0" reward_kinah="0" random="true">
+        <reward_item id="186000147" amount="1"/>
+		<reward_item id="186000147" amount="2"/>
+    </bonus>
+	
+	<bonus time_mins="240" reward_toll="1" reward_kinah="0" random="false" reset_time="true">
+		<reward_item id="0" amount="0"/>
+    </bonus>
+    
+</online_bonus_data>

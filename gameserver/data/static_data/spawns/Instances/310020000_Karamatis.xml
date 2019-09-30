@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spawns>
+	<spawn_map map_id="310020000">
+		<!-- Archon Legionary -->
+		<spawn npc_id="205021">
+            <spot fly="1" h="90" z="237.0" y="133.0" x="143.0"/>
+            <spot fly="1" h="90" z="232.0" y="217.0" x="102.0"/>
+            <spot fly="1" h="90" z="211.0" y="199.0" x="180.0"/>
+            <spot fly="1" h="90" z="216.0" y="193.0" x="142.0"/>
+            <spot fly="1" h="90" z="227.0" y="171.0" x="115.0"/>
+            <spot fly="1" h="90" z="258.0" y="286.0" x="110.0"/>
+            <spot fly="1" h="90" z="224.0" y="233.0" x="129.0"/>
+            <spot fly="1" h="90" z="204.0" y="254.0" x="157.0"/>
+            <spot fly="1" h="90" z="219.0" y="250.0" x="120.0"/>
+            <spot fly="1" h="90" z="296.0" y="284.0" x="182.0"/>
+            <spot fly="1" h="90" z="221.0" y="294.0" x="180.0"/>
+		</spawn>
+		<!-- Archon Legionary -->
+		<spawn npc_id="205022">
+            <spot fly="1" h="90" z="241.0" y="212.0" x="125.0"/>
+            <spot fly="1" h="90" z="227.0" y="196.0" x="159.0"/>
+            <spot fly="1" h="90" z="213.0" y="223.0" x="153.0"/>
+		</spawn>
+		<!-- Legionary -->
+		<spawn npc_id="205019">
+			<spot x="67" y="185" z="228" h="90"/>
+			<spot x="61" y="176" z="228" h="60"/>
+		</spawn>
+		<!-- Legionary -->
+		<spawn npc_id="205018">
+			<spot x="65" y="178" z="228" h="60"/>
+			<spot x="59" y="181" z="228" h="90"/>
+		</spawn>
+		<!-- Legionary -->
+		<spawn npc_id="205004">
+            <spot fly="1" h="90" z="227.0" y="173.0" x="118.0"/>
+            <spot fly="1" h="90" z="211.0" y="201.0" x="186.0"/>
+            <spot fly="1" h="90" z="216.0" y="193.0" x="147.0"/>
+            <spot fly="1" h="90" z="213.0" y="226.0" x="148.0"/>
+		</spawn>
+		<!-- Centurion -->
+		<spawn npc_id="205005">
+            <spot fly="1" h="90" z="237.0" y="131.0" x="139.0"/>
+		</spawn>
+		<!-- Legionary -->
+		<spawn npc_id="205006">
+            <spot fly="1" h="90" z="224.0" y="237.0" x="134.0"/>
+            <spot fly="1" h="90" z="204.0" y="254.0" x="153.0"/>
+            <spot fly="1" h="90" z="219.0" y="256.0" x="119.0"/>
+            <spot fly="1" h="90" z="296.0" y="293.0" x="181.0"/>
+            <spot fly="1" h="90" z="221.0" y="288.0" x="179.0"/>
+		</spawn>
+		<!-- Belpartan -->
+		<spawn npc_id="205000">
+			<spot x="85" y="191" z="232"/>
+		</spawn>
+		<!-- Legionary -->
+		<spawn npc_id="205001">
+			<spot x="63" y="183" z="228" h="90"/>
+		</spawn>
+		<!-- Legionary -->
+		<spawn npc_id="205002">
+			<spot x="69" y="181" z="228" h="60"/>
+		</spawn>
+		<!-- Centurion -->
+		<spawn npc_id="205003">
+            <spot fly="1" h="90" z="227.0" y="196.0" x="153.0"/>
+            <spot fly="1" h="90" z="241.0" y="216.0" x="129.0"/>
+            <spot fly="1" h="90" z="232.0" y="221.0" x="105.0"/>
+		</spawn>
+	</spawn_map>
+</spawns>

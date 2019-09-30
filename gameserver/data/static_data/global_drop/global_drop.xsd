@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="../npc_drops/npc_drops.xsd"/>
+  <xs:element name="global_drop" type="global_dropType">
+    <xs:annotation>
+      <xs:documentation><![CDATA[@author Kolobrodik
+    @description:
+        <drop_data
+            level="50" - определяет уровень монстра, которому будет добавлятся предмет в дроплист.
+            npc_race - раса монстра для которого эта группа будет записана. По дефолту любая.
+            npc_rating - Rating нпс, которму группа будет записана в дроп. Для регулировки, что падает с элиток, а что с обычных монстров. По дефолту - NORMAL
+        >
+            <group - группа предметов, как и в обычном дропе, но с проверками:
+                name = название группы
+                race - раса игрока, для которого дроп будет возможен. По дефолту для всех.
+                use_category - Использовать ли правило категории для этой группы. По дефолту - включена.
+            >
+                <item id="ID" chance="100" min_amount="1" max_amount="2" no_reduce="false" eachmember="false"/>
+                <item id="ID2" chance="100" min_amount="1" max_amount="2"/>
+                <item id="ID3" chance="100" min_amount="1" max_amount="2"/>
+            </group>
+        </drop_data>]]></xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="global_dropType">
+    <xs:sequence>
+      <xs:element type="drop_dataType" name="drop_data" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="drop_dataType">
+    <xs:sequence>
+      <xs:element type="dropGroup" name="group" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="level" use="optional"/>
+    <xs:attribute type="xs:string" name="npc_race" use="optional"/>
+    <xs:attribute type="xs:string" name="npc_rating" use="optional"/>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spawns>
+    <spawn_map map_id="220050000">
+        <!-- Vortex -->
+        <spawn npc_id="700137" handler="RIFT">
+			<spot x="1086.4619" y="1813.9468" z="38.1" h="97" anchor="BRUSTHONIN_AM"/>
+            <spot x="2239.4619" y="2797.9468" z="78.5387" h="45" anchor="BRUSTHONIN_AS"/>
+        </spawn>
+    </spawn_map>
+</spawns>

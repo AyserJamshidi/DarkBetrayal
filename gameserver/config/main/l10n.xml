@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<languages>
+  <language id="EN">
+    <group class="com.ne.gs.modules.pvpevent.Messages">
+      <entry id="REGISTER_OPEN" value="Registration for %s is open for %s. Type '.event apply %s' to register"/>
+      <entry id="REGISTER_SUCCESS" value="You successfully registered at %s [%d/%d]"/>
+      <entry id="REGISTER_PARTICIPANT" value="Participant %s registered at %s [%d/%d]"/>
+      <entry id="REGISTER_WRONG_TIME" value="Registration is closed right now"/>
+      <entry id="REGISTER_NOT_ENOUGH_PLS" value="Not enough players. Registration cancelled"/>
+      <entry id="REGISTER_TIME_OVER" value="Registration time is over"/>
+      <entry id="REGISTER_NO_EVENTS" value="No events are currently accepting players"/>
+      <entry id="REGISTER_COOLDOWN" value="You need to wait for %s to register"/>
+      <entry id="REGISTER_INVALID_STATE" value="Invalid state"/>
+      <entry id="REGISTER_INVALID_CMD" value="Invalid command"/>
+      <entry id="REGISTER_INVALID_LEVEL" value="Invalid level. Required %s"/>
+      <entry id="CANCEL_SUCCESS" value="You successfully canceled %s"/>
+      <entry id="REGISTER_TWICE_ERROR" value="You're already registered at %s. To apply on other event please leave this one"/>
+      <entry id="EVENT_IN_PROGRESS" value="Unable to perform action while event in progress"/>
+      <entry id="ROUND_STARTS_IN" value="Round #%d starts in %s"/>
+      <entry id="ROUND_STARTED" value="Round #%d started"/>
+      <entry id="ROUND_FINISHED" value="Round #%d finished"/>
+      <entry id="ROUND_FINISHED_WINNER" value="Round #%d finished. Winner - %s"/>
+      <entry id="EVENT_FINISHED" value="Event %s finished"/>
+      <entry id="POLL_EVENT" value="Event &lt;font color=&quot;D4FF54&quot;&gt;%s&lt;/font&gt;"/>
+      <entry id="POLL_EVENT_REWARD" value="Event reward(s):"/>
+      <entry id="POLL_EVENT_REWARD_AP" value="You get &lt;font color=&quot;D4FF54&quot;&gt;%d&lt;/font&gt; Abyss Point(s)"/>
+      <entry id="POLL_EVENT_REWARD_LVL" value="You get &lt;font color=&quot;D4FF54&quot;&gt;%d&lt;/font&gt; level(s)"/>
+      <entry id="POLL_EVENT_REWARD_GP" value="You get &lt;font color=&quot;D4FF54&quot;&gt;%d&lt;/font&gt; Game Point(s)"/>
+      <entry id="POLL_EVENT_REWARD_RND_ITEM" value="You get &lt;font color=&quot;D4FF54&quot;&gt;%d&lt;/font&gt; random item(s)"/>
+      <entry id="CHOOSE_ITEM" value="Choose &lt;font color=&quot;D4FF54&quot;&gt;%d&lt;/font&gt; item(s)"/>
+    </group>
+  </language>
+  <language id="RU">
+    <!-- group class="playercommands.CmdVersion.Messages">
+      <entry id="VERSION" value="Версия:"/>
+    </group -->
+    <group class="com.ne.gs.services.player.PlayerEnterWorldService.Messages">
+      <entry id="REGULAR" value="обычный"/>
+      <entry id="PREMIUM" value="премиум"/>
+      <entry id="VIP" value="ВИП"/>
+      <entry id="SUMMARY" value=" --------------- У Вас %s аккаунт\n EXP: %s\n Дроп: %s\n Квест EXP: %s\n Квест Кинары: %s\n Сбор Exp: %s\n Крафт Exp: %s\n PvP Ap: %s\n ---------------"/>
+    </group>
+    <group class="com.ne.gs.utils.audit.GMService.Messages">
+      <entry id="ENTERED" value="\uE042 Анонс: %s%s вошел в мир Атрея."/>
+    </group>
+  </language>
+</languages>

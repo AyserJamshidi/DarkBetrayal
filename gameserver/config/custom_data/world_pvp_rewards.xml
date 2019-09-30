@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<world_drops>
+	<world id="210020000"> <!-- eltenen -->
+		<entry rate="25">
+			<item id="186000031" count="1"/>
+		</entry>
+	</world>
+	
+	<world id="220020000"> <!-- morheim -->
+		<entry rate="25" random="true">
+			<item id="186000031" count="1"/>
+			<item id="186000030" count="1"/>
+		</entry>
+	</world>	
+</world_drops>

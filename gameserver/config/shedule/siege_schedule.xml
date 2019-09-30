@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siege_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="siege_schedule.xsd">
+  <!--
+  MON - Понедельник
+  TUE - Вторник
+  WED - Среда
+  THU - Четверг
+  FRI - Пятница
+  SAT - Суббота
+  SUN - Воскресенье
+   -->
+  <fortress id="1131">
+    <siegeTime>0 0 19 ? * FRI</siegeTime>
+  </fortress>
+  <fortress id="1132">
+    <siegeTime>0 0 19 ? * FRI</siegeTime>
+  </fortress>
+  <fortress id="1141">
+    <siegeTime>0 0 19 ? * TUE,FRI</siegeTime>
+  </fortress>
+  <fortress id="1011">
+    <siegeTime>0 0 23 ? * SAT</siegeTime>
+  </fortress>
+  <fortress id="1211">
+    <siegeTime>0 0 19 ? * TUE,SAT</siegeTime>
+  </fortress>
+  <fortress id="1221">
+    <siegeTime>0 0 19 ? * WED</siegeTime>
+    <siegeTime>0 0 18 ? * SUN</siegeTime>
+  </fortress>
+  <fortress id="1231">
+    <siegeTime>0 0 19 ? * WED</siegeTime>
+    <siegeTime>0 0 18 ? * SUN</siegeTime>
+  </fortress>
+  <fortress id="1241">
+    <siegeTime>0 0 19 ? * WED</siegeTime>
+    <siegeTime>0 0 18 ? * SUN</siegeTime>
+  </fortress>
+  <fortress id="1251">
+    <siegeTime>0 0 19 ? * TUE,SAT</siegeTime>
+  </fortress>
+  <fortress id="2011">
+    <siegeTime>0 0 12 ? * THU,SUN</siegeTime>
+    <siegeTime>0 0 16 ? * SAT</siegeTime>
+    <siegeTime>0 0 21 ? * MON,WED,FRI,SAT</siegeTime>
+    <siegeTime>0 0 22 ? * SUN</siegeTime>
+    <siegeTime>0 0 23 ? * TUE,THU</siegeTime>
+  </fortress>
+  <fortress id="2021">
+    <siegeTime>0 0 21 ? * MON,WED,FRI,SAT</siegeTime>
+    <siegeTime>0 0 23 ? * TUE,THU</siegeTime>
+    <siegeTime>0 0 16 ? * SAT</siegeTime>
+    <siegeTime>0 0 12 ? * SUN</siegeTime>
+    <siegeTime>0 0 22 ? * SUN</siegeTime>
+  </fortress>
+  <fortress id="3011">
+    <siegeTime>0 0 12 ? * THU,SUN</siegeTime>
+    <siegeTime>0 0 16 ? * SAT</siegeTime>
+    <siegeTime>0 0 21 ? * TUE,THU,FRI</siegeTime>
+    <siegeTime>0 0 22 ? * SUN</siegeTime>
+    <siegeTime>0 0 23 ? * MON,WED,SAT</siegeTime>
+  </fortress>
+  <fortress id="3021">
+    <siegeTime>0 0 12 ? * SUN</siegeTime>
+    <siegeTime>0 0 16 ? * SAT</siegeTime>
+    <siegeTime>0 0 21 ? * TUE,THU,FRI</siegeTime>
+    <siegeTime>0 0 22 ? * SUN</siegeTime>
+    <siegeTime>0 0 23 ? * MON,WED,SAT</siegeTime>
+  </fortress>
+  <source id="4011">
+    <siegeTime>0 0 14 ? * *</siegeTime>
+    <siegeTime>0 0 18 ? * *</siegeTime>
+    <siegeTime>0 0 22 ? * *</siegeTime>
+  </source>
+  <source id="4021">
+    <siegeTime>0 0 14 ? * *</siegeTime>
+    <siegeTime>0 0 18 ? * *</siegeTime>
+    <siegeTime>0 0 22 ? * *</siegeTime>
+  </source>
+  <source id="4031">
+    <siegeTime>0 0 14 ? * *</siegeTime>
+    <siegeTime>0 0 18 ? * *</siegeTime>
+    <siegeTime>0 0 22 ? * *</siegeTime>
+  </source>
+  <source id="4041">
+    <siegeTime>0 0 14 ? * *</siegeTime>
+    <siegeTime>0 0 18 ? * *</siegeTime>
+    <siegeTime>0 0 22 ? * *</siegeTime>
+  </source>
+</siege_schedule>

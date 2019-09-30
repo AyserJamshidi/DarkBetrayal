@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<configuration>
+    <property name="logFolder" value="log/"/>
+    <appender name="out_console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="com.aionl.slf4j.filters.ConsoleFilter"></filter>
+        <encoder>
+            <Pattern>%date{HH:mm:ss.SSS} %-5level: %message%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="ADMINAUDIT_LOG" additivity="false">
+
+    </logger>
+    <logger name="AUDIT_LOG">
+
+    </logger>
+    <logger name="AUTOGROUP_LOG">
+
+    </logger>
+    <logger name="CHAT_LOG" additivity="false">
+
+    </logger>
+    <logger name="CRAFT_LOG" additivity="false">
+
+    </logger>
+    <logger name="EXCHANGE_LOG">
+
+    </logger>
+    <logger name="GAMECONNECTION_LOG">
+
+    </logger>
+    <logger name="INGAMESHOP_LOG">
+
+    </logger>
+    <logger name="ITEM_LOG" additivity="false">
+
+    </logger>
+    <logger name="ITEM_HTML_LOG">
+
+    </logger>
+    <logger name="KILL_LOG">
+
+    </logger>
+    <logger name="MAIL_LOG">
+
+    </logger>
+    <logger name="SIEGE_LOG">
+
+    </logger>
+    <logger name="SYSMAIL_LOG">
+
+    </logger>
+    <logger name="ai">
+
+    </logger>
+    <logger name="com.ne.gs.ai2">
+
+    </logger>
+    <logger name="instance" additivity="false">
+
+    </logger>
+    <logger name="quest" additivity="false">
+
+    </logger>
+    <logger name="GMITEMRESTRICTION">
+
+    </logger>
+    <logger name="PLAYERTRANSFER">
+
+    </logger>
+
+    <!-- housing logger -->
+    <logger name="housing">
+        <appender-ref ref="housing"/>
+    </logger>
+
+    <!-- housing logger -->
+    <logger name="anniversary">
+        <appender-ref ref="anniversary"/>
+    </logger>
+    <logger name="sqlquery">
+        <appender-ref ref="app_sqlquery"/>
+    </logger>
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="out_console"/>
+    </root>
+</configuration>

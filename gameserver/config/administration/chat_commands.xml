@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chat_commands>
+  <registry>
+    <admin>
+      <class name="Add">
+        <alias name="add"/>
+      </class>
+      <class name="AddCube">
+        <alias name="addcube"/>
+      </class>
+      <class name="AddDrop">
+        <alias name="adddrop"/>
+      </class>
+      <class name="AddEmotion">
+        <alias name="addemotion"/>
+      </class>
+      <class name="AddExp">
+        <alias name="addexp"/>
+      </class>
+      <class name="AddSet">
+        <alias name="addset"/>
+      </class>
+      <class name="AddSkill">
+        <alias name="addskill"/>
+      </class>
+      <class name="AddTitle">
+        <alias name="addtitle"/>
+      </class>
+      <class name="Admin">
+        <alias name="admin"/>
+      </class>
+      <class name="AdminChat">
+        <alias name="s"/>
+      </class>
+      <class name="Ai2Command">
+        <alias name="ai2"/>
+      </class>
+      <class name="Announce">
+        <alias name="announce"/>
+      </class>
+      <class name="AnnounceFaction">
+        <alias name="announcefaction"/>
+      </class>
+      <class name="Announcements">
+        <alias name="announcements"/>
+      </class>
+      <class name="Appearance">
+        <alias name="appearance"/>
+      </class>
+      <class name="Assault">
+        <alias name="assault"/>
+      </class>
+      <class name="Ban">
+        <alias name="ban"/>
+      </class>
+      <class name="BanChar">
+        <alias name="banchar"/>
+      </class>
+      <class name="BanIp">
+        <alias name="banip"/>
+      </class>
+      <class name="BanMac">
+        <alias name="banmac"/>
+      </class>
+      <class name="Bk">
+        <alias name="bk"/>
+      </class>
+      <class name="ChangeRace">
+        <alias name="changerace"/>
+      </class>
+      <class name="Channel">
+        <alias name="channel"/>
+      </class>
+      <class name="Clear">
+        <alias name="clear"/>
+      </class>
+      <class name="CmdConfigure">
+        <alias name="cfg"/>
+      </class>
+      <class name="CmdHousing">
+        <alias name="housing"/>
+        <alias name="хаузинг"/>
+        <alias name="хаузінг"/>
+      </class>
+      <class name="CmdInstanceEntryManager">
+        <alias name="imanager"/>
+      </class>
+      <class name="CmdRecipe">
+        <alias name="recipe"/>
+      </class>
+      <class name="Cube">
+        <alias name="cube"/>
+      </class>
+      <class name="Cooldown">
+        <alias name="cooldown"/>
+      </class>
+      <class name="Damage">
+        <alias name="damage"/>
+      </class>
+      <class name="Delete">
+        <alias name="delete"/>
+      </class>
+      <class name="DelSkill">
+        <alias name="delskill"/>
+      </class>
+      <class name="Dialog">
+        <alias name="dialog"/>
+      </class>
+      <class name="Dispel">
+        <alias name="dispel"/>
+      </class>
+      <class name="Drop">
+        <alias name="droptoxml"/>
+      </class>
+      <class name="DropInfo">
+        <alias name="dropinfo"/>
+      </class>
+      <class name="Dye">
+        <alias name="dye"/>
+      </class>
+      <class name="Enemy">
+        <alias name="enemy"/>
+      </class>
+      <class name="EnergyBuff">
+        <alias name="energy"/>
+      </class>
+      <class name="Equip">
+        <alias name="equip"/>
+      </class>
+      <class name="FixPath">
+        <alias name="fixpath"/>
+      </class>
+      <class name="Fsc">
+        <alias name="fsc"/>
+      </class>
+      <class name="Gag">
+        <alias name="gag"/>
+      </class>
+      <class name="Geo">
+        <alias name="geo"/>
+      </class>
+      <class name="GiveMissingSkills">
+        <alias name="givemissingskills"/>
+      </class>
+      <class name="GoTo">
+        <alias name="goto"/>
+      </class>
+      <class name="Gps">
+        <alias name="gps"/>
+      </class>
+      <class name="GroupToMe">
+        <alias name="grouptome"/>
+      </class>
+      <class name="Heal">
+        <alias name="heal"/>
+      </class>
+      <class name="Html">
+        <alias name="html"/>
+      </class>
+      <class name="Info">
+        <alias name="info"/>
+      </class>
+      <class name="Invis">
+        <alias name="invis"/>
+      </class>
+      <class name="Invul">
+        <alias name="invul"/>
+      </class>
+      <class name="Kick">
+        <alias name="kick"/>
+      </class>
+      <class name="Kill">
+        <alias name="kill"/>
+      </class>
+      <class name="Kinah">
+        <alias name="kinah"/>
+      </class>
+      <class name="LegionCommand">
+        <alias name="legion"/>
+      </class>
+      <class name="Map">
+        <alias name="map"/>
+      </class>
+      <class name="Marry">
+        <alias name="marry"/>
+      </class>
+      <class name="MarryDel">
+        <alias name="marrydel"/>
+      </class>
+      <class name="Morph">
+        <alias name="morph"/>
+      </class>
+      <class name="Motion">
+        <alias name="motion"/>
+      </class>
+      <class name="MovePlayerToPlayer">
+        <alias name="moveplayertoplayer"/>
+        <alias name="mptp"/>
+      </class>
+      <class name="MoveTo">
+        <alias name="moveto"/>
+        <alias name="mt"/>
+      </class>
+      <class name="MoveToMe">
+        <alias name="movetome"/>
+        <alias name="mtm"/>
+      </class>
+      <class name="MoveToMeAll">
+        <alias name="movetomeall"/>
+        <alias name="mtma"/>
+      </class>
+      <class name="MoveToNpc">
+        <alias name="movetonpc"/>
+        <alias name="mtn"/>
+      </class>
+      <class name="MoveToObject">
+        <alias name="movetoobj"/>
+        <alias name="mto"/>
+      </class>
+      <class name="MoveToPlayer">
+        <alias name="movetoplayer"/>
+        <alias name="mtp"/>
+      </class>
+      <class name="Movie">
+        <alias name="movie"/>
+      </class>
+      <class name="Neutral">
+        <alias name="neutral"/>
+      </class>
+      <class name="Notice">
+        <alias name="notice"/>
+      </class>
+      <class name="NpcSkill">
+        <alias name="npcskill"/>
+      </class>
+      <class name="Online">
+        <alias name="online"/>
+      </class>
+      <class name="PasskeyReset">
+        <alias name="passkeyreset"/>
+      </class>
+      <class name="Pet">
+        <alias name="pet"/>
+      </class>
+      <class name="Petitions">
+        <alias name="petition"/>
+      </class>
+      <class name="PlayerInfo">
+        <alias name="playerinfo"/>
+      </class>
+      <class name="PowerUp">
+        <alias name="powerup"/>
+      </class>
+      <class name="Promote">
+        <alias name="promote"/>
+      </class>
+      <class name="Quest">
+        <alias name="quest"/>
+      </class>
+      <class name="Ranking">
+        <alias name="ranking"/>
+      </class>
+      <class name="Raw">
+        <alias name="raw"/>
+      </class>
+      <class name="Reload">
+        <alias name="reload"/>
+      </class>
+      <class name="ReloadSpawn">
+        <alias name="reload_spawn"/>
+      </class>
+      <class name="Remove">
+        <alias name="remove"/>
+      </class>
+      <class name="RemoveCd">
+        <alias name="removecd"/>
+      </class>
+      <class name="Rename">
+        <alias name="rename"/>
+      </class>
+      <class name="Res">
+        <alias name="res"/>
+      </class>
+      <class name="Reskin">
+        <alias name="reskin"/>
+      </class>
+      <class name="Revoke">
+        <alias name="revoke"/>
+      </class>
+      <class name="Ring">
+        <alias name="ring"/>
+      </class>
+      <class name="RPrison">
+        <alias name="rprison"/>
+      </class>
+      <class name="Say">
+        <alias name="say"/>
+      </class>
+      <class name="See">
+        <alias name="see"/>
+      </class>
+      <class name="Send">
+        <alias name="send"/>
+      </class>
+      <class name="Set">
+        <alias name="set"/>
+      </class>
+      <class name="SetRace">
+        <alias name="setrace"/>
+      </class>
+      <class name="SpawnAssembledNpc">
+        <alias name="spawnAssembledNpc"/>
+      </class>
+      <class name="SiegeCommand">
+        <alias name="siege"/>
+      </class>
+      <class name="SpawnNpc">
+        <alias name="spawn"/>
+      </class>
+      <class name="SpawnUpdate">
+        <alias name="spawnu"/>
+      </class>
+      <class name="Speed">
+        <alias name="speed"/>
+      </class>
+      <class name="SPrison">
+        <alias name="sprison"/>
+      </class>
+      <class name="Stat">
+        <alias name="stat"/>
+      </class>
+      <class name="State">
+        <alias name="state"/>
+      </class>
+      <class name="Status">
+        <alias name="status"/>
+      </class>
+      <class name="Sys">
+        <alias name="sys"/>
+      </class>
+      <class name="SysMail">
+        <alias name="sysmail"/>
+      </class>
+      <class name="Teleportation">
+        <alias name="teleportation"/>
+      </class>
+      <class name="Time">
+        <alias name="time"/>
+      </class>
+      <class name="UnBan">
+        <alias name="unban"/>
+      </class>
+      <class name="UnBanChar">
+        <alias name="unbanchar"/>
+      </class>
+      <class name="UnBanIp">
+        <alias name="unbanip"/>
+      </class>
+      <class name="UnBanMac">
+        <alias name="unbanmac"/>
+      </class>
+      <class name="UnGag">
+        <alias name="ungag"/>
+      </class>
+      <class name="Unstuck">
+        <alias name="unstuck"/>
+      </class>
+      <class name="UseSkill">
+        <alias name="useskill"/>
+      </class>
+      <class name="Warp">
+        <alias name="warp"/>
+      </class>
+      <class name="Wc">
+        <alias name="wc"/>
+      </class>
+      <class name="Weather">
+        <alias name="weather"/>
+      </class>
+      <class name="Whisper">
+        <alias name="whisper"/>
+      </class>
+      <class name="Who">
+        <alias name="who"/>
+      </class>
+      <class name="Zone">
+        <alias name="zone"/>
+      </class>
+    </admin>
+
+    <user>
+      <class name="cmd_answer">
+        <alias name="answer"/>
+      </class>
+      <class name="cmd_asmo">
+        <alias name="asmo"/>
+      </class>
+      <class name="cmd_clean">
+        <alias name="clean"/>
+      </class>
+      <class name="cmd_droplist">
+        <alias name="droplist"/>
+      </class>
+      <class name="cmd_ely">
+        <alias name="ely"/>
+      </class>
+      <class name="cmd_faction">
+        <alias name="faction"/>
+      </class>
+      <class name="cmd_gmlist">
+        <alias name="gmlist"/>
+      </class>
+      <class name="cmd_mcheck">
+        <alias name="mcheck"/>
+      </class>
+      <class name="cmd_noexp">
+        <alias name="noexp"/>
+      </class>
+      <class name="cmd_repair">
+        <alias name="repair"/>
+      </class>
+      <class name="cmd_questauto">
+        <alias name="questauto"/>
+      </class>
+      <class name="cmd_questrestart">
+        <alias name="questrestart"/>
+      </class>
+      <class name="cmd_toll">
+        <alias name="toll"/>
+      </class>
+      <class name="CmdEvent">
+        <alias name="event"/>
+      </class>
+      <class name="CmdVersion">
+        <alias name="version"/>
+      </class>
+      <class name="cmd_world">
+        <alias name="world"/>
+      </class>
+      <class name="cmd_dye">
+        <alias name="paint"/>
+      </class>
+	  <class name="cmd_reskin">
+        <alias name="reskin1"/>
+      </class>
+	  <class name="cmd_reskin1">
+        <alias name="reskin2"/>
+      </class>
+      <class name="cmd_marry">
+        <alias name="marry"/>
+      </class>
+      <class name="cmd_cancelmorph">
+        <alias name="cancelmorph"/>
+      </class>
+    </user>
+
+    <wedding>
+      <class name="Come">
+        <alias name="cometome"/>
+      </class>
+      <class name="Miss">
+        <alias name="missyou"/>
+      </class>
+    </wedding>
+  </registry>
+
+  <security>
+    <server>
+      <user>
+        <permit class="cmd_answer"/>
+        <permit class="cmd_asmo"/>
+        <permit class="cmd_droplist"/>
+        <permit class="cmd_ely"/>
+        <permit class="cmd_faction"/>
+        <permit class="cmd_mcheck"/>
+        <permit class="cmd_noexp"/>
+        <permit class="cmd_gmlist"/>
+        <permit class="cmd_repair"/>
+        <!-- <permit class="cmd_questauto"/> -->
+        <permit class="cmd_questrestart"/>
+        <!-- <permit class="cmd_toll"/> -->
+        <permit class="CmdEvent"/>
+        <permit class="CmdVersion"/>
+        <permit class="cmd_world"/>
+        <permit class="cmd_dye"/>
+        <permit class="cmd_cancelmorph"/>
+          <permit class="cmd_reskin"/>
+          <permit class="cmd_reskin1"/>
+      </user>
+      <wedding>
+        <permit class="Come"/>
+        <permit class="Miss"/>
+      </wedding>
+    </server>
+
+    <group name="Admins">
+      <admin>
+        <permit class="Add"/>
+        <permit class="AddCube"/>
+        <permit class="AddDrop"/>
+        <permit class="AddEmotion"/>
+        <permit class="AddExp"/>
+        <permit class="AddSet"/>
+        <permit class="AddSkill"/>
+        <permit class="AddTitle"/>
+        <permit class="Admin"/>
+        <permit class="AdminChat"/>
+        <permit class="Ai2Command"/>
+        <permit class="Announce"/>
+        <permit class="AnnounceFaction"/>
+        <permit class="Announcements"/>
+        <permit class="Appearance"/>
+        <permit class="Assault"/>
+        <permit class="Ban"/>
+        <permit class="BanChar"/>
+        <permit class="BanIp"/>
+        <permit class="BanMac"/>
+        <permit class="Bk"/>
+        <permit class="ChangeRace"/>
+        <permit class="Channel"/>
+        <permit class="Clear"/>
+        <permit class="CmdConfigure"/>
+        <permit class="CmdHousing"/>
+        <permit class="CmdRecipe"/>
+        <permit class="Cube"/>
+        <permit class="Cooldown"/>
+        <permit class="Damage"/>
+        <permit class="Delete"/>
+        <permit class="DelSkill"/>
+        <permit class="Dialog"/>
+        <permit class="Dispel"/>
+        <permit class="DropInfo"/>
+        <permit class="Drop"/>
+        <permit class="Dye"/>
+        <permit class="Enemy"/>
+        <permit class="EnergyBuff"/>
+        <permit class="Equip"/>
+        <permit class="FixPath"/>
+        <permit class="Fsc"/>
+        <permit class="Gag"/>
+        <permit class="Geo"/>
+        <permit class="GiveMissingSkills"/>
+        <permit class="GoTo"/>
+        <permit class="Gps"/>
+        <permit class="GroupToMe"/>
+        <permit class="Heal"/>
+        <permit class="Html"/>
+        <permit class="Info"/>
+        <permit class="Invis"/>
+        <permit class="Invul"/>
+        <permit class="Kick"/>
+        <permit class="Kill"/>
+        <permit class="Kinah"/>
+        <permit class="LegionCommand"/>
+        <permit class="Map"/>
+        <permit class="Marry"/>
+        <permit class="MarryDel"/>
+        <permit class="Morph"/>
+        <permit class="Motion"/>
+        <permit class="MovePlayerToPlayer"/>
+        <permit class="MoveTo"/>
+        <permit class="MoveToMe"/>
+        <permit class="MoveToMeAll"/>
+        <permit class="MoveToNpc"/>
+        <permit class="MoveToObject"/>
+        <permit class="MoveToPlayer"/>
+        <permit class="Movie"/>
+        <permit class="Neutral"/>
+        <permit class="Notice"/>
+        <permit class="NpcSkill"/>
+        <permit class="Online"/>
+        <permit class="PasskeyReset"/>
+        <permit class="Pet"/>
+        <permit class="Petitions"/>
+        <permit class="PlayerInfo"/>
+        <permit class="PowerUp"/>
+        <permit class="Promote"/>
+        <permit class="Quest"/>
+        <permit class="Ranking"/>
+        <permit class="Raw"/>
+        <permit class="Reload"/>
+        <permit class="ReloadSpawn"/>
+        <permit class="Remove"/>
+        <permit class="RemoveCd"/>
+        <permit class="Rename"/>
+        <permit class="Res"/>
+        <permit class="Reskin"/>
+        <permit class="Revoke"/>
+        <permit class="Ring"/>
+        <permit class="RPrison"/>
+        <permit class="Say"/>
+        <permit class="See"/>
+        <permit class="Send"/>
+        <permit class="Set"/>
+        <permit class="SetRace"/>
+        <permit class="SpawnAssembledNpc"/>
+        <permit class="SiegeCommand"/>
+        <permit class="SpawnNpc"/>
+        <permit class="SpawnUpdate"/>
+        <permit class="Speed"/>
+        <permit class="SPrison"/>
+        <permit class="Stat"/>
+        <permit class="State"/>
+        <permit class="Status"/>
+        <permit class="Sys"/>
+        <permit class="SysMail"/>
+        <permit class="Teleportation"/>
+        <permit class="Time"/>
+        <permit class="UnBan"/>
+        <permit class="UnBanChar"/>
+        <permit class="UnBanIp"/>
+        <permit class="UnBanMac"/>
+        <permit class="UnGag"/>
+        <permit class="Unstuck"/>
+        <permit class="UseSkill"/>
+        <permit class="Warp"/>
+        <permit class="Wc"/>
+        <permit class="Weather"/>
+        <permit class="Whisper"/>
+        <permit class="Who"/>
+        <permit class="Zone"/>
+      </admin>
+      <user>
+        <!-- ... -->
+      </user>
+      <wedding>
+        <!-- ... -->
+      </wedding>
+    </group>
+
+    <group name="Gms">
+      <admin>
+        <!-- ... -->
+      </admin>
+      <user>
+        <!-- ... -->
+      </user>
+      <wedding>
+        <!-- ... -->
+      </wedding>
+    </group>
+  </security>
+</chat_commands>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spawns>
+    <spawn_map map_id="210060000">
+        <!-- Vortex -->
+        <spawn npc_id="700137" handler="RIFT">
+			<spot x="2173.8070" y="2469.6829" z="46.1" h="75" anchor="THEOBOMOS_AM"/>
+            <spot x="954.8070" y="2430.6829" z="109.3725" h="75" anchor="THEOBOMOS_AS"/>
+        </spawn>
+    </spawn_map>
+</spawns>

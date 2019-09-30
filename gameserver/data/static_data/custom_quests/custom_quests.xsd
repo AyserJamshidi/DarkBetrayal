@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation="../global_types.xsd"/>
+	<xs:include schemaLocation="../import.xsd"/>
+	<xs:element name="custom_quests" type="CustomQuests"/>
+	<xs:complexType name="CustomQuests">
+		<xs:sequence>
+			<xs:element ref="import" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="custom_quest" type="CustomQuestTemplate" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustomQuestTemplate">
+		<xs:sequence>
+			<xs:element name="schedule" type="Schedule" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="start_properties" type="StartProperties" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="end_properties" type="EndProperties" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="announcements" type="Announcements" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="quest_rewards" type="QuestRewards" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:int" use="required"/>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="world_id" type="xs:int"/>
+		<xs:attribute name="reset_after_days" type="xs:int"/>
+		<xs:attribute name="amount_per_day" type="xs:int"/>
+	</xs:complexType>
+	<xs:complexType name="Schedule">
+		<xs:attribute name="start_date" type="xs:string"/>
+		<xs:attribute name="end_date" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="StartProperties">
+		<xs:attribute name="min_level" type="xs:int"/>
+		<xs:attribute name="max_level" type="xs:int"/>
+		<xs:attribute name="race" type="Race"/>
+	</xs:complexType>
+	<xs:complexType name="EndProperties">
+		<xs:attribute name="player_kills" type="xs:int"/>
+		<xs:attribute name="monster_kills" type="xs:int"/>
+		<xs:attribute name="monster_id" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="Announcements">
+		<xs:attribute name="on_quest_start" type="xs:string"/>
+		<xs:attribute name="on_quest_end" type="xs:string"/>
+		<xs:attribute name="on_quest_restart" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="QuestRewards">
+		<xs:sequence>
+			<xs:element name="rewards" type="PvpRewardList" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="complete_count" type="xs:int"/>
+	</xs:complexType>
+	<xs:complexType name="PvpRewardList">
+		<xs:sequence>
+			<xs:element name="random_rewards" type="PvpItemList" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="selective_rewards" type="PvpItemList" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="group" type="xs:string"/>
+		<xs:attribute name="rank" type="xs:int"/>
+		<xs:attribute name="ap" type="xs:int"/>
+		<xs:attribute name="lvl" type="xs:int"/>
+		<xs:attribute name="gp" type="xs:int"/>
+	</xs:complexType>
+	<xs:complexType name="PvpItemList">
+		<xs:sequence>
+			<xs:element name="item" type="Item" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="limit" type="xs:int"/>	
+	</xs:complexType>
+	<xs:complexType name="Item">
+		<xs:attribute name="itemId" type="xs:int"/>	
+		<xs:attribute name="count" type="xs:int"/>	
+	</xs:complexType>
+</xs:schema>
