@@ -10,6 +10,7 @@ package quest.ascension;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import com.ne.gs.configs.main.CustomConfig;
 import com.ne.gs.dataholders.DataManager;
@@ -114,6 +115,7 @@ public class _2008Ascension extends QuestHandler {
 
     @Override
     public boolean onDialogEvent(final QuestEnv env) {
+        env.getPlayer().sendMsg("onDialog");
         final Player player = env.getPlayer();
         final int instanceId = player.getInstanceId();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);

@@ -178,6 +178,22 @@ public class RiftController extends NpcController {
         }
     }
 
+
+    /**
+     * @return the isMaster
+     */
+    public boolean isMaster() {
+        return isMaster;
+    }
+
+    /**
+     * @return the isVortex
+     */
+    // LMFAOOWN add this
+    public boolean isVortex() {
+        return false;//isVortex;
+    }
+
     /**
      * @return the maxEntries
      */

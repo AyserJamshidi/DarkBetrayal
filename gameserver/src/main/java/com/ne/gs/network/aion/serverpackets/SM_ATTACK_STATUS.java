@@ -27,8 +27,7 @@ public class SM_ATTACK_STATUS extends AionServerPacket {
 
     public static enum TYPE {
         NATURAL_HP(3),
-        USED_HP(4),
-        // when skill uses hp as cost parameter
+        USED_HP(4), // when skill uses hp as cost parameter
         REGULAR(5),
         ABSORBED_HP(6),
         DAMAGE(7),
@@ -68,7 +67,8 @@ public class SM_ATTACK_STATUS extends AionServerPacket {
         SPELLATKDRAIN(130),
         FPHEAL(133),
         REGULARHEAL(170),
-        REGULAR(171);
+        //REGULAR(171); // 3.0??
+        REGULAR(181); // 4.0??
 
         private final int value;
 

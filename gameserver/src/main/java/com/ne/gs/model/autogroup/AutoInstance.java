@@ -9,6 +9,8 @@
 package com.ne.gs.model.autogroup;
 
 import java.util.List;
+
+import com.ne.gs.model.team2.TeamType;
 import javolution.util.FastList;
 
 import com.ne.gs.model.PlayerClass;
@@ -66,8 +68,7 @@ public class AutoInstance {
 
         List<Player> playersByRace = getPlayersInsideByRace(player.getRace());
         if (playersByRace.size() == 1 && !playersByRace.get(0).isInGroup2()) {
-            PlayerGroup newGroup = PlayerGroupService.createGroup(playersByRace.get(0), player);
-            newGroup.setGroupType(0x02);
+            PlayerGroup newGroup = PlayerGroupService.createGroup(playersByRace.get(0), player, TeamType.AUTO_GROUP);
             int groupId = newGroup.getObjectId();
             if (!worldMapInstance.isRegistered(groupId)) {
                 worldMapInstance.register(groupId);

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <siege_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="siege_schedule.xsd">
   <!--
-  MON - Понедельник
-  TUE - Вторник
-  WED - Среда
-  THU - Четверг
-  FRI - Пятница
-  SAT - Суббота
-  SUN - Воскресенье
+  MON - Monday
+  TUE - Tuesday
+  WED - Wednesday
+  THU - Thursday
+  FRI - Friday
+  SAT - Saturday
+  SUN - Sunday
    -->
   <fortress id="1131">
     <siegeTime>0 0 19 ? * FRI</siegeTime>

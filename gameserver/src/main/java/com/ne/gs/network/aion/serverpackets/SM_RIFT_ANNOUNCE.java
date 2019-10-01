@@ -74,8 +74,17 @@ public class SM_RIFT_ANNOUNCE extends AionServerPacket {
     protected void writeImpl(AionConnection con) {
         switch (actionId) {
             case 0: // announce
-                writeH(0x09);
+                //writeH(0x09); // 3.0 code
+                //writeH(0x11); // 3.0
+                //writeC(actionId); // 3.0
+
+                writeH(0x19);//4.0 // old -->writeH(0x11); // 0x11
                 writeC(actionId);
+                //for (int value : rifts.values()) {
+                //    writeD(value);
+                //}
+
+                // LMFAOOWN see if we need to update this switch case to 4.0 code
                 switch (race) {
                     case ASMODIANS:
                         writeD(1);
@@ -87,30 +96,36 @@ public class SM_RIFT_ANNOUNCE extends AionServerPacket {
                 }
                 break;
             case 1:
-                writeH(9);
+                writeH(0x09);
                 writeC(actionId);
                 writeD(gelkmaros);
                 writeD(inggison);
                 break;
-            case 2:
-                writeH(0x21);
+            /*case 2:
+                //writeH(0x21); // 3.0 code
+                writeH(0x23); // 0x23
                 writeC(actionId);
                 writeD(rift.getOwner().getObjectId());
-                writeD(rift.getMaxEntries() - rift.getUsedEntries());
+                writeD(rift.getMaxEntries() - rift.getUsedEntries()); // LMFAOOWN make sure this is right, could just be MaxEntries
                 writeD(rift.getRemainTime());
                 writeD(rift.getMinLevel());
                 writeD(rift.getMaxLevel());
                 writeF(rift.getOwner().getX());
                 writeF(rift.getOwner().getY());
                 writeF(rift.getOwner().getZ());
+                writeC(rift.isVortex() ? 1 : 0); // red | blue
+                writeC(rift.isMaster() ? 1 : 0); // display | hide
                 break;
-            case 3:
-                writeH(0x0D);
+            case 3: // LMFAOOWN add isVortex method.
+                //writeH(0x0D); // 3.0 code
+                writeH(0x0f); // 0x0f
                 writeC(actionId);
                 writeD(rift.getOwner().getObjectId());
                 writeD(rift.getUsedEntries());
                 writeD(rift.getRemainTime());
-                break;
+                writeC(rift.isVortex() ? 0x01 : 0x00);
+                writeC(0x00); // unk
+                break;*/
             case 4:
                 writeH(0x05);
                 writeC(actionId);

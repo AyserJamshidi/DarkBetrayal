@@ -75,6 +75,8 @@ public final class Packets {
 
         AionClientPacket proto = _clientPackets.get(opcode);
 
+        //_log.warn(String.format("Client: 0x%04X, state=%s %n%s", opcode, state
+        //        .toString(), Util.toHex(buf)));
         if (proto == null) {
             if (NetworkConfig.DISPLAY_UNKNOWNPACKETS) {
                 _log.warn(String.format("Unknown packet recived from Aion client: 0x%04X, state=%s %n%s", opcode, state

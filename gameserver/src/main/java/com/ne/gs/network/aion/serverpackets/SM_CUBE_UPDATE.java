@@ -37,6 +37,7 @@ public class SM_CUBE_UPDATE extends AionServerPacket {
         int itemsCount = 0;
         int npcExpands = 0;
         int questExpands = 0;
+
         switch (type) {
             case CUBE:
                 itemsCount = player.getInventory().size();
@@ -76,8 +77,8 @@ public class SM_CUBE_UPDATE extends AionServerPacket {
         switch (action) {
             case 0:
                 writeD(itemsCount);
-                writeC(npcExpands); // cube size from npc (so max 5 for now)
-                writeC(questExpands); // cube size from quest (so max 2 for now)
+                writeC(npcExpands); // cube size from npc (max 5)
+                writeC(questExpands); // cube size from quest (max 2)
                 writeC(0); // unk - expands from items?
                 break;
             case 6:

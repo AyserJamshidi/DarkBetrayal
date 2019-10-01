@@ -33,7 +33,8 @@ public class EncryptionKeyPair {
     /**
      * Second byte of client packet must be equal to this
      */
-    private final static byte staticClientPacketCode = 0x6D; // 3.0
+    // private final static byte staticClientPacketCode = 0x6D; // 3.0
+    private final static byte staticClientPacketCode = 0x65; // 4.0
 
     /**
      * Base key used to generate client/server keys

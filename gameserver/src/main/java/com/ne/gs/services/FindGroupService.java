@@ -53,6 +53,7 @@ public class FindGroupService {
 
     public void addFindGroupList(Player player, int action, String message, int groupType) {
         AionObject object;
+
         if (player.isInTeam()) {
             object = player.getCurrentTeam();
         } else {
@@ -66,11 +67,11 @@ public class FindGroupService {
                 switch (action) {
                     case 0x02:
                         elyosRecruitFindGroups.put(objectId, findGroup);
-                        player.sendPck(new SM_SYSTEM_MESSAGE(1400392));
+                        player.sendPck(SM_SYSTEM_MESSAGE.STR_PARTY_MATCH_OFFER_PARTY_POSTED);
                         break;
                     case 0x06:
                         elyosApplyFindGroups.put(objectId, findGroup);
-                        player.sendPck(new SM_SYSTEM_MESSAGE(1400393));
+                        player.sendPck(SM_SYSTEM_MESSAGE.STR_PARTY_MATCH_SEEK_PARTY_POSTED);
                         break;
                 }
                 break;
@@ -78,11 +79,11 @@ public class FindGroupService {
                 switch (action) {
                     case 0x02:
                         asmodianRecruitFindGroups.put(objectId, findGroup);
-                        player.sendPck(new SM_SYSTEM_MESSAGE(1400392));
+                        player.sendPck(SM_SYSTEM_MESSAGE.STR_PARTY_MATCH_OFFER_PARTY_POSTED);
                         break;
                     case 0x06:
                         asmodianApplyFindGroups.put(objectId, findGroup);
-                        player.sendPck(new SM_SYSTEM_MESSAGE(1400393));
+                        player.sendPck(SM_SYSTEM_MESSAGE.STR_PARTY_MATCH_SEEK_PARTY_POSTED);
                         break;
                 }
                 break;
@@ -137,7 +138,17 @@ public class FindGroupService {
 
     public FindGroup removeFindGroup(final Race race, int action, int playerObjId) {
         FindGroup findGroup = null;
-        switch (race) {
+        switch (action) {
+            case 0x00: {
+                findGroup = (race == Race.ELYOS) ? elyosRecruitFindGroups.remove(playerObjId) : asmodianRecruitFindGroups.remove(playerObjId);
+                break;
+            }
+            case 0x04: {
+                findGroup = (race == Race.ELYOS) ? elyosApplyFindGroups.remove(playerObjId) : asmodianApplyFindGroups.remove(playerObjId);
+                break;
+            }
+        }
+        /*switch (race) {
             case ELYOS:
                 switch (action) {
                     case 0x00:
@@ -158,14 +169,11 @@ public class FindGroupService {
                         break;
                 }
                 break;
-        }
+        }*/
+        System.out.println("findGroup null == " + (findGroup == null));
         if (findGroup != null) {
-            PacketSendUtility.broadcastFilteredPacket(new SM_FIND_GROUP(action + 1, playerObjId, findGroup.getUnk()), new Filter<Player>() {
-                @Override
-                public boolean accept(Player object) {
-                    return race == object.getRace();
-                }
-            });
+            PacketSendUtility.broadcastFilteredPacket(new SM_FIND_GROUP(action + 1, playerObjId, findGroup.getUnk()),
+                    object -> race == object.getRace());
         }
         return findGroup;
     }

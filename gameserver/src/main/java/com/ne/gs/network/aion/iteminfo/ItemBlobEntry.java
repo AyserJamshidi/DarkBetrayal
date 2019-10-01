@@ -1,53 +1,60 @@
 /*
- * This file is part of Neon-Eleanor project
+ * This file is part of aion-lightning <aion-lightning.com>.
  *
- * This is proprietary software. See the EULA file distributed with
- * this project for additional information regarding copyright ownership.
+ *  aion-lightning is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
  *
- * Copyright (c) 2011-2013, Neon-Eleanor Team. All rights reserved.
+ *  aion-lightning is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with aion-lightning.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.ne.gs.network.aion.iteminfo;
 
-import java.nio.ByteBuffer;
-
+import com.ne.gs.model.gameobjects.Item;
+import com.ne.gs.model.gameobjects.player.Player;
+import com.ne.gs.model.stats.calc.functions.IStatFunction;
 import com.ne.gs.network.PacketWriteHelper;
 import com.ne.gs.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
 
+import java.nio.ByteBuffer;
+
 /**
- * ItemInfo blob entry (contains detailed item info).
+ * ItemInfo blob entry (contains detailed item info). Client does have blob tree as implemented, it contains sequence of
+ * blobs. Just blame Nemesiss for deep recursion to get the right size [RR] :P
  *
  * @author -Nemesiss-
  */
 public abstract class ItemBlobEntry extends PacketWriteHelper {
 
-    private final ItemBlobType type;
-    private ItemBlobEntry nextBlob;
-    ItemInfoBlob parent;
+	private final ItemBlobType type;
+	Player owner;
+	Item ownerItem;
+	IStatFunction modifier;
 
-    ItemBlobEntry(ItemBlobType type) {
-        this.type = type;
-    }
+	ItemBlobEntry(ItemBlobType type) {
+		this.type = type;
+	}
 
-    void setParent(ItemInfoBlob parent) {
-        this.parent = parent;
-    }
+	void setOwner(Player owner, Item item, IStatFunction modifier) {
+		this.owner = owner;
+		this.ownerItem = item;
+		this.modifier = modifier;
+	}
 
-    void addBlobEntry(ItemBlobEntry ent) {
-        if (nextBlob == null) {
-            nextBlob = ent;
-        } else {
-            nextBlob.addBlobEntry(ent);
-        }
-    }
+	@Override
+	protected void writeMe(ByteBuffer buf) {
+		writeC(buf, type.getEntryId());
+		writeThisBlob(buf);
+	}
 
-    @Override
-    protected void writeMe(ByteBuffer buf) {
-        writeC(buf, type.getEntryId());
-        writeThisBlob(buf);
-        if (nextBlob != null) {
-            nextBlob.writeMe(buf);
-        }
-    }
+	public abstract void writeThisBlob(ByteBuffer buf);
 
-    public abstract void writeThisBlob(ByteBuffer buf);
+	public abstract int getSize();
+
 }

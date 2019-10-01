@@ -32,5 +32,6 @@ public class SM_CS_PLAYER_AUTH extends CsServerPacket {
         writeD(playerId);
         writeS(playerLogin);
         writeS(nick);
+        System.out.println("Done sending chat packets.");
     }
 }

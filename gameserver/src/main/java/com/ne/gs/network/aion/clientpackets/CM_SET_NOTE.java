@@ -12,6 +12,7 @@ import com.ne.gs.model.gameobjects.player.Friend;
 import com.ne.gs.model.gameobjects.player.Player;
 import com.ne.gs.network.aion.AionClientPacket;
 import com.ne.gs.network.aion.serverpackets.SM_FRIEND_LIST;
+import com.ne.gs.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 
 /**
  * Received when a player sets his note
@@ -39,18 +40,17 @@ public class CM_SET_NOTE extends AionClientPacket {
         Player activePlayer = getConnection().getActivePlayer();
 
         if (!note.equals(activePlayer.getCommonData().getNote())) {
-
             activePlayer.getCommonData().setNote(note);
 
-            for (Friend friend : activePlayer.getFriendList()) // For all my friends
-            {
+            for (Friend friend : activePlayer.getFriendList())  { // For all my friends
                 Player frienPlayer = friend.getPlayer();
                 if (friend.isOnline() && frienPlayer != null) {
                     friend.getPlayer().getClientConnection().sendPacket(new SM_FRIEND_LIST()); // Send him a new friend list
                     // packet
+                    // LMFAOOWN make it send packet saying it set new note
                 }
             }
-
         }
+        activePlayer.sendPck(SM_SYSTEM_MESSAGE.STR_MSG_READ_TODAY_WORDS(note));
     }
 }

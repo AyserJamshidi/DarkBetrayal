@@ -24,14 +24,16 @@ import com.ne.gs.utils.PacketSendUtility;
  */
 public class CM_EQUIP_ITEM extends AionClientPacket {
 
-    public int slotRead;
+    public long slotRead;
     public int itemUniqueId;
     public int action;
 
     @Override
     protected void readImpl() {
         action = readC(); // 0/1 = equip/unequip
-        slotRead = readD();
+        slotRead = readQ();
+        // 3.0
+        //slotRead = readD();
         itemUniqueId = readD();
     }
 
@@ -44,12 +46,15 @@ public class CM_EQUIP_ITEM extends AionClientPacket {
         Equipment equipment = activePlayer.getEquipment();
 
         if (equipment == null || equipment.getOwner() == null) {
+            activePlayer.sendMsg("equipment = " + (equipment == null));
+            activePlayer.sendMsg("equipment.getOwner = " + (equipment.getOwner() == null));
             return;
         }
 
         Item resultItem = null;
 
         if (!RestrictionsManager.canChangeEquip(activePlayer)) {
+            activePlayer.sendMsg("blocked.");
             return;
         }
 
@@ -58,6 +63,9 @@ public class CM_EQUIP_ITEM extends AionClientPacket {
             return;
         }
 
+        activePlayer.sendMsg("action = " + action);
+        activePlayer.sendMsg("itemUniqueId = " + 0);
+        activePlayer.sendMsg("slotRead = " + slotRead);
         switch (action) {
             case 0:
                 resultItem = equipment.equipItem(itemUniqueId, slotRead);
@@ -75,8 +83,8 @@ public class CM_EQUIP_ITEM extends AionClientPacket {
         }
 
         if (resultItem != null || action == 2) {
-            PacketSendUtility.broadcastPacket(activePlayer, new SM_UPDATE_PLAYER_APPEARANCE(activePlayer.getObjectId(), equipment.getEquippedForAppearance()),
-                true);
+            PacketSendUtility.broadcastPacket(activePlayer, new SM_UPDATE_PLAYER_APPEARANCE(activePlayer.getObjectId(),
+                            equipment.getEquippedForAppearance()), true);
         }
 
     }

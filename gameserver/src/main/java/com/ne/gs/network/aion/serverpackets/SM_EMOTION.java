@@ -106,11 +106,11 @@ public class SM_EMOTION extends AionServerPacket {
         this.heading = heading;
         this.targetObjectId = targetObjectId;
 
-        state = player.getState();
-        speed = player.getGameStats().getMovementSpeedFloat();
+        this.state = player.getState();
+        this.speed = player.getGameStats().getMovementSpeedFloat();
         Stat2 aSpeed = player.getGameStats().getAttackSpeed();
-        baseAttackSpeed = aSpeed.getBase();
-        currentAttackSpeed = aSpeed.getCurrent();
+        this.baseAttackSpeed = aSpeed.getBase();
+        this.currentAttackSpeed = aSpeed.getCurrent();
     }
 
     /**
@@ -132,7 +132,6 @@ public class SM_EMOTION extends AionServerPacket {
             case WINDSTREAM_END_BOOST:
             case FLY:
             case LAND:
-            case RESURRECT:
             case ATTACKMODE:
             case NEUTRALMODE:
             case WALK:
@@ -187,6 +186,7 @@ public class SM_EMOTION extends AionServerPacket {
                 writeC(0x40);// 64
                 break;
             case START_SPRINT:// ???
+            case RESURRECT:
                 writeD(0);
                 break;
             case EMOTE:
@@ -199,6 +199,7 @@ public class SM_EMOTION extends AionServerPacket {
                 // emote startloop
                 writeH(baseAttackSpeed);
                 writeH(currentAttackSpeed);
+                writeC(0);//new 4.0
                 break;
             default:
                 if (targetObjectId != 0) {

@@ -4611,4 +4611,340 @@
 		<tradelist id="52"/>
 		<tradelist id="53"/>
 	</trade_in_list_template>
+	
+	
+	<!-- NPC PURCHASE LIST 4.0 -->
+	<purchase_template npc_id="800573" buy_price_rate="20">
+		<tradelist id="1"/>
+		<tradelist id="2"/>
+		<tradelist id="3"/>
+		<tradelist id="7"/>
+	</purchase_template>
+	<purchase_template npc_id="800574" buy_price_rate="50">
+		<tradelist id="1"/>
+		<tradelist id="2"/>
+		<tradelist id="3"/>
+		<tradelist id="7"/>
+	</purchase_template>
+	<purchase_template npc_id="800575" buy_price_rate="20" npc_type="ABYSS">
+		<tradelist id="4"/>
+		<tradelist id="5"/>
+		<tradelist id="6"/>
+	</purchase_template>
+	<purchase_template npc_id="800576" buy_price_rate="50" npc_type="ABYSS">
+		<tradelist id="4"/>
+		<tradelist id="5"/>
+		<tradelist id="6"/>
+	</purchase_template>
+	<purchase_template npc_id="800632" buy_price_rate="50">
+		<tradelist id="12"/>
+	</purchase_template>
+	<purchase_template npc_id="800637" buy_price_rate="50">
+		<tradelist id="11"/>
+	</purchase_template>
+	<purchase_template npc_id="800651" buy_price_rate="60">
+		<tradelist id="14"/>
+	</purchase_template>
+	<purchase_template npc_id="800655" buy_price_rate="60">
+		<tradelist id="14"/>
+	</purchase_template>
+	<purchase_template npc_id="800659" buy_price_rate="60">
+		<tradelist id="15"/>
+	</purchase_template>
+	<purchase_template npc_id="800663" buy_price_rate="60">
+		<tradelist id="15"/>
+	</purchase_template>
+	<purchase_template npc_id="800669" buy_price_rate="170">
+		<tradelist id="16"/>
+	</purchase_template>
+	<purchase_template npc_id="800675" buy_price_rate="170">
+		<tradelist id="16"/>
+	</purchase_template>
+	<purchase_template npc_id="800681" buy_price_rate="170">
+		<tradelist id="17"/>
+	</purchase_template>
+	<purchase_template npc_id="800687" buy_price_rate="170">
+		<tradelist id="17"/>
+	</purchase_template>
+	<purchase_template npc_id="800692" buy_price_rate="170">
+		<tradelist id="18"/>
+	</purchase_template>
+	<purchase_template npc_id="800697" buy_price_rate="170">
+		<tradelist id="18"/>
+	</purchase_template>
+	<purchase_template npc_id="800738" buy_price_rate="170">
+		<tradelist id="19"/>
+	</purchase_template>
+	<purchase_template npc_id="800743" buy_price_rate="170">
+		<tradelist id="19"/>
+	</purchase_template>
+	<purchase_template npc_id="800754" buy_price_rate="170">
+		<tradelist id="20"/>
+	</purchase_template>
+	<purchase_template npc_id="800759" buy_price_rate="170">
+		<tradelist id="20"/>
+	</purchase_template>
+	<purchase_template npc_id="800953" buy_price_rate="20" npc_type="ABYSS">
+		<tradelist id="4"/>
+		<tradelist id="5"/>
+		<tradelist id="6"/>
+	</purchase_template>
+	<purchase_template npc_id="801338" buy_price_rate="29" npc_type="ABYSS">
+		<tradelist id="31"/>
+		<tradelist id="32"/>
+		<tradelist id="33"/>
+		<tradelist id="34"/>
+		<tradelist id="35"/>
+	</purchase_template>
+	<purchase_template npc_id="801340" buy_price_rate="150" npc_type="ABYSS">
+		<tradelist id="59"/>
+		<tradelist id="60"/>
+		<tradelist id="61"/>
+	</purchase_template>
+	<purchase_template npc_id="801341" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="21"/>
+		<tradelist id="22"/>
+		<tradelist id="23"/>
+		<tradelist id="24"/>
+		<tradelist id="25"/>
+	</purchase_template>
+	<purchase_template npc_id="801345" buy_price_rate="190">
+		<tradelist id="8"/>
+	</purchase_template>
+	<purchase_template npc_id="801346" buy_price_rate="29" npc_type="ABYSS">
+		<tradelist id="36"/>
+		<tradelist id="37"/>
+		<tradelist id="38"/>
+		<tradelist id="39"/>
+		<tradelist id="40"/>
+	</purchase_template>
+	<purchase_template npc_id="801348" buy_price_rate="150" npc_type="ABYSS">
+		<tradelist id="59"/>
+		<tradelist id="60"/>
+		<tradelist id="61"/>
+	</purchase_template>
+	<purchase_template npc_id="801349" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="26"/>
+		<tradelist id="27"/>
+		<tradelist id="28"/>
+		<tradelist id="29"/>
+		<tradelist id="30"/>
+	</purchase_template>
+	<purchase_template npc_id="801353" buy_price_rate="190">
+		<tradelist id="8"/>
+	</purchase_template>
+	<purchase_template npc_id="801354" buy_price_rate="29" npc_type="ABYSS">
+		<tradelist id="31"/>
+		<tradelist id="32"/>
+		<tradelist id="33"/>
+		<tradelist id="34"/>
+		<tradelist id="35"/>
+	</purchase_template>
+	<purchase_template npc_id="801356" buy_price_rate="150" npc_type="ABYSS">
+		<tradelist id="59"/>
+		<tradelist id="60"/>
+		<tradelist id="61"/>
+	</purchase_template>
+	<purchase_template npc_id="801357" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="21"/>
+		<tradelist id="22"/>
+		<tradelist id="23"/>
+		<tradelist id="24"/>
+		<tradelist id="25"/>
+	</purchase_template>
+	<purchase_template npc_id="801361" buy_price_rate="190">
+		<tradelist id="9"/>
+	</purchase_template>
+	<purchase_template npc_id="801362" buy_price_rate="29" npc_type="ABYSS">
+		<tradelist id="36"/>
+		<tradelist id="37"/>
+		<tradelist id="38"/>
+		<tradelist id="39"/>
+		<tradelist id="40"/>
+	</purchase_template>
+	<purchase_template npc_id="801364" buy_price_rate="150" npc_type="ABYSS">
+		<tradelist id="59"/>
+		<tradelist id="60"/>
+		<tradelist id="61"/>
+	</purchase_template>
+	<purchase_template npc_id="801365" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="26"/>
+		<tradelist id="27"/>
+		<tradelist id="28"/>
+		<tradelist id="29"/>
+		<tradelist id="30"/>
+	</purchase_template>
+	<purchase_template npc_id="801369" buy_price_rate="190">
+		<tradelist id="9"/>
+	</purchase_template>
+	<purchase_template npc_id="801370" buy_price_rate="29" npc_type="ABYSS">
+		<tradelist id="31"/>
+		<tradelist id="32"/>
+		<tradelist id="33"/>
+		<tradelist id="34"/>
+		<tradelist id="35"/>
+	</purchase_template>
+	<purchase_template npc_id="801372" buy_price_rate="150" npc_type="ABYSS">
+		<tradelist id="59"/>
+		<tradelist id="60"/>
+		<tradelist id="61"/>
+	</purchase_template>
+	<purchase_template npc_id="801373" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="21"/>
+		<tradelist id="22"/>
+		<tradelist id="23"/>
+		<tradelist id="24"/>
+		<tradelist id="25"/>
+	</purchase_template>
+	<purchase_template npc_id="801377" buy_price_rate="190">
+		<tradelist id="10"/>
+	</purchase_template>
+	<purchase_template npc_id="801378" buy_price_rate="29" npc_type="ABYSS">
+		<tradelist id="36"/>
+		<tradelist id="37"/>
+		<tradelist id="38"/>
+		<tradelist id="39"/>
+		<tradelist id="40"/>
+	</purchase_template>
+	<purchase_template npc_id="801380" buy_price_rate="150" npc_type="ABYSS">
+		<tradelist id="59"/>
+		<tradelist id="60"/>
+		<tradelist id="61"/>
+	</purchase_template>
+	<purchase_template npc_id="801381" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="26"/>
+		<tradelist id="27"/>
+		<tradelist id="28"/>
+		<tradelist id="29"/>
+		<tradelist id="30"/>
+	</purchase_template>
+	<purchase_template npc_id="801385" buy_price_rate="190">
+		<tradelist id="10"/>
+	</purchase_template>
+	<purchase_template npc_id="801392" buy_price_rate="100" npc_type="ABYSS">
+		<tradelist id="57"/>
+		<tradelist id="58"/>
+		<tradelist id="59"/>
+		<tradelist id="60"/>
+		<tradelist id="61"/>
+	</purchase_template>
+	<purchase_template npc_id="801459" buy_price_rate="100" npc_type="ABYSS">
+		<tradelist id="57"/>
+		<tradelist id="58"/>
+		<tradelist id="59"/>
+		<tradelist id="60"/>
+		<tradelist id="61"/>
+	</purchase_template>
+	<purchase_template npc_id="801475" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="41"/>
+		<tradelist id="42"/>
+		<tradelist id="43"/>
+		<tradelist id="44"/>
+		<tradelist id="45"/>
+	</purchase_template>
+	<purchase_template npc_id="801476" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="46"/>
+		<tradelist id="47"/>
+		<tradelist id="48"/>
+		<tradelist id="49"/>
+		<tradelist id="50"/>
+	</purchase_template>
+	<purchase_template npc_id="801479" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="51"/>
+		<tradelist id="52"/>
+		<tradelist id="53"/>
+	</purchase_template>
+	<purchase_template npc_id="801480" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="51"/>
+		<tradelist id="52"/>
+		<tradelist id="53"/>
+	</purchase_template>
+	<purchase_template npc_id="801501" buy_price_rate="105" npc_type="ABYSS">
+		<tradelist id="57"/>
+		<tradelist id="58"/>
+		<tradelist id="59"/>
+		<tradelist id="60"/>
+		<tradelist id="61"/>
+	</purchase_template>
+	<purchase_template npc_id="801531" buy_price_rate="50">
+		<tradelist id="13"/>
+	</purchase_template>
+	<purchase_template npc_id="801564" buy_price_rate="30" npc_type="ABYSS">
+		<tradelist id="51"/>
+		<tradelist id="52"/>
+		<tradelist id="53"/>
+	</purchase_template>
+	<purchase_template npc_id="801565" buy_price_rate="30" npc_type="ABYSS">
+		<tradelist id="51"/>
+		<tradelist id="52"/>
+		<tradelist id="53"/>
+	</purchase_template>
+	<purchase_template npc_id="801568" buy_price_rate="30" npc_type="ABYSS">
+		<tradelist id="54"/>
+		<tradelist id="55"/>
+		<tradelist id="56"/>
+	</purchase_template>
+	<purchase_template npc_id="801569" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="54"/>
+		<tradelist id="55"/>
+		<tradelist id="56"/>
+	</purchase_template>
+	<purchase_template npc_id="801570" buy_price_rate="30" npc_type="ABYSS">
+		<tradelist id="54"/>
+		<tradelist id="55"/>
+		<tradelist id="56"/>
+	</purchase_template>
+	<purchase_template npc_id="801571" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="54"/>
+		<tradelist id="55"/>
+		<tradelist id="56"/>
+	</purchase_template>
+	<!-- New 4.3 -->
+	<purchase_template npc_id="801307" buy_price_rate="40" npc_type="ABYSS">
+		<tradelist id="36" />
+		<tradelist id="37" />
+		<tradelist id="38" />
+		<tradelist id="39" />
+		<tradelist id="40" />
+	</purchase_template>
+	<purchase_template npc_id="801306" buy_price_rate="290" npc_type="ABYSS">
+		<tradelist id="62" />
+		<tradelist id="63" />
+		<tradelist id="64" />
+		<tradelist id="65" />
+	</purchase_template>
+	<purchase_template npc_id="801300" buy_price_rate="30" npc_type="ABYSS">
+		<tradelist id="51"/>
+		<tradelist id="52"/>
+		<tradelist id="53"/>
+	</purchase_template>
+	<purchase_template npc_id="801308" buy_price_rate="30" npc_type="ABYSS">
+		<tradelist id="68"/>
+		<tradelist id="69"/>
+		<tradelist id="70"/>
+	</purchase_template>
+	<purchase_template npc_id="801309" buy_price_rate="30" npc_type="ABYSS">
+		<tradelist id="68"/>
+		<tradelist id="69"/>
+		<tradelist id="70"/>
+	</purchase_template>
+	<purchase_template npc_id="801310" buy_price_rate="30" npc_type="ABYSS">
+		<tradelist id="68"/>
+		<tradelist id="69"/>
+		<tradelist id="70"/>
+	</purchase_template>
+	<purchase_template npc_id="801301" buy_price_rate="30">
+		<tradelist id="66"/>
+		<tradelist id="67"/>
+	</purchase_template>
+	<purchase_template npc_id="801963" buy_price_rate="40" npc_type="ABYSS">
+		<tradelist id="31" />
+		<tradelist id="32" />
+		<tradelist id="33" />
+		<tradelist id="34" />
+		<tradelist id="35" />
+	</purchase_template>
+	<purchase_template npc_id="801297" buy_price_rate="35" npc_type="ABYSS">
+		<tradelist id="61"/>
+	</purchase_template>
 </npc_trade_list>

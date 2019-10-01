@@ -31,7 +31,7 @@ public enum InventoryPacketType {
 
     private InventoryPacketType(boolean isInventory, boolean isMail, boolean isPrivateStore, boolean isWeaponSwitch) {
         this.isInventory = isInventory;
-        isMailOrRepurchase = isMail;
+        this.isMailOrRepurchase = isMail;
         this.isPrivateStore = isPrivateStore;
         this.isWeaponSwitch = isWeaponSwitch;
     }

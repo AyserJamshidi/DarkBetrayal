@@ -20,6 +20,10 @@ public final class StatCapUtil {
 
         // TODO more stats????
         switch (stat.getStat()) {
+            /*
+			case PHYSICAL_ACCURACY:
+			case MAGICAL_ACCURACY:
+             */
             case MAIN_HAND_POWER:
             case MAIN_HAND_ACCURACY:
             case MAIN_HAND_CRITICAL:
@@ -31,6 +35,7 @@ public final class StatCapUtil {
             case EVASION:
             case PHYSICAL_DEFENSE:
             case MAGICAL_DEFEND:
+            case OFF_HAND_MAGICAL_ACCURACY:
                 lowerCap = 0;
                 break;
             case ATTACK_SPEED:

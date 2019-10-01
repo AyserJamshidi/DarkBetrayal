@@ -36,7 +36,7 @@ public final class FloodManager {
         private final int _rejectLimit;
         private final int _tickLimit;
 
-        public FloodFilter(int warnLimit, int rejectLimit, int tickLimit) {
+        public FloodFilter(final int warnLimit, final int rejectLimit, final int tickLimit) {
             _warnLimit = warnLimit;
             _rejectLimit = rejectLimit;
             _tickLimit = tickLimit;
@@ -69,8 +69,8 @@ public final class FloodManager {
             return getCurrentTick() - _lastTick < _tickAmount * 10;
         }
 
-        public Result isFlooding(boolean increment) {
-            int currentTick = getCurrentTick();
+        public Result isFlooding(final boolean increment) {
+            final int currentTick = getCurrentTick();
 
             if (currentTick - _lastTick >= _ticks.length) {
                 _lastTick = currentTick;
@@ -123,7 +123,7 @@ public final class FloodManager {
         WARNED,
         REJECTED;
 
-        public static Result max(Result r1, Result r2) {
+        public static Result max(final Result r1, final Result r2) {
             if (r1.ordinal() > r2.ordinal()) {
                 return r1;
             }
@@ -145,7 +145,7 @@ public final class FloodManager {
 
     private final FloodFilter[] _filters;
 
-    public FloodManager(int msecPerTick, FloodFilter... filters) {
+    public FloodManager(final int msecPerTick, final FloodFilter... filters) {
         _tickLength = msecPerTick;
         _filters = filters;
 
@@ -157,12 +157,7 @@ public final class FloodManager {
 
         _tickAmount = max;
 
-        NetFlusher.add(new Runnable() {
-            @Override
-            public void run() {
-                flush();
-            }
-        }, 60000);
+        NetFlusher.add(this::flush, 60000);
     }
 
     private void flush() {
@@ -180,20 +175,21 @@ public final class FloodManager {
         }
     }
 
-    public Result isFlooding(String key, boolean increment) {
+    public Result isFlooding(final String key, final boolean increment) {
         if (key == null || key.isEmpty()) {
             return Result.REJECTED;
         }
 
         _lock.lock();
         try {
-            LogEntry entry = _entries.get(key);
+            LogEntry entry = _entries.computeIfAbsent(key, k -> new LogEntry());
+            /*LogEntry entry = _entries.get(key);
 
             if (entry == null) {
                 entry = new LogEntry();
 
                 _entries.put(key, entry);
-            }
+            }*/
 
             return entry.isFlooding(increment);
         } finally {

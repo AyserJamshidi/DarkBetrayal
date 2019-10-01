@@ -1,18 +1,26 @@
 /*
- * This file is part of Neon-Eleanor project
+ * This file is part of aion-lightning <aion-lightning.com>.
  *
- * This is proprietary software. See the EULA file distributed with
- * this project for additional information regarding copyright ownership.
+ *  aion-lightning is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
  *
- * Copyright (c) 2011-2013, Neon-Eleanor Team. All rights reserved.
+ *  aion-lightning is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with aion-lightning.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.ne.gs.network.aion.iteminfo;
-
-import java.nio.ByteBuffer;
 
 import com.ne.gs.model.gameobjects.Item;
 import com.ne.gs.model.items.ItemSlot;
 import com.ne.gs.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
+
+import java.nio.ByteBuffer;
 
 /**
  * This blob is sent for armors. It keeps info about slots that armor can be equipped to.
@@ -21,16 +29,24 @@ import com.ne.gs.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
  */
 public class ArmorInfoBlobEntry extends ItemBlobEntry {
 
-    ArmorInfoBlobEntry() {
-        super(ItemBlobType.SLOTS_ARMOR);
-    }
+	ArmorInfoBlobEntry() {
+		super(ItemBlobType.SLOTS_ARMOR);
+	}
 
-    @Override
-    public void writeThisBlob(ByteBuffer buf) {
-        Item item = parent.item;
+	@Override
+	public void writeThisBlob(ByteBuffer buf) {
+		Item item = ownerItem;
 
-        writeD(buf, ItemSlot.getSlotFor(item.getItemTemplate().getItemSlot()).id());
-        writeD(buf, 0);// TODO! secondary slot?
-        writeD(buf, 0);
-    }
+		writeQ(buf, ItemSlot.getSlotFor(item.getItemTemplate().getItemSlot()).id());
+		writeQ(buf, 0); // TODO! secondary slot?
+		writeC(buf, item.getItemTemplate().isItemDyePermitted() ? 1 : 0);
+		writeC(buf, (item.getItemColor() & 0xFF0000) >> 16);
+		writeC(buf, (item.getItemColor() & 0xFF00) >> 8);
+		writeC(buf, (item.getItemColor() & 0xFF));
+	}
+
+	@Override
+	public int getSize() {
+		return 20;
+	}
 }

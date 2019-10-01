@@ -96,6 +96,11 @@ public class SM_TITLE_INFO extends AionServerPacket {
                 writeD(playerObjId);
                 writeH(titleId);
                 break;
+            case 6: // Title which will take bonusStats from
+                // LMFAOOWN add this later
+                //writeH(bonusTitleId);
+                System.out.println("Blah");
+                break;
         }
     }
 }

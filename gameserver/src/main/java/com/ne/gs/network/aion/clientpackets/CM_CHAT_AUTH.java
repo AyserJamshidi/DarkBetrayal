@@ -31,7 +31,8 @@ public class CM_CHAT_AUTH extends AionClientPacket {
         if (GSConfig.ENABLE_CHAT_SERVER) {
             // this packet is sent sometimes after logout from world
             Player player = getConnection().getActivePlayer();
-            if (!player.isInPrison() && !player.isGagged()) {
+            if (!player.isInPrison()) {
+                System.out.println("Found played " + player.getName() + " logging in");
                 ChatServer.getInstance().sendPlayerLoginRequst(player);
             }
         }

@@ -11,6 +11,7 @@ package com.ne.gs.model.team2.group.events;
 import com.ne.gs.model.gameobjects.Creature;
 import com.ne.gs.model.gameobjects.player.Player;
 import com.ne.gs.model.gameobjects.player.RequestResponseHandler;
+import com.ne.gs.model.team2.TeamType;
 import com.ne.gs.model.team2.group.PlayerGroup;
 import com.ne.gs.model.team2.group.PlayerGroupService;
 import com.ne.gs.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
@@ -37,7 +38,7 @@ public class PlayerGroupInvite extends RequestResponseHandler {
             if (group != null) {
                 PlayerGroupService.addPlayer(group, invited);
             } else {
-                PlayerGroupService.createGroup(inviter, invited);
+                PlayerGroupService.createGroup(inviter, invited, TeamType.GROUP);
             }
         }
     }

@@ -57,7 +57,7 @@ public class CM_DELETE_ITEM extends AionClientPacket {
                 if (qs.getPersistentState() != PersistentState.NEW) {
                     qs.setPersistentState(PersistentState.DELETED);
                 }
-                player.sendMsg("Квест \"Совет помощника\" был удален т.к. у вас отсутствуют необходимые предметы. Необходимо перезайти в игру и взять квест заново.");	
+                player.sendMsg("The quest \"Assistant Council\" was deleted because you do not have the necessary items. You must re-enter the game and take the quest again.");
         	}
         }
         else if(item.getItemId() == 170425021) {
@@ -69,7 +69,7 @@ public class CM_DELETE_ITEM extends AionClientPacket {
                 if (qs.getPersistentState() != PersistentState.NEW) {
                     qs.setPersistentState(PersistentState.DELETED);
                 }
-                player.sendMsg("Квест \"Совет помощника\" был удален т.к. у вас отсутствуют необходимые предметы. Необходимо перезайти в игру и взять квест заново.");	
+                player.sendMsg("The quest \"Assistant Council\" was deleted because you do not have the necessary items. You must re-enter the game and take the quest again.");
         	}
         }
     }

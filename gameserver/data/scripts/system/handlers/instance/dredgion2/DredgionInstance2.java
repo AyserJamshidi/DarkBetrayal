@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import com.ne.gs.model.team2.TeamType;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 import com.ne.commons.network.util.ThreadPoolManager;
@@ -87,24 +89,14 @@ public class DredgionInstance2 extends GeneralInstanceHandler {
 
     protected void startInstanceTask() {
         instanceTime = System.currentTimeMillis();
-        ThreadPoolManager.getInstance().schedule(new Runnable() {
-
-            @Override
-            public void run() {
-                openFirstDoors();
-                dredgionReward.setInstanceScoreType(InstanceScoreType.START_PROGRESS);
-                sendPacket();
-            }
-
+        ThreadPoolManager.getInstance().schedule(() -> {
+            openFirstDoors();
+            dredgionReward.setInstanceScoreType(InstanceScoreType.START_PROGRESS);
+            sendPacket();
         }, 120000);
-        instanceTask = ThreadPoolManager.getInstance().schedule(new Runnable() {
 
-            @Override
-            public void run() {
-                stopInstance(dredgionReward.getWinningRaceByScore());
-            }
-
-        }, 2520000);
+        instanceTask = ThreadPoolManager.getInstance().schedule(() ->
+                stopInstance(dredgionReward.getWinningRaceByScore()), 2520000);
     }
 
     private List<Player> getPlayersByRace(Race race) {
@@ -123,7 +115,7 @@ public class DredgionInstance2 extends GeneralInstanceHandler {
         List<Player> playersByRace = getPlayersByRace(player.getRace());
         playersByRace.remove(player);
         if (playersByRace.size() == 1 && !playersByRace.get(0).isInGroup2()) {
-            PlayerGroup newGroup = PlayerGroupService.createGroup(playersByRace.get(0), player);
+            PlayerGroup newGroup = PlayerGroupService.createGroup(playersByRace.get(0), player, TeamType.AUTO_GROUP);
             int groupId = newGroup.getObjectId();
             if (!instance.isRegistered(groupId)) {
                 instance.register(groupId);
@@ -312,13 +304,7 @@ public class DredgionInstance2 extends GeneralInstanceHandler {
     }
 
     private void sendPacket() {
-        instance.doOnAllPlayers(new Visitor<Player>() {
-
-            @Override
-            public void visit(Player player) {
-                player.sendPck(new SM_INSTANCE_SCORE(getTime(), dredgionReward));
-            }
-        });
+        instance.doOnAllPlayers(player -> player.sendPck(new SM_INSTANCE_SCORE(getTime(), dredgionReward)));
     }
 	
 	
@@ -357,36 +343,19 @@ public class DredgionInstance2 extends GeneralInstanceHandler {
     }
 
     protected void sp(final int npcId, final float x, final float y, final float z, final byte h, final int staticId, int time) {
-        ThreadPoolManager.getInstance().schedule(new Runnable() {
-
-            @Override
-            public void run() {
-                if (!isInstanceDestroyed) {
-                    spawn(npcId, x, y, z, h, staticId);
-                }
+        ThreadPoolManager.getInstance().schedule(() -> {
+            if (!isInstanceDestroyed) {
+                spawn(npcId, x, y, z, h, staticId);
             }
-
         }, time);
     }
 
     protected void sendMsgByRace(final int msg, final Race race, int time) {
-        ThreadPoolManager.getInstance().schedule(new Runnable() {
-
-            @Override
-            public void run() {
-                instance.doOnAllPlayers(new Visitor<Player>() {
-
-                    @Override
-                    public void visit(Player player) {
-                        if (player.getRace().equals(race) || race.equals(Race.PC_ALL)) {
-                            player.sendPck(new SM_SYSTEM_MESSAGE(msg));
-                        }
-                    }
-
-                });
+        ThreadPoolManager.getInstance().schedule(() -> instance.doOnAllPlayers(player -> {
+            if (player.getRace().equals(race) || race.equals(Race.PC_ALL)) {
+                player.sendPck(new SM_SYSTEM_MESSAGE(msg));
             }
-
-        }, time);
+        }), time);
 
     }
 

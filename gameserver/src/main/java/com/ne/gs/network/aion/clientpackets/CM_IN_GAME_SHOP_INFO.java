@@ -45,14 +45,14 @@ public class CM_IN_GAME_SHOP_INFO extends AionClientPacket {
             final Player player = getConnection().getActivePlayer();
 
             switch (actionId) {
-                case 0x01:
+				case 0x01: // item info
                     player.sendPck(new SM_IN_GAME_SHOP_ITEM(player, categoryId));
                     break;
-                case 0x02:
+				case 0x02: // change category
                     player.sendPck(new SM_IN_GAME_SHOP_CATEGORY_LIST(2, categoryId));
                     player.inGameShop.setCategory((byte) categoryId);
                     break;
-                case 0x04:
+				case 0x04: // category list
                     player.sendPck(new SM_IN_GAME_SHOP_CATEGORY_LIST(0, categoryId));
                     break;
                 case 0x08:// showcat
@@ -63,7 +63,7 @@ public class CM_IN_GAME_SHOP_INFO extends AionClientPacket {
                     player.sendPck(new SM_IN_GAME_SHOP_LIST(player, listInCategory, 1));
                     player.sendPck(new SM_IN_GAME_SHOP_LIST(player, listInCategory, 0));
                     break;
-                case 0x10:
+				case 0x10: // balance
                     InGameShopEn.getInstance().querryToll(player, new InGameShopEn.TollQuerry() {
                         @Override
                         public Object onEvent(@NotNull InGameShopEn.TollQuerryResult env) {

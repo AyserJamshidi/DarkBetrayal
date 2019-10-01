@@ -46,7 +46,7 @@ public abstract class AionClientPacket extends BaseClientPacket<AionConnection> 
     public final void run() {
 
         log.info("0x" + Integer.toHexString(this.getOpcode()).toUpperCase() + " : " + this.getPacketName());
-		
+
         try {
             // run only if packet is still valid (connection state didn't changed)
             if (isValid()) {
@@ -104,7 +104,7 @@ public abstract class AionClientPacket extends BaseClientPacket<AionConnection> 
         boolean valid = (_stateMask & state) == state;
 
         if (!valid) {
-            log.info(this + " wont be processed cuz its valid state don't match current connection state: " + getConnection().getState());
+            log.info(this + " is skipped since state " + getConnection().getState() + " is not valid.");
         }
 
         return valid;

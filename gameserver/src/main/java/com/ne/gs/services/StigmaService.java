@@ -42,7 +42,7 @@ public final class StigmaService {
 
     private static final Logger log = LoggerFactory.getLogger(StigmaService.class);
 
-    public static boolean notifyEquipAction(Player player, Item resultItem, int slot) {
+    public static boolean notifyEquipAction(Player player, Item resultItem, long slot) {
         if (resultItem.getItemTemplate().isStigma()) {
             if (ItemSlot.isRegularStigma(slot)) {
                 int possible = getPossibleStigmaCount(player);

@@ -12,6 +12,7 @@ import com.google.common.collect.ImmutableList;
 import javolution.util.FastMap;
 
 import com.ne.gs.model.gameobjects.Item;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author KID
@@ -20,17 +21,21 @@ public class ItemStorage {
 
     public static final int FIRST_AVAILABLE_SLOT = 65535;
 
-    private final FastMap<Integer, Item> items;
+    private FastMap<Integer, Item> items;
     private int limit;
 
     public ItemStorage(int limit) {
         this.limit = limit;
-        items = FastMap.newInstance();
+        this.items = FastMap.newInstance();
     }
 
     public ImmutableList<Item> getItems() {
         return ImmutableList.copyOf(items.values());
     }
+
+    /*static public ImmutableList<Item> test() {
+        return ImmutableList.copyOf(items.values());
+    }*/
 
     public int getLimit() {
         return limit;
@@ -65,6 +70,7 @@ public class ItemStorage {
     }
 
     public Item getItemByObjId(int itemObjId) {
+        LoggerFactory.getLogger(ItemStorage.class).info("itemObjId in ItemStorage.java == " + items.get(itemObjId));
         return items.get(itemObjId);
     }
 
@@ -100,11 +106,13 @@ public class ItemStorage {
     }
 
     public boolean putItem(Item item) {
-        if (items.containsKey(item.getObjectId())) {
+        if (this.items.containsKey(item.getObjectId())) {
             return false;
         }
 
-        items.put(item.getObjectId(), item);
+        this.items.put(item.getObjectId(), item);
+        /*System.out.println(item.getItemName() + " // " + this.items.put(item.getObjectId(), item));
+        System.out.println("Contains == " + this.items.containsKey(item.getObjectId()));*/
         return true;
     }
 

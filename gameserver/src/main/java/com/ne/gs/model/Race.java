@@ -22,8 +22,8 @@ public enum Race {
     /**
      * Playable races
      */
-    ELYOS(0, DescId.of(480480), "Элийцы"),
-    ASMODIANS(1, DescId.of(480481), "Асмодиане"),
+    ELYOS(0, DescId.of(480480), "Elyos"),
+    ASMODIANS(1, DescId.of(480481), "Asmodians"),
 
     /**
      * Npc races

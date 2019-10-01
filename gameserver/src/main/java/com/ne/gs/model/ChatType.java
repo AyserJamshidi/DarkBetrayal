@@ -14,41 +14,38 @@ package com.ne.gs.model;
  * @author SoulKeeper, Imaginary
  */
 public enum ChatType {
-    NORMAL(0x00),
-    // Normal chat (White)
-    SHOUT(0x03),
-    // Shout chat (Orange)
-    WHISPER(0x04),
-    // Whisper chat (Green)
-    GROUP(0x05),
-    // Group chat (Blue)
-    ALLIANCE(0x06),
-    // Alliance chat (Aqua)
-    GROUP_LEADER(0x07),
-    // Group Leader chat (???)
-    LEAGUE(0x08),
-    // League chat (Dark Blue)
-    LEAGUE_ALERT(0x09),
-    // League chat (Orange)
-    LEGION(0x0A),
-    // Legion chat (Green)
+    NORMAL(0x00), // Normal chat (White)
+    SHOUT(0x03), // Shout chat (Orange)
+    WHISPER(0x04), // Whisper chat (Green)
+    GROUP(0x05), // Group chat (Blue)
+    ALLIANCE(0x06), // Alliance chat (Aqua)
+    GROUP_LEADER(0x07), // Group Leader chat (???)
+    LEAGUE(0x08), // League chat (Dark Blue)
+    LEAGUE_ALERT(0x09), // League chat (Orange)
+    LEGION(0x0A), // Legion chat (Green)
+    COMMAND(0x18), // Command chat (Yellow)
+
+    CH1(0x0E),
+    CH2(0x0F),
+    CH3(0x10),
+    CH4(0x11),
+    CH5(0x12),
+    CH6(0x13),
+    CH7(0x14),
+    CH8(0x15),
+    CH9(0x16),
+    CH10(0x17),
 
     /**
      * Global chat types
      */
-    GOLDEN_YELLOW(0x19, true),
-    // System message (Dark Yellow), most commonly used, no "center" equivalent.
+    GOLDEN_YELLOW(0x19, true), // System message (Dark Yellow), most commonly used, no "center" equivalent.
 
-    WHITE(0x1E, true),
-    // System message (White), visible in "All" chat thumbnail only !
-    YELLOW(0x1F, true),
-    // System message (Yellow), visible in "All" chat thumbnail only !
-    BRIGHT_YELLOW(0x20, true),
-    // System message (Light Yellow), visible in "All" chat thumbnail only !
-    WHITE_CENTER(0x21, true),
-    // Periodic Notice (White && Box on screen center)
-    YELLOW_CENTER(0x22, true),
-    // Periodic Announcement(Yellow && Box on screen center)
+    WHITE(0x1E, true), // System message (White), visible in "All" chat thumbnail only !
+    YELLOW(0x1F, true), // System message (Yellow), visible in "All" chat thumbnail only !
+    BRIGHT_YELLOW(0x20, true), // System message (Light Yellow), visible in "All" chat thumbnail only !
+    WHITE_CENTER(0x21, true), // Periodic Notice (White && Box on screen center)
+    YELLOW_CENTER(0x22, true), // Periodic Announcement(Yellow && Box on screen center)
     BRIGHT_YELLOW_CENTER(0x23, true); // System Notice (Light Yellow && Box on screen center)
 
     private final int intValue;

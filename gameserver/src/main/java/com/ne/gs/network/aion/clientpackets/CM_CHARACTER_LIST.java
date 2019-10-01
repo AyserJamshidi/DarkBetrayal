@@ -37,9 +37,10 @@ public class CM_CHARACTER_LIST extends AionClientPacket {
      */
     @Override
     protected void runImpl() {
+        sendPacket(new SM_ACCOUNT_PROPERTIES());
         sendPacket(new SM_CHARACTER_LIST(playOk2));
-        if (getConnection().getAccount().getAccessLevel() > 3) {
-            sendPacket(new SM_ACCOUNT_PROPERTIES());
-        }
+
+        //if (getConnection().getAccount().getAccessLevel() > 3) {
+        //}
     }
 }

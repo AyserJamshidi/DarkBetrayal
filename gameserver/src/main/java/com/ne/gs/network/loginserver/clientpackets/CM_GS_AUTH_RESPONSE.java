@@ -49,9 +49,8 @@ public class CM_GS_AUTH_RESPONSE extends LsClientPacket {
     @Override
     public void readImpl() {
         response = readC();
-        if (response == 0) {
+        if (response == 0)
             serverCount = (byte) readC();
-        }
     }
 
     /**
@@ -62,35 +61,24 @@ public class CM_GS_AUTH_RESPONSE extends LsClientPacket {
         /**
          * Authed
          */
-        if (response == 0) {
-            getConnection().setState(State.AUTHED);
-            sendPacket(new SM_ACCOUNT_LIST(LoginServer.getInstance().getLoggedInAccounts()));
-            NetworkController.getInstance().setServerCount(serverCount);
-        }
-
-        /**
-         * NotAuthed
-         */
-        else if (response == 1) {
-            log.error("GameServer is not authenticated at LoginServer side, shutting down!");
-            System.exit(ExitCode.CODE_ERROR);
-        }
-        /**
-         * AlreadyRegistered
-         */
-        else if (response == 2) {
-            log.info("GameServer is already registered at LoginServer side! trying again...");
-            /**
-             * try again after 10s
-             */
-            ThreadPoolManager.getInstance().schedule(new Runnable() {
-
-                @Override
-                public void run() {
-                    CM_GS_AUTH_RESPONSE.this.sendPacket(new SM_GS_AUTH());
-                }
-
-            }, 10000);
+        switch (response) {
+            case 0: // Successful Connection
+                getConnection().setState(State.AUTHED);
+                sendPacket(new SM_ACCOUNT_LIST(LoginServer.getInstance().getLoggedInAccounts()));
+                NetworkController.getInstance().setServerCount(serverCount);
+                break;
+            case 1: // Not Authed
+                log.error("GameServer is not authenticated at LoginServer side, shutting down!");
+                System.exit(ExitCode.CODE_ERROR);
+                break;
+            case 2: // Already Registered
+                log.info("GameServer is already registered at LoginServer side! trying again...");
+                // Try again after 10s
+                ThreadPoolManager.getInstance().schedule(() -> CM_GS_AUTH_RESPONSE.this.sendPacket(new SM_GS_AUTH()), 10000);
+                break;
+            default:
+                log.info("Default has been triggered in CM_GS_AUTH_RESPONSE");
+                break;
         }
     }
 }

@@ -34,6 +34,8 @@ public class SM_QUEST_LIST extends AionServerPacket {
         writeH(-questState.size() & 0xFFFF);
 
         QuestsData QUEST_DATA = DataManager.QUEST_DATA;
+
+        // LMFAOOWN update this to 4.0
         for (QuestState qs : questState) {
             writeH(qs.getQuestId());
             writeH(QUEST_DATA.getQuestById(qs.getQuestId()).getCategory().getId());

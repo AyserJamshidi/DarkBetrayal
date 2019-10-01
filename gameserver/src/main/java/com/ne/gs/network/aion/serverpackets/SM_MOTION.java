@@ -103,11 +103,10 @@ public class SM_MOTION extends AionServerPacket {
                 writeD(playerId);
                 for (int i = 1; i < 6; i++) {
                     Motion motion = activeMotions.get(i);
-                    if (motion == null) {
+                    if (motion == null)
                         writeH(0);
-                    } else {
+                    else
                         writeH(motion.getId());
-                    }
                 }
         }
     }

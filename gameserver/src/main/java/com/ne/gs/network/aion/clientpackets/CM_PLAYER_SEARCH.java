@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.ne.commons.Util;
 import com.ne.gs.configs.main.CustomConfig;
 import com.ne.gs.model.gameobjects.player.FriendList.Status;
 import com.ne.gs.model.gameobjects.player.Player;
@@ -44,11 +45,15 @@ public class CM_PLAYER_SEARCH extends AionClientPacket {
      */
     @Override
     protected void readImpl() {
-        if (!(name = readS()).isEmpty()) {
+        /*if (!(name = readS()).isEmpty()) {
             readB(52 - (name.length() * 2 + 2));
         } else {
             readB(50);
-        }
+        }*/        
+		name = readS(52);
+		if (name != null) {
+			name = Util.convertName(name);
+		}
         region = readD();
         classMask = readD();
         minLevel = readC();
@@ -74,29 +79,30 @@ public class CM_PLAYER_SEARCH extends AionClientPacket {
         }
         while (it.hasNext() && matches.size() < MAX_RESULTS) {
             Player player = it.next();
-            if (!player.isSpawned()) {
-                continue;
-            } else if (player.getFriendList().getStatus() == Status.OFFLINE) {
-                continue;
-            } else if (player.isGM() && !CustomConfig.SEARCH_GM_LIST) {
-                continue;
-            } else if (lfgOnly == 1 && !player.isLookingForGroup()) {
-                continue;
-            } else if (!name.isEmpty() && !player.getName().toLowerCase().contains(name.toLowerCase())) {
-                continue;
-            } else if (minLevel != 0xFF && player.getLevel() < minLevel) {
-                continue;
-            } else if (maxLevel != 0xFF && player.getLevel() > maxLevel) {
-                continue;
-            } else if (classMask > 0 && (player.getPlayerClass().getMask() & classMask) == 0) {
-                continue;
-            } else if (region > 0 && player.getActiveRegion().getMapId() != region) {
-                continue;
-            } else if ((player.getRace() != activePlayer.getRace()) && (CustomConfig.FACTIONS_SEARCH_MODE == false)) {
-                continue;
-            } else {
-                matches.add(player);
-            }
+			if (!player.isSpawned())
+				continue;
+			else if (player.getFriendList().getStatus() == Status.OFFLINE)
+				continue;
+			else if (player.isGM() && !CustomConfig.SEARCH_GM_LIST) {
+				continue;
+			} else if (lfgOnly == 1 && !player.isLookingForGroup())
+				continue;
+			else if (!name.isEmpty() && !player.getName().toLowerCase().contains(name.toLowerCase()))
+				continue;
+			else if (minLevel != 0xFF && player.getLevel() < minLevel)
+				continue;
+			else if (maxLevel != 0xFF && player.getLevel() > maxLevel)
+				continue;
+			else if (classMask > 0 && (player.getPlayerClass().getMask() & classMask) == 0)
+				continue;
+			else if (region > 0 && player.getActiveRegion().getMapId() != region)
+				continue;
+			else if ((player.getRace() != activePlayer.getRace())
+					&& (!CustomConfig.FACTIONS_SEARCH_MODE))
+				continue;
+			else { // This player matches criteria
+				matches.add(player);
+			}
         }
 
         sendPacket(new SM_PLAYER_SEARCH(matches, region));

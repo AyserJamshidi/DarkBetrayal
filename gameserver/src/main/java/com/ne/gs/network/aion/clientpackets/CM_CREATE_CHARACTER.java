@@ -11,6 +11,7 @@ package com.ne.gs.network.aion.clientpackets;
 import java.sql.Timestamp;
 import java.util.List;
 
+import com.ne.commons.Util;
 import com.ne.gs.database.GDB;
 import com.ne.gs.configs.main.GSConfig;
 import com.ne.gs.configs.main.MembershipConfig;
@@ -58,7 +59,7 @@ public class CM_CREATE_CHARACTER extends AionClientPacket {
         readS(); // something + accointId
 
         playerCommonData = new PlayerCommonData(IDFactory.getInstance().nextId());
-        String name = readS();
+        String name = Util.convertName(readS());
 
         playerCommonData.setName(name);
 
@@ -186,7 +187,7 @@ public class CM_CREATE_CHARACTER extends AionClientPacket {
             return;
         }
         if (NameRestrictionService.isForbiddenWord(playerCommonData.getName())) {
-            client.sendPacket(new SM_CREATE_CHARACTER(null, 9));
+            client.sendPacket(new SM_CREATE_CHARACTER(null, SM_CREATE_CHARACTER.RESPONSE_FORBIDDEN_CHAR_NAME));
             IDFactory.getInstance().releaseId(playerCommonData.getPlayerObjId());
             return;
         }

@@ -33,6 +33,7 @@ public class SM_SELL_ITEM extends AionServerPacket {
     @Override
     protected void writeImpl(AionConnection con) {
 
+        // LMFAOOWN 4.0 source code is a lot fatter than this, check it out.
         writeD(targetObjectId);
         writeD(sellPercentage); // Buy Price * (sellPercentage / 100) = Display price.
 

@@ -17,6 +17,6 @@ public class SM_PACKAGE_INFO_NOTIFY extends AionServerPacket {
     protected void writeImpl(AionConnection con) {
         writeH(1);
         writeC(3);
-        writeD(0);
+        writeD(0); // time until pack expiration
     }
 }

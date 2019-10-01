@@ -48,9 +48,8 @@ public class SM_WAREHOUSE_INFO extends AionServerPacket {
         writeC(expandLvl); // warehouse expand (0 - 9)
         writeH(0);
         writeH(itemList.size());
-        for (Item item : itemList) {
+        for (Item item : itemList)
             writeItemInfo(item);
-        }
     }
 
     private void writeItemInfo(Item item) {

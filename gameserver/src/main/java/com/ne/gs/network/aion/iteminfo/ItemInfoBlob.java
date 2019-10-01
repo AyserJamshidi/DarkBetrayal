@@ -1,20 +1,17 @@
-/*
- * This file is part of Neon-Eleanor project
- *
- * This is proprietary software. See the EULA file distributed with
- * this project for additional information regarding copyright ownership.
- *
- * Copyright (c) 2011-2013, Neon-Eleanor Team. All rights reserved.
- */
 package com.ne.gs.network.aion.iteminfo;
-
-import java.nio.ByteBuffer;
 
 import com.ne.gs.model.gameobjects.Item;
 import com.ne.gs.model.gameobjects.player.Player;
+import com.ne.gs.model.stats.calc.functions.IStatFunction;
+import com.ne.gs.model.stats.calc.functions.StatFunction;
+import com.ne.gs.model.templates.item.ArmorType;
 import com.ne.gs.model.templates.item.EquipType;
 import com.ne.gs.model.templates.item.ItemTemplate;
 import com.ne.gs.network.PacketWriteHelper;
+
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Entry item info packet data (contains blob entries with detailed info).
@@ -23,192 +20,231 @@ import com.ne.gs.network.PacketWriteHelper;
  */
 public class ItemInfoBlob extends PacketWriteHelper {
 
-    protected final Player player;
-    protected final Item item;
+	protected final Player player;
+	protected final Item item;
 
-    private ItemBlobEntry itemBlobEnt;
+	private List<ItemBlobEntry> itemBlobEntries = new ArrayList<>();
 
-    public ItemInfoBlob(Player player, Item item) {
-        this.player = player;
-        this.item = item;
-    }
+	public ItemInfoBlob(Player player, Item item) {
+		this.player = player;
+		this.item = item;
+	}
 
-    @Override
-    public void writeMe(ByteBuffer buf) {
-        ByteBuffer buf2 = buf.duplicate().order(buf.order());
-        writeH(buf, 0);// size - not known
-        int curPos = buf.position();
-        itemBlobEnt.writeMe(buf);
-        writeH(buf2, buf.position() - curPos);// size - known now
-    }
+	@Override
+	public void writeMe(ByteBuffer buf) {
+		writeH(buf, size());
+		for (ItemBlobEntry ent : itemBlobEntries)
+			ent.writeMe(buf);
+	}
 
-    public void addBlobEntry(ItemBlobType type) {
-        ItemBlobEntry ent = type.newBlobEntry();
-        ent.setParent(this);
+	public void addBlobEntry(ItemBlobType type) {
+		ItemBlobEntry ent = type.newBlobEntry();
+		ent.setOwner(player, item, null);
+		itemBlobEntries.add(ent);
+	}
 
-        if (itemBlobEnt == null) {
-            itemBlobEnt = ent;
-        } else {
-            itemBlobEnt.addBlobEntry(ent);
-        }
-    }
+	public void addBonusBlobEntry(IStatFunction modifier) {
+		ItemBlobEntry ent = ItemBlobType.STAT_BONUSES.newBlobEntry();
+		ent.setOwner(player, item, modifier);
+		itemBlobEntries.add(ent);
+	}
 
-    public static ItemBlobEntry newBlobEntry(ItemBlobType type, Player player, Item item) {
-        ItemBlobEntry ent = type.newBlobEntry();
-        ent.setParent(new ItemInfoBlob(player, item));
-        return ent;
-    }
+	public static ItemBlobEntry newBlobEntry(ItemBlobType type, Player player, Item item) {
+		if (type == ItemBlobType.STAT_BONUSES)
+			throw new UnsupportedOperationException();
+		ItemBlobEntry ent = type.newBlobEntry();
+		ent.setOwner(player, item, null);
+		return ent;
+	}
 
-    public static ItemInfoBlob getFullBlob(Player player, Item item) {
-        ItemInfoBlob blob = new ItemInfoBlob(player, item);
+	public static ItemInfoBlob getFullBlob(Player player, Item item) {
+		ItemInfoBlob blob = new ItemInfoBlob(player, item);
 
-        ItemTemplate itemTemplate = item.getItemTemplate();
+		ItemTemplate itemTemplate = item.getItemTemplate();
 
-        if (item.getConditioningInfo() != null) {
-            blob.addBlobEntry(ItemBlobType.CONDITIONING_INFO);
-        }
+		if (itemTemplate.getWeaponType() != null)
+			blob.addBlobEntry(ItemBlobType.COMPOSITE_ITEM);
 
-        if (item.hasFusionedItem()) {
-            blob.addBlobEntry(ItemBlobType.COMPOSITE_ITEM);
-        }
+		if (item.getEquipmentType() != EquipType.NONE) {
+			// EQUIPPED SLOT
+			blob.addBlobEntry(ItemBlobType.EQUIPPED_SLOT);
 
-        if (item.getEquipmentType() != EquipType.NONE) {
-            // EQUIPPED SLOT
-            blob.addBlobEntry(ItemBlobType.EQUIPPED_SLOT);
+			// SLOT INFO
+			if (itemTemplate.getArmorType() != null && itemTemplate.getArmorType() != ArmorType.NO_ARMOR) {
+				switch (itemTemplate.getArmorType()) {
+					case WING:
+						blob.addBlobEntry(ItemBlobType.SLOTS_WING);
+						break;
+					case SHIELD:
+						blob.addBlobEntry(ItemBlobType.SLOTS_SHIELD);
+						break;
+					default:
+						blob.addBlobEntry(ItemBlobType.SLOTS_ARMOR);
+						break;
+				}
+			} else if (itemTemplate.isWeapon())
+				blob.addBlobEntry(ItemBlobType.SLOTS_WEAPON);
+			else if (item.getEquipmentType() == EquipType.ARMOR)
+				blob.addBlobEntry(ItemBlobType.SLOTS_ACCESSORY); // power shards, helmets, earrings, rings, belts
 
-            // SLOT INFO
-            if (itemTemplate.getArmorType() != null) {
-                switch (itemTemplate.getArmorType()) {
-                    case CLOTHES:
-                        blob.addBlobEntry(ItemBlobType.SLOTS_CLOTHES);
-                        break;
-                    case SHIELD:
-                        blob.addBlobEntry(ItemBlobType.SLOTS_SHIELD);
-                        break;
-                    default:
-                        blob.addBlobEntry(ItemBlobType.SLOTS_ARMOR);
-                        break;
-                }
-            } else if (itemTemplate.isWeapon()) {
-                blob.addBlobEntry(ItemBlobType.SLOTS_WEAPON);
-            } else if (item.getEquipmentType() == EquipType.STIGMA) {
-                blob.addBlobEntry(ItemBlobType.STIGMA_INFO);
-            } else if (item.getEquipmentType() == EquipType.ARMOR) {
-                blob.addBlobEntry(ItemBlobType.SLOTS_ACCESSORY);
-            }
+			// MANA STONES
+			blob.addBlobEntry(ItemBlobType.MANA_SOCKETS);
 
-            // MANA STONES
-            blob.addBlobEntry(ItemBlobType.MANA_SOCKETS);
+			if (item.getConditioningInfo() != null)
+				blob.addBlobEntry(ItemBlobType.CONDITIONING_INFO);
 
-            // STATS MOD
-            // xx blob.addBlobEntry(ItemBlobType.STATS_MOD);
-        }
+			// All items with only General
+			if (blob.getBlobEntries().size() > 0) {
+				blob.addBlobEntry(ItemBlobType.PREMIUM_OPTION);
 
-        // GENERAL INFO
-        blob.addBlobEntry(ItemBlobType.GENERAL_INFO);
+				// LMFAOOWN fix
+				//if (itemTemplate.isCanPolish())
+				//	blob.addBlobEntry(ItemBlobType.POLISH_INFO);
+			}
 
-        return blob;
-    }
+			List<StatFunction> allModifiers = itemTemplate.getModifiers();
+			if (allModifiers != null) {
+				for (IStatFunction modifier : allModifiers) {
 
-    public enum ItemBlobType {
-        GENERAL_INFO(0x00) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new GeneralInfoBlobEntry();
-            }
-        },
-        // 30 + S OK
-        SLOTS_WEAPON(0x01) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new WeaponInfoBlobEntry();
-            }
-        },
-        // 9 OK
-        SLOTS_ARMOR(0x02) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new ArmorInfoBlobEntry();
-            }
-        },
-        // 13 OK
-        SLOTS_SHIELD(0x03) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new ShieldInfoBlobEntry();
-            }
-        },
-        // 13 OK [Not handled before]
-        SLOTS_ACCESSORY(0x04) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new AccessoryInfoBlobEntry();
-            }
-        },
-        // 9 OK [Not handled before]
-        // missing(0x05),//9 [dd] [Not handled before]
-        EQUIPPED_SLOT(0x06) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new EquippedSlotBlobEntry();
-            }
-        },
-        // 5 OK
-        STIGMA_INFO(0x07) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new StigmaInfoBlobEntry();
-            }
-        },
-        // 259 OK
-        // missing(0x08),//5 [d] Stigma Shard? [Not handled before]
-        // missing(0x09),//15? [Not handled before]
-        STAT_MOD(0x0A) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                throw new RuntimeException("not impl yet!");
-            }
-        },
-        // 8 [hdc] ?? [Not handled before] retail send it xx times (smth dynamically changed)
-        MANA_SOCKETS(0x0B) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new ManaStoneInfoBlobEntry();
-            }
-        },
-        // 45 OK
-        // 0x0C - not used?
-        SLOTS_CLOTHES(0x0D) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new ClothesInfoBlobEntry();
-            }
-        },
-        // 9 OK [Not handled before]
-        COMPOSITE_ITEM(0x0E) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new CompositeItemBlobEntry();
-            }
-        },
-        // 30 OK
-        CONDITIONING_INFO(0x0F) {
-            @Override
-            ItemBlobEntry newBlobEntry() {
-                return new ConditioningInfoBlobEntry();
-            }
-        }; // 5 OK
+					// LMFAOOWN fix
+					/*if (modifier.isBonus() && !modifier.hasConditions()) {
+						blob.addBonusBlobEntry(modifier);
+					}*/
+				}
+			}
+		} else if (itemTemplate.getTemplateId() == 141000001) {
+			blob.addBlobEntry(ItemBlobType.STIGMA_SHARD);
+		}
 
-        private final int entryId;
+		// GENERAL INFO
+		blob.addBlobEntry(ItemBlobType.GENERAL_INFO);
 
-        private ItemBlobType(int entryId) {
-            this.entryId = entryId;
-        }
+		return blob;
+	}
 
-        public int getEntryId() {
-            return entryId;
-        }
+	public List<ItemBlobEntry> getBlobEntries() {
+		return itemBlobEntries;
+	}
 
-        abstract ItemBlobEntry newBlobEntry();
-    }
+	public int size() {
+		int totalSize = 0;
+		for (ItemBlobEntry ent : itemBlobEntries)
+			totalSize += ent.getSize() + 1; // 1 C for blob id
+		return totalSize;
+	}
+
+	public enum ItemBlobType {
+		GENERAL_INFO(0x00) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new GeneralInfoBlobEntry();
+			}
+		},
+		SLOTS_WEAPON(0x01) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new WeaponInfoBlobEntry();
+			}
+		},
+		SLOTS_ARMOR(0x02) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new ArmorInfoBlobEntry();
+			}
+		},
+		SLOTS_SHIELD(0x03) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new ShieldInfoBlobEntry();
+			}
+		},
+		SLOTS_ACCESSORY(0x04) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new AccessoryInfoBlobEntry();
+			}
+		},
+		SLOTS_ARROW(0x05) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new ArrowInfoBlobEntry();
+			}
+		},
+		EQUIPPED_SLOT(0x06) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new EquippedSlotBlobEntry();
+			}
+		},
+		// Removed from 3.5
+		STIGMA_INFO(0x07) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new StigmaInfoBlobEntry();
+			}
+		},
+		STIGMA_SHARD(0x08) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new StigmaShardInfoBlobEntry();
+			}
+		},
+		// missing(0x09), //15? [Not handled before]
+		PREMIUM_OPTION(0x10) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new PremiumOptionInfoBlobEntry();
+			}
+		},
+		POLISH_INFO(0x11) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new PolishInfoBlobEntry();
+			}
+		},
+		STAT_BONUSES(0x0A) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new BonusInfoBlobEntry();
+			}
+		},
+		// [Not handled before] retail send it xx times (smth dynamically changed)
+		MANA_SOCKETS(0x0B) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new ManaStoneInfoBlobEntry();
+			}
+		},
+		// 0x0C - not used?
+		SLOTS_WING(0x0D) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new WingInfoBlobEntry();
+			}
+		},
+		COMPOSITE_ITEM(0x0E) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new CompositeItemBlobEntry();
+			}
+		},
+		CONDITIONING_INFO(0x0F) {
+			@Override
+			ItemBlobEntry newBlobEntry() {
+				return new ConditioningInfoBlobEntry();
+			}
+		};
+
+		private int entryId;
+
+		private ItemBlobType(int entryId) {
+			this.entryId = entryId;
+		}
+
+		public int getEntryId() {
+			return entryId;
+		}
+
+		abstract ItemBlobEntry newBlobEntry();
+	}
 }

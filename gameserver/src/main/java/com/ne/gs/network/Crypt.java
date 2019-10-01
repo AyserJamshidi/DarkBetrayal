@@ -28,7 +28,8 @@ public class Crypt {
     /**
      * Second byte of server packet must be equal to this
      */
-    public final static byte staticServerPacketCode = 0x44;
+    // public final static byte staticServerPacketCode = 0x44; // 3.0
+    public final static byte staticServerPacketCode = 0x46; // 4.0
 
     /**
      * Crypt is enabled after first server packet was send.
@@ -44,9 +45,8 @@ public class Crypt {
      * @return "false key" that should by used by aion client to encrypt/decrypt packets.
      */
     public final int enableKey() {
-        if (packetKey != null) {
+        if (packetKey != null)
             throw new KeyAlreadySetException();
-        }
 
         /** rnd key - this will be used to encrypt/decrypt packet */
         int key = Rnd.nextInt();
@@ -56,7 +56,8 @@ public class Crypt {
         log.debug("new encrypt key: " + packetKey);
 
         /** false key that will be sent to aion client in SM_KEY packet */
-        return (key ^ 0xCD92E4D3) + 0x3FF2CCC7;
+        // return (key ^ 0xCD92E4D3) + 0x3FF2CCC7; // 3.0
+        return (key ^ 0xCD92E4D9) + 0x3FF2CCCF; // 4.0
     }
 
     /**
@@ -99,6 +100,7 @@ public class Crypt {
      * @return obfuscated opcodec
      */
     public static int encodeOpcodec(int op) {
-        return (op + 0xC2) ^ 0xD3;
+        //return (op + 0xC2) ^ 0xD3; // 3.0
+        return (op + 0xC9) ^ 0xD9; // 4.0
     }
 }

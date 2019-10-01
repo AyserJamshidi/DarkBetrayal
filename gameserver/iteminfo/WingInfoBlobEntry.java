@@ -16,20 +16,24 @@ import com.ne.gs.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
 
 /**
  * This blob is sent for clothes. It keeps info about slots that cloth can be equipped to.
- *
- * @author -Nemesiss-
  */
-public class ClothesInfoBlobEntry extends ItemBlobEntry {
+public class WingInfoBlobEntry extends ItemBlobEntry {
 
-    ClothesInfoBlobEntry() {
-        super(ItemBlobType.SLOTS_CLOTHES);
+    WingInfoBlobEntry() {
+        super(ItemBlobType.SLOTS_WING);
     }
 
     @Override
     public void writeThisBlob(ByteBuffer buf) {
-        Item item = parent.item;
+        Item item = ownerItem;
 
         writeD(buf, ItemSlot.getSlotFor(item.getItemTemplate().getItemSlot()).id());
-        writeD(buf, 0);// TODO! secondary slot?
+        writeD(buf, 0); // no secondary slot
+    }
+
+
+    @Override
+    public int getSize() {
+        return 16;
     }
 }

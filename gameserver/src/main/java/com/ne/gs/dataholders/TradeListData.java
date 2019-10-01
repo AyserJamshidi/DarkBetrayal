@@ -37,6 +37,9 @@ public class TradeListData {
     @XmlElement(name = "trade_in_list_template")
     private List<TradeListTemplate> tInlist;
 
+    @XmlElement(name = "purchase_template")
+    private List<TradeListTemplate> plist;
+
     /**
      * A map containing all trade list templates
      */
@@ -44,17 +47,21 @@ public class TradeListData {
 
     private final TIntObjectHashMap<TradeListTemplate> npcTradeInlistData = new TIntObjectHashMap<>();
 
-    void afterUnmarshal(Unmarshaller u, Object parent) {
-        for (TradeListTemplate npc : tlist) {
-            npctlistData.put(npc.getNpcId(), npc);
-        }
+    private final TIntObjectHashMap<TradeListTemplate> npcPurchaseTemplateData = new TIntObjectHashMap<>();
 
-        for (TradeListTemplate npc : tInlist) {
+    void afterUnmarshal(Unmarshaller u, Object parent) {
+        for (TradeListTemplate npc : tlist)
+            npctlistData.put(npc.getNpcId(), npc);
+
+        for (TradeListTemplate npc : tInlist)
             npcTradeInlistData.put(npc.getNpcId(), npc);
-        }
+
+        for (TradeListTemplate npc : plist)
+            npcPurchaseTemplateData.put(npc.getNpcId(), npc);
 
         tlist = null;
         tInlist = null;
+        plist = null;
     }
 
     public int size() {
@@ -75,6 +82,10 @@ public class TradeListData {
 
     public TradeListTemplate getTradeInListTemplate(int id) {
         return npcTradeInlistData.get(id);
+    }
+
+    public TradeListTemplate getPurchaseTemplate(int id) {
+        return npcPurchaseTemplateData.get(id);
     }
 
     /**

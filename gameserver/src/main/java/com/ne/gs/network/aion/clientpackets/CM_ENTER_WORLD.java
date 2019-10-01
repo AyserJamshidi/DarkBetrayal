@@ -37,7 +37,6 @@ public class CM_ENTER_WORLD extends AionClientPacket {
      */
     @Override
     protected void runImpl() {
-
         AionConnection client = getConnection();
         PlayerEnterWorldService.startEnterWorld(objectId, client);
     }

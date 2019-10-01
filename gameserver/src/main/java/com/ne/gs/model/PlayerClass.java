@@ -33,7 +33,12 @@ public enum PlayerClass {
     PRIEST(9, true),
     CLERIC(10),
     CHANTER(11),
-    ALL(12);
+    ENGINEER(12, true),
+    PLACEHOLDER(13),
+    GUNNER(14),
+    ARTIST(15, true),
+    SONGWEAVER(16),
+    ALL(17);
 
     /**
      * This id is used on client side
@@ -114,11 +119,16 @@ public enum PlayerClass {
             case SORCERER:
             case SPIRIT_MASTER:
                 return MAGE;
+            case GUNNER:
+                return ENGINEER;
+            case SONGWEAVER:
+                return ARTIST;
             case SCOUT:
             case WARRIOR:
             case PRIEST:
             case MAGE:
-                return pc;
+            case ENGINEER:
+            case ARTIST:
             default:
                 throw new IllegalArgumentException("Given player class is starting class: " + pc);
         }

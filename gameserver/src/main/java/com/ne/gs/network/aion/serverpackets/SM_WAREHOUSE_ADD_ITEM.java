@@ -57,6 +57,7 @@ public class SM_WAREHOUSE_ADD_ITEM extends AionServerPacket {
         ItemInfoBlob itemInfoBlob = ItemInfoBlob.getFullBlob(player, item);
         itemInfoBlob.writeMe(getBuf());
 
-        writeH(item.getEquipmentSlot());
+        //writeH(item.getEquipmentSlot()); // 3.0 code
+        writeH((int) (item.getEquipmentSlot() & 0xFFFF)); // 4.0
     }
 }

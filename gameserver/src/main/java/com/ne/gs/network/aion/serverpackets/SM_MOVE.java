@@ -97,7 +97,6 @@ public class SM_MOVE extends AionServerPacket {
     protected void writeImpl(AionConnection client) {
 
         if (creature == null){
-
             writeD(_objectId);
 
             writeF(_sX);
@@ -113,7 +112,6 @@ public class SM_MOVE extends AionServerPacket {
                 writeF(_tY);
                 writeF(_tZ);
             }
-
         } else{
             MoveController moveData = creature.getMoveController();
             writeD(creature.getObjectId());

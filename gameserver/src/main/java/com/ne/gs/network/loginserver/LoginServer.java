@@ -13,6 +13,12 @@ import java.nio.channels.SocketChannel;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.ne.commons.database.dao.DAOManager;
+import com.ne.gs.database.dao.PlayerDAO;
+import com.ne.gs.model.gameobjects.player.Player;
+import com.ne.gs.services.player.PlayerLeaveWorldService;
+import com.ne.gs.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -135,13 +141,7 @@ public class LoginServer {
          * Reconnect after 5s if not server shutdown sequence
          */
         if (!serverShutdown) {
-            ThreadPoolManager.getInstance().schedule(new Runnable() {
-
-                @Override
-                public void run() {
-                    connect();
-                }
-            }, 5000);
+            ThreadPoolManager.getInstance().schedule(this::connect, 5000);
         }
     }
 
@@ -239,9 +239,17 @@ public class LoginServer {
      * @return
      */
     private boolean validateAccount(Account account) {
-        for (PlayerAccountData accountData : account) {
+        for (PlayerAccountData accountData : account) { // TODO could probably do this shit better
             if (accountData.getPlayerCommonData().isOnline()) {
                 log.warn("[AUDIT] Possible dupe hack account: " + account.getId());
+                Player player = World.getInstance().findPlayer(accountData.getPlayerCommonData().getPlayerObjId());
+                if (player != null) {
+                    // kick
+                    PlayerLeaveWorldService.startLeaveWorld(player);
+                } else {
+                    // db update offline
+                    DAOManager.getDAO(PlayerDAO.class).onlinePlayer(player, false);
+                }
                 return false;
             }
         }

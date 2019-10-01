@@ -81,27 +81,37 @@ public class CM_PET extends AionClientPacket {
                 break;
             case FOOD:
                 actionType = readD();
-                if (actionType == 3) {
-                    activateLoot = readD();
-                } else if (actionType == 2) {
-                    dopingAction = readD();
-                    if (dopingAction == 0) {
-                        dopingItemId = readD();
-                        dopingSlot1 = readD();
-                    } else if (dopingAction == 1) {
-                        dopingSlot1 = readD();
-                        dopingItemId = readD();
-                    } else if (dopingAction == 2) {
-                        dopingSlot1 = readD();
-                        dopingSlot2 = readD();
-                    } else if (dopingAction == 3) {
-                        dopingItemId = readD();
-                        dopingSlot1 = readD();
-                    }
-                } else {
-                    objectId = readD();
-                    count = readD();
-                }
+                switch (actionType) {
+					case 3:
+						activateLoot = readD();
+						break;
+					case 2:
+						dopingAction = readD();
+						switch (dopingAction) {
+							case 0:  // add item
+								dopingItemId = readD();
+								dopingSlot1 = readD();
+								break;
+							case 1:  // remove item
+								dopingSlot1 = readD();
+								dopingItemId = readD();
+								break;
+							case 2:  // move item
+								dopingSlot1 = readD();
+								dopingSlot2 = readD();
+								break;
+							case 3:  // use doping
+								dopingItemId = readD();
+								dopingSlot1 = readD();
+								break;
+						}
+						break;
+					default:
+						objectId = readD();
+						count = readD();
+						unk2 = readD();
+						break;
+				}
                 break;
             case RENAME:
                 petId = readD();

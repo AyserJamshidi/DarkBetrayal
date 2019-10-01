@@ -84,18 +84,27 @@ public class Equipment {
      *
      * @return item or null in case of failure
      */
-    public Item equipItem(int itemUniqueId, int slot) {
+    public Item equipItem(int itemUniqueId, long slot) {
         if (getOwner() == null) {
+            owner.sendMsg("owner is NULL");
+            log.info("owner is NULL.");
             return null;
         }
 
         Item item = owner.getInventory().getItemByObjId(itemUniqueId);
 
         if (item == null) {
+            owner.sendMsg("item is NULL for unique ID " + itemUniqueId);
             return null;
         }
 
         ItemTemplate itemTemplate = item.getItemTemplate();
+
+        if (!item.getItemTemplate().isClassSpecific(owner.getCommonData().getPlayerClass())) {
+            owner.sendMsg("your class = " + owner.getCommonData().getPlayerClass());
+            owner.sendPck(SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_INVALID_CLASS);
+            return null;
+        }
 
         // don't allow to wear items of higher level
         if (itemTemplate.getLevel() > owner.getCommonData().getLevel()) {
@@ -103,6 +112,7 @@ public class Equipment {
             return null;
         }
 
+        owner.sendMsg("Passed the rest.");
         if (owner.getAccessLevel() < AdminConfig.GM_LEVEL) {
             if (itemTemplate.getRace() != Race.PC_ALL && itemTemplate.getRace() != owner.getRace()) {
                 owner.sendPck(SM_SYSTEM_MESSAGE.STR_CANNOT_USE_ITEM_INVALID_RACE);
@@ -146,7 +156,13 @@ public class Equipment {
             }
 
             // check whether there is already item in specified slot
-            int itemSlotMask = 0;
+            long itemSlotMask = 0;
+            if (item.getEquipmentType() == EquipType.STIGMA) {
+                itemSlotMask = slot;
+            } else {
+                itemSlotMask = itemTemplate.getItemSlot();
+            }
+            /*
             switch (item.getEquipmentType()) {
                 case STIGMA:
                     itemSlotMask = slot;
@@ -155,11 +171,12 @@ public class Equipment {
                     itemSlotMask = itemTemplate.getItemSlot();
                     break;
             }
+             */
 
             // find correct slot
-            ItemSlot[] possibleSlots = ItemSlot.getSlotsFor(itemSlotMask);
-            for (int i = 0; i < possibleSlots.length; i++) {
-                ItemSlot possibleSlot = possibleSlots[i];
+            // LMFAOOWN fix (try to make this getSlotsFor method better and not require a cast?)
+            ItemSlot[] possibleSlots = ItemSlot.getSlotsFor((int)itemSlotMask);
+            for (ItemSlot possibleSlot : possibleSlots) {
                 int slotId = possibleSlot.id();
                 if (equipment.get(slotId) == null || markedFreeSlots.contains(slotId)) {
                     itemSlotToEquip = slotId;
@@ -200,7 +217,7 @@ public class Equipment {
      * @param itemSlotToEquip
      * @param item
      */
-    private Item equip(int itemSlotToEquip, Item item, int slotMask) {
+    private Item equip(int itemSlotToEquip, Item item, long slotMask) {
         synchronized (equipment) {
             // remove item first from inventory to have at least one slot free
             owner.getInventory().remove(item);
@@ -271,7 +288,7 @@ public class Equipment {
         }
     }
 
-    public Item unEquipItem(int itemUniqueId, int slot){
+    public Item unEquipItem(int itemUniqueId, long slot){
         return unEquipItem(itemUniqueId, slot, false);
     }
     /**
@@ -282,7 +299,7 @@ public class Equipment {
      *
      * @return item or null in case of failure
      */
-    public Item unEquipItem(int itemUniqueId, int slot, boolean force) {
+    public Item unEquipItem(int itemUniqueId, long slot, boolean force) {
         if (getOwner() == null) {
             return null;
         }

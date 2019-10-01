@@ -43,6 +43,7 @@ public class SM_TRADELIST extends AionServerPacket {
             writeD(npcObj);
             writeC(tlist.getTradeNpcType().index()); // reward, abyss or normal
             writeD(buyPriceModifier); // Vendor Buy Price Modifier
+            writeH(0x101);
             writeH(tlist.getCount());
             for (TradeTab tradeTabl : tlist.getTradeTablist()) {
                 writeD(tradeTabl.getId());

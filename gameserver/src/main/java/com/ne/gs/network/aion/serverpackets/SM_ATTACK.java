@@ -45,6 +45,7 @@ public class SM_ATTACK extends AionServerPacket {
         writeD(attacker.getObjectId());
         writeC(attackno); // unknown
         writeH(time); // unknown
+        writeC(0);
         writeC(type); // 0, 1, 2
         writeD(target.getObjectId());
 

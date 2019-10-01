@@ -102,7 +102,12 @@ public class SM_NPC_INFO extends AionServerPacket {
 
         writeC(npcTypeId);
 
-        writeH(_npc.getState());// unk 65=normal,0x47 (71)= [dead npc ?]no drop,0x21(33)=fight state,0x07=[dead
+        if (_npc.getLifeStats().isAlreadyDead() && _npc.getState() == 47) {
+            _npc.setState(39);
+        }
+        writeH(_npc.getState());
+
+        // unk 65=normal,0x47 (71)= [dead npc ?]no drop,0x21(33)=fight state,0x07=[dead
         // monster?]
         // no drop
         // 3,19 - wings spread (NPCs)
@@ -134,15 +139,17 @@ public class SM_NPC_INFO extends AionServerPacket {
             else
                 masterName = npcId + " " + _npc.getAi2().getName();
         }
-        if (npcTemplate.getNameId()== 999997) {
-            masterName = "Статуя легиона новичков";
-        }
+
+        // LMFAOOWN (make sure this isn't needed)
+        /*if (npcTemplate.getNameId()== 999997) {
+            masterName = "Statue of the Legion of Novices";
+        }*/
         writeS(masterName);// masterName
 
-        int maxHp = _npc.getLifeStats().getMaxHp();
-        int currHp = _npc.getLifeStats().getCurrentHp();
+        //int maxHp = _npc.getLifeStats().getMaxHp();
+        //int currHp = _npc.getLifeStats().getCurrentHp();
 
-        writeC((int) (100f * currHp / maxHp));// %hp
+        writeC((int) (100f * _npc.getLifeStats().getCurrentHp() / _npc.getLifeStats().getMaxHp()));// %hp
         writeD(_npc.getGameStats().getMaxHp().getCurrent());
         writeC(_npc.getLevel());// lvl
 
@@ -158,9 +165,9 @@ public class SM_NPC_INFO extends AionServerPacket {
             for (Entry<ItemSlot, ItemTemplate> item : gear) // getting it from template ( later if we make sure that npcs
             // actually use items, we'll make Item from it )
             {
-                if (item.getValue().getWeaponType() != null) {
+                if (item.getValue().getWeaponType() != null)
                     hasWeapon = true;
-                }
+
                 writeD(item.getValue().getTemplateId());
                 writeD(0x00);
                 writeD(0x00);
@@ -176,6 +183,7 @@ public class SM_NPC_INFO extends AionServerPacket {
         writeH(npcTemplate.getAttackDelay());
         writeH(npcTemplate.getAttackDelay());
 
+        // LMFAOOWN update for 4.0, currently 3.0
         writeC(_npc.isNewSpawn() ? 0x01 : 0x00);
 
         /**
@@ -203,10 +211,17 @@ public class SM_NPC_INFO extends AionServerPacket {
         writeC(_npc.getVisualState()); // visualState
 
         /**
-         * 1 : normal (kisk too) 2 : summon 32 : trap 64 : skill area 1024 : holy servant, noble energy
+         * 1 : normal (kisk too)
+         * 2 : summon
+         * 32 : trap
+         * 64 : skill area
+         * 1024 : holy servant, noble energy
          */
         writeH(_npc.getNpcObjectType().getId());
         writeC(0x00);// unk
         writeD(_npc.getTarget() == null ? 0 : _npc.getTarget().getObjectId());
+        // LMFAOOWN (add this town shit)
+        writeD(0x00);
+        //writeD(TownService.getInstance().getTownIdByPosition(_npc));
     }
 }

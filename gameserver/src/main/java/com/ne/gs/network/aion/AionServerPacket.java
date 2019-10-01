@@ -8,13 +8,12 @@
  */
 package com.ne.gs.network.aion;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.nio.ByteBuffer;
 
 import com.ne.commons.network.packet.BaseServerPacket;
 import com.ne.gs.network.Crypt;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Base class for every GS -> Aion Server Packet.
@@ -51,8 +50,11 @@ public abstract class AionServerPacket extends BaseServerPacket {
      * @param con
      */
     public final void write(AionConnection con, ByteBuffer buffer) {
+        //if (con.getState().equals(AionConnection.State.IN_GAME) && con.getActivePlayer().getPlayerAccount().getAccessLevel() == 10)
+         //   if (!this.getPacketName().equals("SM_MESSAGE"))
+         /*       PacketSendUtility.sendMessage(con.getActivePlayer(), */
         log.info("0x" + Integer.toHexString(this.getOpcode()).toUpperCase() + " : " + this.getPacketName());
-		
+
         setBuf(buffer);
         buf.putShort((short) 0);
         writeOP(getOpcode());
@@ -87,7 +89,7 @@ public abstract class AionServerPacket extends BaseServerPacket {
         if (text == null) {
             buf.put(new byte[size]);
         } else {
-            int len = text.length();
+            final int len = text.length();
             for (int i = 0; i < len; i++) {
                 buf.putChar(text.charAt(i));
             }

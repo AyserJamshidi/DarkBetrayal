@@ -22,10 +22,12 @@ public class SM_FRIEND_NOTIFY extends AionServerPacket {
      * Buddy has logged in (Or become visible)
      */
     public static final int LOGIN = 0;
+
     /**
      * Buddy has logged out (Or become invisible)
      */
     public static final int LOGOUT = 1;
+
     /**
      * Buddy has deleted you
      */

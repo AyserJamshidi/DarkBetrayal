@@ -1,42 +1,57 @@
 /*
- * This file is part of Neon-Eleanor project
+ * This file is part of aion-lightning <aion-lightning.com>.
  *
- * This is proprietary software. See the EULA file distributed with
- * this project for additional information regarding copyright ownership.
+ *  aion-lightning is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
  *
- * Copyright (c) 2011-2013, Neon-Eleanor Team. All rights reserved.
+ *  aion-lightning is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with aion-lightning.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.ne.gs.network.aion.iteminfo;
-
-import java.nio.ByteBuffer;
 
 import com.ne.gs.model.gameobjects.Item;
 import com.ne.gs.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
 
+import java.nio.ByteBuffer;
+
 /**
- * This blob entry is sent with ALL items. (unless partial blob is constructed, ie: sending equip slot only) It is the first and only block for non-equipable
- * items, and the last blob for EquipableItems
+ * This blob entry is sent with ALL items. (unless partial blob is constructed, ie: sending equip slot only) It is the
+ * first and only block for non-equipable items, and the last blob for EquipableItems
  *
  * @author -Nemesiss-
  */
 public class GeneralInfoBlobEntry extends ItemBlobEntry {
 
-    GeneralInfoBlobEntry() {
-        super(ItemBlobType.GENERAL_INFO);
-    }
+	GeneralInfoBlobEntry() {
+		super(ItemBlobType.GENERAL_INFO);
+	}
 
-    @Override
-    public void writeThisBlob(ByteBuffer buf) {// TODO what with kinah?
-        Item item = parent.item;
-        writeH(buf, item.getItemMask(parent.player));
-        writeQ(buf, item.getItemCount());
-        writeS(buf, item.getItemCreator());// Creator name
-        writeC(buf, 0);
-        writeD(buf, item.getExpireTimeRemaining()); // Disappears time
-        writeH(buf, 0);
-        writeH(buf, 0);
-        writeD(buf, item.getExchangeTime().getRemainingSeconds());
-        writeH(buf, 0);
-        writeD(buf, 0);
-    }
+	@Override
+	public void writeThisBlob(ByteBuffer buf) {// TODO what with kinah?
+		Item item = ownerItem;
+		writeH(buf, item.getItemMask(owner));
+		writeQ(buf, item.getItemCount());
+		writeS(buf, item.getItemCreator());// Creator name
+		writeC(buf, 0);
+		writeD(buf, item.getExpireTimeRemaining()); // Disappears time
+		writeD(buf, 0);
+
+		// LMFAOOWN fix
+		writeD(buf, 0);
+		//writeD(buf, item.getTemporaryExchangeTimeRemaining());
+		writeH(buf, 0);
+		writeD(buf, 0);
+	}
+
+	@Override
+	public int getSize() {
+		return 29 + ownerItem.getItemCreator().length() * 2 + 2;
+	}
 }

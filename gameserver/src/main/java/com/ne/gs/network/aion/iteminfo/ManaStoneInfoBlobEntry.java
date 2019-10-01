@@ -1,21 +1,29 @@
 /*
- * This file is part of Neon-Eleanor project
+ * This file is part of aion-lightning <aion-lightning.com>.
  *
- * This is proprietary software. See the EULA file distributed with
- * this project for additional information regarding copyright ownership.
+ *  aion-lightning is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
  *
- * Copyright (c) 2011-2013, Neon-Eleanor Team. All rights reserved.
+ *  aion-lightning is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with aion-lightning.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.ne.gs.network.aion.iteminfo;
 
-import java.nio.ByteBuffer;
-import java.util.Set;
-
 import com.ne.gs.model.gameobjects.Item;
+import com.ne.gs.model.items.IdianStone;
 import com.ne.gs.model.items.ItemStone;
 import com.ne.gs.model.items.ManaStone;
-import com.ne.gs.model.stats.calc.functions.StatFunction;
 import com.ne.gs.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
+
+import java.nio.ByteBuffer;
+import java.util.Set;
 
 /**
  * This blob sends info about mana stones.
@@ -24,69 +32,84 @@ import com.ne.gs.network.aion.iteminfo.ItemInfoBlob.ItemBlobType;
  */
 public class ManaStoneInfoBlobEntry extends ItemBlobEntry {
 
-    ManaStoneInfoBlobEntry() {
-        super(ItemBlobType.MANA_SOCKETS);
-    }
+	ManaStoneInfoBlobEntry() {
+		super(ItemBlobType.MANA_SOCKETS);
+	}
 
-    @Override
-    public void writeThisBlob(ByteBuffer buf) {
-        Item item = parent.item;
+	@Override
+	public void writeThisBlob(ByteBuffer buf) {
+		Item item = ownerItem;
 
-        writeC(buf, item.isSoulBound() ? 1 : 0);
-        writeC(buf, item.getEnchantLevel()); // enchant (1-15)
-        writeD(buf, item.getItemSkinTemplate().getTemplateId());
-        writeC(buf, item.getOptionalSocket());
+		writeC(buf, item.isSoulBound() ? 1 : 0);
+		writeC(buf, item.getEnchantLevel()); // enchant (1-15)
+		writeD(buf, item.getItemSkinTemplate().getTemplateId());
+		writeC(buf, item.getOptionalSocket());
+		//writeC(buf, item.getItemTemplate().getMaxEnchantLevel());
+		writeC(buf, 0);
 
-        writeItemStones(buf);
+		writeItemStones(buf);
 
-        ItemStone god = item.getGodStone();
-        writeD(buf, god == null ? 0 : god.getItemId());
+		ItemStone god = item.getGodStone();
+		writeD(buf, god == null ? 0 : god.getItemId());
 
-        writeD(buf, item.getItemColor());
+		int itemColor = item.getItemColor();
 
-        writeD(buf, 0);// unk 1.5.1.9
-        writeD(buf, 0);// unk 2.7
-        writeC(buf, 0);// unk
-    }
+		// LMFAOOWN fix
+		int dyeExpiration = 0;
+		//int dyeExpiration = item.getColorTimeLeft();
 
-    /**
-     * Writes manastones : 6C - statenum mask, 6H - value
-     *
-     */
-    private void writeItemStones(ByteBuffer buf) {
-        Item item = parent.item;
-        int count = 0;
+		// expired dyed items
+		// LMFAOOWN fix
+		if (1 == 2) {
+		//if ((dyeExpiration > 0 && item.getColorExpireTime() > 0 || dyeExpiration == 0 && item.getColorExpireTime() == 0)
+		//		&& item.getItemTemplate().isItemDyePermitted()) {
+			writeC(buf, itemColor == 0 ? 0 : 1);
+			writeD(buf, itemColor);
+			writeD(buf, 0); // unk 1.5.1.9
+			writeD(buf, dyeExpiration); // seconds until dye expires
+		} else {
+			writeC(buf, 0);
+			writeD(buf, 0);
+			writeD(buf, 0); // unk 1.5.1.9
+			writeD(buf, 0);
+		}
+		IdianStone idianStone = item.getIdianStone();
+		if (idianStone != null && idianStone.getPolishNumber() > 0) {
+			writeD(buf, idianStone.getItemId()); // Idian Stone template ID
+			writeC(buf, idianStone.getPolishNumber()); // polish statset ID
+		} else {
+			writeD(buf, 0); // Idian Stone template ID
+			writeC(buf, 0); // polish statset ID
+		}
 
-        if (item.hasManaStones()) {
-            Set<ManaStone> itemStones = item.getItemStones();
+	}
 
-            for (ManaStone itemStone : itemStones) {
-                if (count == 6) {
-                    break;
-                }
+	/**
+	 * Writes manastones
+	 *
+	 * @param buf
+	 */
+	private void writeItemStones(ByteBuffer buf) {
+		Item item = ownerItem;
+		int count = 0;
 
-                StatFunction modifier = itemStone.getFirstModifier();
-                if (modifier != null) {
-                    count++;
-                    writeH(buf, modifier.getName().getItemStoneMask());
-                }
-            }
-            skip(buf, (6 - count) * 2);
-            count = 0;
-            for (ManaStone itemStone : itemStones) {
-                if (count == 6) {
-                    break;
-                }
+		if (item.hasManaStones()) {
+			Set<ManaStone> itemStones = item.getItemStones();
 
-                StatFunction modifier = itemStone.getFirstModifier();
-                if (modifier != null) {
-                    count++;
-                    writeH(buf, modifier.getValue());
-                }
-            }
-            skip(buf, (6 - count) * 2);
-        } else {
-            skip(buf, 24);
-        }
-    }
+			for (ManaStone itemStone : itemStones) {
+				if (count == 6)
+					break;
+				writeD(buf, itemStone.getItemId());
+				count++;
+			}
+			skip(buf, (6 - count) * 4);
+		} else {
+			skip(buf, 24);
+		}
+	}
+
+	@Override
+	public int getSize() {
+		return 12 * 2 + 24 + 1 + 5;
+	}
 }

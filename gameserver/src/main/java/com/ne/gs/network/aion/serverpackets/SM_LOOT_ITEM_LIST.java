@@ -57,11 +57,10 @@ public class SM_LOOT_ITEM_LIST extends AionServerPacket {
         for (DropItem dropItem : _dropItems) {
             Drop drop = dropItem.getDropTemplate();
             writeC(dropItem.getIndex()); // index in droplist
-            writeD(dropItem.getDropTemplate().getItemId());
+            writeD(drop.getItemId());
             writeD((int) dropItem.getCount());
             writeH(0);
-//            writeC(0);
-//            writeC(0); // 3.5
+            writeC(0); // 3.5
             ItemTemplate template = drop.getItemTemplate();
             writeC(!template.getCategory().equals(ItemCategory.QUEST) && !template.isTradeable() ? 1 : 0);
 //            writeC(dropItem.getDropTemplate().getItemTemplate().isTradeable() ? 0 : 1);
@@ -78,6 +77,7 @@ public class SM_LOOT_ITEM_LIST extends AionServerPacket {
         partitioner.foreach(new Partitioner.Func<DropItem>() {
             @Override
             public boolean apply(List<DropItem> dropItems1) {
+                player.sendMsg("Inside of sendTo for SM_LOOT_ITEM_LIST");
                 player.sendPck(new SM_LOOT_ITEM_LIST(targetUid, dropItems1, player));
                 return false;
             }

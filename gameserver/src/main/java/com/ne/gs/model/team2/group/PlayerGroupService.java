@@ -13,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
+import com.ne.gs.model.team2.TeamType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,10 +58,10 @@ public final class PlayerGroupService {
         return RestrictionsManager.canInviteToGroup(inviter, invited);
     }
 
-    public static PlayerGroup createGroup(Player leader, Player invited) {
+    public static PlayerGroup createGroup(Player leader, Player invited, TeamType type) {
         EventNotifier.GLOBAL.fire(BeforeCreate.class, leader);
 
-        PlayerGroup newGroup = new PlayerGroup(new PlayerGroupMember(leader));
+        PlayerGroup newGroup = new PlayerGroup(new PlayerGroupMember(leader), type);
         groups.put(newGroup.getTeamId(), newGroup);
         addPlayer(newGroup, leader);
         addPlayer(newGroup, invited);

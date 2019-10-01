@@ -84,8 +84,8 @@ public abstract class MailServicePacket extends AionServerPacket {
     protected void writeLetterRead(Letter letter, long time, int totalCount, int unreadCount, int expressCount,
                                    int blackCloudCount) {
         writeD(letter.getRecipientId());
-        writeD(totalCount + unreadCount * 65536);
-        writeD(expressCount + blackCloudCount);
+        writeD(totalCount + unreadCount * 65536); // Total conut + unread hex
+        writeD(expressCount + blackCloudCount); // Unread express + BC letters count
         writeD(letter.getObjectId());
         writeD(letter.getRecipientId());
         writeS(letter.getSenderName());
@@ -112,9 +112,9 @@ public abstract class MailServicePacket extends AionServerPacket {
 
         writeD((int) letter.getAttachedKinah());
         writeD(0); // AP reward for castle assault/defense (in future)
-        writeC(0);
+        writeC(0); // GM panel
         writeD((int) (time / 1000));
-        writeC(letter.getLetterType().getId());
+        writeC(letter.getLetterType().getId()); // Mail type
     }
 
     protected void writeLetterState(int letterId, int attachmentType) {

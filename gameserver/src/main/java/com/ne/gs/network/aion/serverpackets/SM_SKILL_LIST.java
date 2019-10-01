@@ -35,15 +35,15 @@ public class SM_SKILL_LIST extends AionServerPacket {
      * This constructor is used on player entering the world Constructs new <tt>SM_SKILL_LIST </tt> packet
      */
     public SM_SKILL_LIST(Player player) {
-        skillList = player.getSkillList().getAllSkills();
-        messageId = 0;
+        this.skillList = player.getSkillList().getAllSkills();
+        this.messageId = 0;
     }
 
     public SM_SKILL_LIST(PlayerSkillEntry skillListEntry, int messageId, boolean isNew) {
-        skillList = Collections.singletonList(skillListEntry);
+        this.skillList = Collections.singletonList(skillListEntry);
         this.messageId = messageId;
-        skillNameId = DataManager.SKILL_DATA.getSkillTemplate(skillListEntry.getSkillId()).getNameId();
-        skillLvl = String.valueOf(skillListEntry.getSkillLevel());
+        this.skillNameId = DataManager.SKILL_DATA.getSkillTemplate(skillListEntry.getSkillId()).getNameId();
+        this.skillLvl = String.valueOf(skillListEntry.getSkillLevel());
         this.isNew = isNew;
     }
 

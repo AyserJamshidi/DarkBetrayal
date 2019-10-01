@@ -37,11 +37,9 @@ public class CM_TITLE_SET extends AionClientPacket {
     @Override
     protected void runImpl() {
         Player player = getConnection().getActivePlayer();
-        if (titleId != 0xFFFF) {
-            if (!player.getTitleList().contains(titleId) && !player.havePermission(MembershipConfig.TITLES_ADDITIONAL_ENABLE)) {
+        if (titleId != 0xFFFF)
+            if (!player.getTitleList().contains(titleId) && !player.havePermission(MembershipConfig.TITLES_ADDITIONAL_ENABLE))
                 return;
-            }
-        }
 
         player.getTitleList().setTitle(titleId);
     }

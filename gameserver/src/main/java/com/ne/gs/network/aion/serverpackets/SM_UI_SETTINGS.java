@@ -32,9 +32,17 @@ public class SM_UI_SETTINGS extends AionServerPacket {
      */
     @Override
     protected void writeImpl(AionConnection con) {
-        writeH(type);
+        // LMFAOOWN make sure we need this weird "upgrade" from 3.0 to 4.0
+        // 3.0 code
+        /*writeH(type);
         writeC(0x1C);
+        writeB(data);*/
+
+        writeC(type);
+        writeH(0x1C00);
         writeB(data);
+        if (0x1C00 > data.length)
+            writeB(new byte[0x1C00 - data.length]);
     }
 
 }

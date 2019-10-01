@@ -52,28 +52,24 @@ public class CM_CHAT_MESSAGE_PUBLIC extends AionClientPacket {
         message = message.replaceAll("\\s+", " ");
 
         // TODO rework access level(byte) to more flexible implementation
-        if (ChatCommandHandler.perform(player, message)) {
+        if (ChatCommandHandler.perform(player, message))
             return;
-        }
 
         message = NameRestrictionService.filterMessage(message);
 
-        if (LoggingConfig.LOG_CHAT) {
+        if (LoggingConfig.LOG_CHAT)
             PlayerChatService.chatLogging(player, type, message);
-        }
 
         if (RestrictionsManager.canChat(player) && !PlayerChatService.isFlooding(player)) {
             switch (type) {
                 case GROUP:
-                    if (!player.isInTeam()) {
+                    if (!player.isInTeam())
                         return;
-                    }
                     broadcastToGroupMembers(player);
                     break;
                 case ALLIANCE:
-                    if (!player.isInAlliance2()) {
+                    if (!player.isInAlliance2())
                         return;
-                    }
                     broadcastToAllianceMembers(player);
                     break;
                 case GROUP_LEADER:
@@ -120,6 +116,18 @@ public class CM_CHAT_MESSAGE_PUBLIC extends AionClientPacket {
         }
     }
 
+    // LMFAOOWN add this
+    /*private void broadcastFromCommander(final Player player) {
+        final int senderRace = player.getRace().getRaceId();
+        PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, message, type), true, new ObjectFilter<Player>() {
+            @Override
+            public boolean acceptObject(Player object) {
+                return (senderRace == object.getRace().getRaceId() || object.isGM());
+            }
+
+        });
+    }*/
+
     /**
      * Sends message to all players from admin
      *
@@ -138,8 +146,8 @@ public class CM_CHAT_MESSAGE_PUBLIC extends AionClientPacket {
         PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, message, type), true, new Filter<Player>() {
             @Override
             public boolean accept(Player object) {
-                return true;
-                //return object.isGM() || !object.getBlockList().contains(player.getObjectId());
+                //return true;
+                return object.isGM() || !object.getBlockList().contains(player.getObjectId());
             }
         });
     }
@@ -154,11 +162,11 @@ public class CM_CHAT_MESSAGE_PUBLIC extends AionClientPacket {
         PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, message, type), true, new Filter<Player>() {
             @Override
             public boolean accept(Player object) {
-                return object.isGM() || senderRace == object.getRace().getRaceId() /*&& !object.getBlockList().contains(player.getObjectId())*/;
+                return object.isGM() || senderRace == object.getRace().getRaceId() && !object.getBlockList().contains(player.getObjectId());
             }
 
         });
-        PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "Unknow Message", type), false, new Filter<Player>() {
+        PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, message, type), false, new Filter<Player>() {
             @Override
             public boolean accept(Player object) {
                 return senderRace != object.getRace().getRaceId() && !object.getBlockList().contains(player.getObjectId()) && !object.isGM();

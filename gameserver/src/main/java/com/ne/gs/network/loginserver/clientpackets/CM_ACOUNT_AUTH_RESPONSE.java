@@ -82,6 +82,14 @@ public class CM_ACOUNT_AUTH_RESPONSE extends LsClientPacket {
             membership = (byte) readC();
             toll = readQ();
             expire = readQ();
+
+            //TODO make use of this information
+			/*expire = readQ();
+			acc_enter = readD();
+			accessLevelExpire = readQ();
+			realPassword = readS();
+			countryCode = readD();
+			oldMembership = (byte) readC();*/
         }
     }
 

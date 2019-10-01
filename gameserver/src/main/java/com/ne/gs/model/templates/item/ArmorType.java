@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "armor_type")
 @XmlEnum
 public enum ArmorType {
+    NO_ARMOR(new int[] {}),
     CHAIN(new int[]{6, 13}),
     CLOTHES(new int[]{4}),
     LEATHER(new int[]{5, 12}),
@@ -24,7 +25,8 @@ public enum ArmorType {
     ROBE(new int[]{67, 70}),
     SHARD(new int[]{}),
     SHIELD(new int[]{7, 14}),
-    ARROW(new int[]{});
+    ARROW(new int[]{}),
+    WING(new int[] {});
 
     private final int[] requiredSkills;
 

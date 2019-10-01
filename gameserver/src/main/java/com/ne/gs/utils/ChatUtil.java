@@ -21,9 +21,9 @@ import com.ne.gs.world.WorldPosition;
  */
 public final class ChatUtil {
 
-    public static final String HEART = "\ue020";
-    public static final String VIP = "\ue023";
-    public static final String PREMIUM = "\ue024";
+    public static final String HEART = "\uE020";
+    public static final String VIP = "\uE023";
+    public static final String PREMIUM = "\uE024";
 
     public static String position(String label, WorldPosition pos) {
         return position(label, pos.getMapId(), pos.getX(), pos.getY(), pos.getZ());
@@ -98,14 +98,14 @@ public final class ChatUtil {
     }
 
     public static String undecorateName(String input) {
-        if (MembershipConfig.ENABLE_NAMEDECOR) {
+        //if (MembershipConfig.ENABLE_NAMEDECOR) {
             input = input.replace(VIP, "");
             input = input.replace(PREMIUM, "");
-        }
+        //}
 
-        if (WeddingsConfig.ENABLE_NAMEDECOR && input.contains(HEART)) {
+        //if (WeddingsConfig.ENABLE_NAMEDECOR && input.contains(HEART)) {
             input = input.split(HEART)[0].trim();
-        }
+        //}
 
         return getRealAdminName(input);
     }

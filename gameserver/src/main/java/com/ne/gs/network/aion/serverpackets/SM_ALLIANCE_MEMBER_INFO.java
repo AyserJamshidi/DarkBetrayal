@@ -69,9 +69,12 @@ public class SM_ALLIANCE_MEMBER_INFO extends AionServerPacket {
             writeD(0);
             writeD(0);
         }
-        if (GSConfig.SERVER_VERSION.startsWith("3.1")) {
+
+        /*if (GSConfig.SERVER_VERSION.startsWith("3.1")) {
             writeD(0);
-        }
+        }*/
+        writeD(0);
+
         writeD(wp.getMapId());
         writeD(wp.getMapId());
         writeF(wp.getX());

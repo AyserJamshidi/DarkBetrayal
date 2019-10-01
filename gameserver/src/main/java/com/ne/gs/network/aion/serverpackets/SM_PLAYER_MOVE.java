@@ -36,6 +36,8 @@ public class SM_PLAYER_MOVE extends AionServerPacket {
         writeF(y);
         writeF(z);
         writeC(heading);
+
+        // LMFAOOWN is this state write needed?  It isn't in 4.0 source
         writeC(state);
     }
 }

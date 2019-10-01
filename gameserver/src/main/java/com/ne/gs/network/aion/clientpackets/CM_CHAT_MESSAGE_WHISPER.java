@@ -8,6 +8,7 @@
  */
 package com.ne.gs.network.aion.clientpackets;
 
+import com.ne.commons.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,15 +61,15 @@ public class CM_CHAT_MESSAGE_WHISPER extends AionClientPacket {
      */
     @Override
     protected void runImpl() {
-        name = name.replace("\uE024", "");
-        name = name.replace("\uE023", "");
+        /*name = name.replace(ChatUtil.VIP, "");
+        name = name.replace(ChatUtil.PREMIUM, "");
         if (name.contains(ChatUtil.HEART)) {
             name = name.split(ChatUtil.HEART)[0].trim();
         }
 
-        name = ChatUtil.getRealAdminName(name);
+        name = ChatUtil.getRealAdminName(name);*/
 
-        String formatname = name;
+        String formatname = Util.convertName(ChatUtil.undecorateName(name));
 
         Player sender = getConnection().getActivePlayer();
         Player receiver = World.getInstance().findPlayer(formatname);

@@ -15,6 +15,8 @@ import com.ne.gs.model.conds.CanReadChatMessageCond;
 import com.ne.gs.model.gameobjects.player.Player;
 import com.ne.gs.network.aion.AionConnection;
 import com.ne.gs.network.aion.AionServerPacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Massage [chat, etc]
@@ -58,16 +60,14 @@ public class SM_MESSAGE extends AionServerPacket {
     private float x;
     private float y;
     private float z;
+    private static final Logger log = LoggerFactory.getLogger(SM_MESSAGE.class);
 
     /**
      * Constructs new <tt>SM_MESSAGE </tt> packet
      *
-     * @param speaker
-     *     who sent message
-     * @param message
-     *     actual message
-     * @param chatType
-     *     what chat type should be used
+     * @param speaker who sent message
+     * @param message actual message
+     * @param chatType what chat type should be used
      */
     public SM_MESSAGE(Player speaker, String message, ChatType chatType) {
         this.speaker = speaker;
@@ -84,14 +84,10 @@ public class SM_MESSAGE extends AionServerPacket {
     /**
      * Manual creation of chat message.<br>
      *
-     * @param senderObjectId
-     *     - can be 0 if system message(like announcements)
-     * @param senderName
-     *     - used for shout ATM, can be null in other cases
-     * @param message
-     *     - actual text
-     * @param chatType
-     *     type of chat, Normal, Shout, Announcements, Etc...
+     * @param senderObjectId can be 0 if system message(like announcements)
+     * @param senderName used for shout ATM, can be null in other cases
+     * @param message actual text
+     * @param chatType type of chat, Normal, Shout, Announcements, Etc...
      */
     public SM_MESSAGE(int senderObjectId, String senderName, String message, ChatType chatType) {
         this.senderObjectId = senderObjectId;
@@ -112,13 +108,15 @@ public class SM_MESSAGE extends AionServerPacket {
             canRead = actor.getConditioner().check(CanReadChatMessageCond.class, Tuple.of(race, chatType, speaker, actor));
         }
 
-        writeC(chatType.toInteger()); // type
+        writeC(chatType.toInteger()); // Chat type
 
 		/*
-         * 0 : all 1 : elyos 2 : asmodians
+         * 0 : all
+         * 1 : elyos
+         * 2 : asmodians
 		 */
-        writeC(canRead ? 0 : race.getRaceId() + 1);
-        writeD(senderObjectId); // sender object id
+        writeC(canRead ? 0 : race.getRaceId() + 1); // Can read
+        writeD(senderObjectId); // Sender object id
 
         switch (chatType) {
             case NORMAL:
@@ -129,7 +127,7 @@ public class SM_MESSAGE extends AionServerPacket {
             case WHITE_CENTER:
             case YELLOW_CENTER:
             case BRIGHT_YELLOW_CENTER:
-                writeH(0x00); // unknown
+                writeH(0x00); // Spacer maybe?
                 writeS(message);
                 break;
             case SHOUT:
@@ -146,6 +144,20 @@ public class SM_MESSAGE extends AionServerPacket {
             case WHISPER:
             case LEAGUE:
             case LEAGUE_ALERT:
+                writeS(senderName);
+                writeS(message);
+                break;
+            case CH1:
+            case CH2:
+            case CH3:
+            case CH4:
+            case CH5:
+            case CH6:
+            case CH7:
+            case CH8:
+            case CH9:
+            case CH10:
+            case COMMAND:
                 writeS(senderName);
                 writeS(message);
                 break;

@@ -34,9 +34,9 @@ public abstract class PlayerInfo extends AionServerPacket {
 
     protected void writePlayerInfo(PlayerAccountData accPlData) {
         PlayerCommonData pbd = accPlData.getPlayerCommonData();
-        int raceId = pbd.getRace().getRaceId();
-        int genderId = pbd.getGender().getGenderId();
-        PlayerAppearance playerAppearance = accPlData.getAppereance();
+        final int raceId = pbd.getRace().getRaceId();
+        final int genderId = pbd.getGender().getGenderId();
+        final PlayerAppearance playerAppearance = accPlData.getAppereance();
         writeD(pbd.getPlayerObjId());
         writeS(pbd.getName(), 52);
         writeD(genderId);
@@ -53,7 +53,7 @@ public abstract class PlayerInfo extends AionServerPacket {
         writeC(playerAppearance.getTattoo());
         writeC(playerAppearance.getFaceContour());
         writeC(playerAppearance.getExpression());
-        writeC(4);// always 4 o0
+        writeC(6);// LMFAOOWN this was originally 4, changed to 6 after 4.6 retail sniff
         writeC(playerAppearance.getJawLine());
         writeC(playerAppearance.getForehead());
         writeC(playerAppearance.getEyeHeight());
@@ -103,8 +103,7 @@ public abstract class PlayerInfo extends AionServerPacket {
         writeC(0x00); // always 0 - unk
         writeC(0x00);
         writeF(playerAppearance.getHeight());
-        int raceSex = 100000 + raceId * 2 + genderId;
-        writeD(raceSex);
+        writeD(100000 + raceId * 2 + genderId);
         writeD(pbd.getPosition().getMapId());// mapid for preloading map
         writeF(pbd.getPosition().getX());
         writeF(pbd.getPosition().getY());
@@ -113,6 +112,7 @@ public abstract class PlayerInfo extends AionServerPacket {
         writeH(pbd.getLevel());
         writeH(0); // unk 2.5
         writeD(pbd.getTitleId());
+
         if (accPlData.isLegionMember()) {
             writeD(accPlData.getLegion().getLegionId());
             writeS(accPlData.getLegion().getLegionName(), 82);
@@ -139,7 +139,7 @@ public abstract class PlayerInfo extends AionServerPacket {
 
             if (itemTemplate.isArmor() || itemTemplate.isWeapon()) {
                 if (itemTemplate.getItemSlot() <= ItemSlot.PANTS.id()) {
-                    writeC(1); // this flas is needed to show equipment on selection screen
+                    writeC(1); // isEquipped
                     writeD(item.getItemSkinTemplate().getTemplateId());
                     GodStone godStone = item.getGodStone();
                     writeD(godStone != null ? godStone.getItemId() : 0);

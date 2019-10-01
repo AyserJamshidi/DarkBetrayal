@@ -65,9 +65,10 @@ public class SM_ABYSS_RANKING_PLAYERS extends AionServerPacket {
 
             writeS(rs.getPlayerName(), 52);// Player Name
             writeS(rs.getLegionName(), 82);// Legion Name
-            if (GSConfig.SERVER_VERSION.startsWith("3.1")) {
+            /*if (GSConfig.SERVER_VERSION.startsWith("3.1")) {
                 writeD(0);
-            }
+            }*/
+            writeD(0); // unk 3.5
         }
     }
 }

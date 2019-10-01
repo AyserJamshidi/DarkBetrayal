@@ -77,9 +77,13 @@ public class SM_PLAYER_INFO extends AionServerPacket {
         writeF(player.getZ());// z
         writeD(player.getObjectId());
         /**
-         * A3 female asmodian A2 male asmodian A1 female elyos A0 male elyos
+         * A3 female asmodian
+         * A2 male asmodian
+         * A1 female elyos
+         * A0 male elyos
          */
         writeD(pcd.getTemplateId());
+        writeD(0x00); // 4.3 NA
         /**
          * Transformed state - send transformed model id Regular state - send player model id (from common data)
          */
@@ -87,7 +91,7 @@ public class SM_PLAYER_INFO extends AionServerPacket {
         writeD(model != 0 ? model : pcd.getTemplateId());
         writeC(0x00); // new 2.0 Packet --- probably pet info?
         writeD(player.getTransformModel().getType().getId());
-        writeC(enemy ? 0 : 38);
+        writeC(enemy ? 0x00 : 0x26);
 
         writeC(raceId); // race
         writeC(pcd.getPlayerClass().getClassId());
@@ -248,12 +252,14 @@ public class SM_PLAYER_INFO extends AionServerPacket {
         writeH(player.getLevel()); // [level]
         writeH(player.getPlayerSettings().getDisplay()); // unk - 0x04
         writeH(player.getPlayerSettings().getDeny()); // unk - 0x00
-        writeH(player.getImplementator().result(FFALoc.VisualRank.class, player));
+        //writeH(player.getImplementator().result(FFALoc.VisualRank.class, player));
+        writeH(player.getAbyssRank().getRank().getId()); // abyss rank
         writeH(0x00); // unk - 0x01
         writeD(player.getTarget() == null ? 0 : player.getTarget().getObjectId());
         writeC(0); // suspect id
         writeD(0);
         writeC(player.isMentor() ? 1 : 0);
         writeD(HouseInfo.of(player).getId());
+        writeD(0x01);
     }
 }

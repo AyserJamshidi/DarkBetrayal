@@ -38,7 +38,10 @@ public class CM_FIND_GROUP extends AionClientPacket {
 
     @Override
     protected void readImpl() {
+        Player player = getConnection().getActivePlayer();
         action = readC();
+        if (player != null)
+            player.sendMsg("type = " + action);
 
         switch (action) {
             case 0x00: // recruit list
@@ -48,6 +51,7 @@ public class CM_FIND_GROUP extends AionClientPacket {
                 unk = readD(); // unk(65557)
                 break;
             case 0x02: // send offer
+
                 playerObjId = readD();
                 message = readS();
                 groupType = readC();
@@ -73,6 +77,9 @@ public class CM_FIND_GROUP extends AionClientPacket {
             case 0x07: // apply update
                 // TODO need packet check
                 break;
+            case 0x0A:
+                log.info("----------0x0A on CM_FIND_GROUP");
+                break;
             default:
                 log.error("Unknown find group packet? 0x" + Integer.toHexString(action).toUpperCase());
                 break;
@@ -97,6 +104,7 @@ public class CM_FIND_GROUP extends AionClientPacket {
                 FindGroupService.getInstance().addFindGroupList(player, action, message, groupType);
                 break;
             case 0x03:
+            case 0x07:
                 FindGroupService.getInstance().updateFindGroupList(player, message, playerObjId);
             default:
                 player.sendPck(new SM_FIND_GROUP(action, playerObjId, unk));

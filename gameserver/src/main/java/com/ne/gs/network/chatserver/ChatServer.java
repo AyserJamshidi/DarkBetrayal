@@ -76,6 +76,7 @@ public class ChatServer {
                  */
                 Thread.sleep(10 * 1000);
             } catch (Exception e) {
+                System.out.println("ChatServer Exception: \n" + e);
             }
         }
     }
@@ -89,13 +90,7 @@ public class ChatServer {
         chatServer = null;
 
         if (!serverShutdown) {
-            ThreadPoolManager.getInstance().schedule(new Runnable() {
-
-                @Override
-                public void run() {
-                    connect();
-                }
-            }, 5000);
+            ThreadPoolManager.getInstance().schedule(this::connect, 5000);
         }
     }
 
@@ -103,6 +98,7 @@ public class ChatServer {
      * @param player
      */
     public void sendPlayerLoginRequst(Player player) {
+        System.out.println("chatServer null == " + (chatServer != null));
         if (chatServer != null) {
             chatServer.sendPacket(new SM_CS_PLAYER_AUTH(player.getObjectId(), player.getAcountName(), player.getName()));
         }

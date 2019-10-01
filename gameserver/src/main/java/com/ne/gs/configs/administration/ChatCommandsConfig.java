@@ -30,12 +30,7 @@ public final class ChatCommandsConfig {
 
     public static void load() {
         try {
-            GameServer.addStartupHook(new GameServer.StartupHook() {
-                @Override
-                public void onStartup() {
-                    reload();
-                }
-            });
+            GameServer.addStartupHook(ChatCommandsConfig::reload);
         } catch (Exception e) {
             _log.warn("Error while loading chat commands config", e);
         }

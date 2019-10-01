@@ -48,9 +48,10 @@ public class SM_PLAYER_SPAWN extends AionServerPacket {
         writeF(player.getY());// y
         writeF(player.getZ());// z
         writeC(player.getHeading());// heading
-        writeD(0); // new 2.5
-        writeD(0); // new 2.5
-        writeD(0); // new 2.7
-        writeC(0);
+        writeD(0); // Unk 2.5
+        writeD(0); // Unk 2.5
+        writeD(0); // Unk 2.7
+        writeC(0); // Fast Track Enabled/Disabled (True/False)
+        writeD(0); // Unk 4.0
     }
 }

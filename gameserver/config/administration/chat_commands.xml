@@ -3,6 +3,9 @@
 <chat_commands>
   <registry>
     <admin>
+      <class name="Test">
+        <alias name="test"/>
+      </class>
       <class name="Add">
         <alias name="add"/>
       </class>
@@ -496,6 +499,7 @@
 
     <group name="Admins">
       <admin>
+        <permit class="Test"/>
         <permit class="Add"/>
         <permit class="AddCube"/>
         <permit class="AddDrop"/>
@@ -628,6 +632,14 @@
         <!-- ... -->
       </wedding>
     </group>
+	
+	<player name="Asdf">
+		<group name="Admins"/>
+		<admin>
+		</admin>
+		<user>
+		</user>
+	</player>
 
     <group name="Gms">
       <admin>

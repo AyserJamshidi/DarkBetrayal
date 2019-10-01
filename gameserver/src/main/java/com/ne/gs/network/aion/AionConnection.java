@@ -132,7 +132,8 @@ public class AionConnection extends AConnection {
      * @throws IOException
      */
     public AionConnection(SocketChannel sc, Dispatcher d) throws IOException {
-        super(sc, d, 8192 * 2, 8192 * 2);
+        //super(sc, d, 8192 * 2, 8192 * 2); // 3.0 ??
+        super(sc, d, 8192 * 4, 8192 * 4); // 4.0 ??
 
         state = State.CONNECTED;
 

@@ -27,12 +27,13 @@ public class SM_NEARBY_QUESTS extends AionServerPacket {
 
     @Override
     protected void writeImpl(AionConnection con) {
-        if (questIds == null || con.getActivePlayer() == null) {
+        if (questIds == null || con.getActivePlayer() == null)
             return;
-        }
 
         writeC(0);
         writeH(-questIds.size() & 0xFFFF);
+
+        // LMFAOOWN might need updating for 4.0, currently 3.0 code.
         for (FastMap.Entry<Integer, Integer> e = questIds.head(), end = questIds.tail(); (e = e.getNext()) != end; ) {
             writeH(e.getKey());
             writeH(e.getValue());

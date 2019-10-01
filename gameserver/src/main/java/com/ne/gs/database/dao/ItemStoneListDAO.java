@@ -15,6 +15,7 @@ import java.util.Set;
 import com.ne.commons.database.dao.DAO;
 import com.ne.gs.model.gameobjects.Item;
 import com.ne.gs.model.gameobjects.player.Player;
+import com.ne.gs.model.items.IdianStone;
 import com.ne.gs.model.items.ManaStone;
 
 /**
@@ -33,6 +34,8 @@ public abstract class ItemStoneListDAO implements DAO {
     public abstract void storeManaStones(Set<ManaStone> manaStones);
 
     public abstract void storeFusionStone(Set<ManaStone> fusionStones);
+
+    public abstract void storeIdianStones(IdianStone idianStone);
 
     /**
      * Saves stones of player

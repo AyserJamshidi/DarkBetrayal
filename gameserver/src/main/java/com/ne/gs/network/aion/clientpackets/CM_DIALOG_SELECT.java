@@ -8,6 +8,10 @@
  */
 package com.ne.gs.network.aion.clientpackets;
 
+import com.ne.gs.dataholders.DataManager;
+import com.ne.gs.model.DialogAction;
+import com.ne.gs.model.templates.QuestTemplate;
+import com.ne.gs.services.QuestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,7 +58,7 @@ public class CM_DIALOG_SELECT extends AionClientPacket {
      */
     @Override
     protected void runImpl() {
-        Player player = getConnection().getActivePlayer();
+        final Player player = getConnection().getActivePlayer();
 
         if (player.isTrading()) {
             return;
@@ -75,6 +79,35 @@ public class CM_DIALOG_SELECT extends AionClientPacket {
             Creature creature = (Creature) obj;
             creature.getController().onDialogSelect(dialogId, player, questId, extendedRewardIndex);
         }
+        /*final Player player = getConnection().getActivePlayer();
+        if (player == null) {
+            return;
+        }
+        QuestTemplate questTemplate = DataManager.QUEST_DATA.getQuestById(questId);
+        QuestEnv env = new QuestEnv(null, player, questId, 0);
+        if (player.isTrading()) {
+            return;
+        }
+
+        if (targetObjectId == 0 || targetObjectId == player.getObjectId()) {
+            DialogAction.
+            if (questTemplate != null && !questTemplate.isCannotShare() && (dialogId == DialogAction.QUEST_ACCEPT_1.id() || dialogId == DialogAction.QUEST_ACCEPT_SIMPLE.id())) {
+                QuestService.startQuest(env);
+                return;
+            }
+            if (QuestEngine.getInstance().onDialog(new QuestEnv(null, player, questId, dialogId))) {
+                return;
+            }
+            // FIXME client sends unk1=1, targetObjectId=0, dialogId=2 (trader) => we miss some packet to close window
+            ClassChangeService.changeClassToSelection(player, dialogId);
+            return;
+        }
+
+        VisibleObject obj = player.getKnownList().getObject(targetObjectId);
+        if (obj != null && obj instanceof Creature) {
+            Creature creature = (Creature) obj;
+            creature.getController().onDialogSelect(dialogId, player, questId, extendedRewardIndex);
+        }*/
         // log.info("id: "+targetObjectId+" dialogId: " + dialogId +" unk1: " + unk1 + " questId: "+questId);
     }
 }

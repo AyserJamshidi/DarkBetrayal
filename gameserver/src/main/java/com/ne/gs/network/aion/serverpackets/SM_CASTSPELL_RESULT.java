@@ -61,6 +61,8 @@ public class SM_CASTSPELL_RESULT extends AionServerPacket {
         writeC(targetType);
         switch (targetType) {
             case 0:
+                writeD(0);
+                break;
             case 3:
             case 4:
                 writeD(target.getObjectId());
@@ -91,15 +93,16 @@ public class SM_CASTSPELL_RESULT extends AionServerPacket {
         writeC(0); // unk
 
         /**
-         * 0 : chain skill (counter too) 16 : no damage to all target like dodge, resist or effect size is 0 32 : regular
+         * 0 : chain skill (counter too)
+         * 16 : no damage to all target like dodge, resist or effect size is 0
+         * 32 : regular
          */
-        if (effects.isEmpty()) {
+        if (effects.isEmpty())
             writeH(16);
-        } else if (chainSuccess) {
+        else if (chainSuccess)
             writeH(32);
-        } else {
+        else
             writeH(0);
-        }
 
         // Get dash status
         writeC(dashStatus);
@@ -137,7 +140,16 @@ public class SM_CASTSPELL_RESULT extends AionServerPacket {
             writeC((int) (100f * attackerCurrHp / attackerMaxHp)); // attacker %hp
 
             /**
-             * Spell Status 1 : stumble 2 : knockback 4 : open aerial 8 : close aerial 16 : spin 32 : block 64 : parry 128 : dodge 256 : resist
+             * Spell Status
+             * 1 : stumble
+             * 2 : knockback
+             * 4 : open aerial
+             * 8 : close aerial
+             * 16 : spin
+             * 32 : block
+             * 64 : parry
+             * 128 : dodge
+             * 256 : resist
              */
             writeC(spellStatus);
             writeC(effect.getSkillMoveType().getId());
@@ -190,7 +202,11 @@ public class SM_CASTSPELL_RESULT extends AionServerPacket {
                 writeC(effect.getShieldDefense());
 
                 /**
-                 * shield Type: 1: reflector 2: normal shield 8: protect effect (ex. skillId: 417 Bodyguard) TODO find out 4
+                 * shield Type:
+                 * 1: reflector
+                 * 2: normal shield
+                 * 8: protect effect (ex. skillId: 417 Bodyguard)
+                 * TODO find out 4
                  */
                 switch (effect.getShieldDefense()) {
                     case 0:

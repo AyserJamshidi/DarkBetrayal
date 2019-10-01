@@ -9,6 +9,8 @@
 package com.ne.gs.network.aion.serverpackets;
 
 import java.util.Collection;
+
+import com.ne.gs.model.gameobjects.player.Player;
 import org.apache.commons.lang3.StringUtils;
 
 import com.ne.gs.model.team2.alliance.PlayerAlliance;
@@ -51,9 +53,11 @@ public class SM_ALLIANCE_INFO extends AionServerPacket {
 
     @Override
     protected void writeImpl(AionConnection con) {
+        Player player = con.getActivePlayer();
         writeH(alliance.groupSize());
         writeD(groupid);
         writeD(leaderid);
+        writeD(player.getWorldId()); // 4.3 mapid
         Collection<Integer> ids = alliance.getViceCaptainIds();
         for (Integer id : ids) {
             writeD(id);
@@ -72,6 +76,7 @@ public class SM_ALLIANCE_INFO extends AionServerPacket {
         writeD(0x02);
         writeC(0x00);
         writeD(0x3F);
+
         writeD(alliance.isInLeague() ? alliance.getLeague().getTeamId() : 0);
         for (int a = 0; a < 4; a++) {
             writeD(a); // group num

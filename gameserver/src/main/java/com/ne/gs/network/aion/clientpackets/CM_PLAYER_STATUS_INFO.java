@@ -29,6 +29,7 @@ public class CM_PLAYER_STATUS_INFO extends AionClientPacket {
 
     @Override
     protected void readImpl() {
+        System.out.println("WE INSIDE CM_PLAYER_STAT_INF-------------------------");
         commandCode = readC();
         playerObjId = readD();
         allianceGroupId = readD();
@@ -40,6 +41,10 @@ public class CM_PLAYER_STATUS_INFO extends AionClientPacket {
     protected void runImpl() {
         Player activePlayer = getConnection().getActivePlayer();
         TeamCommand command = TeamCommand.getCommand(commandCode);
+
+        activePlayer.sendMsg("We are inside CM_PLAYER_STATUS_INFO with cmdCode \"" + commandCode + "\"");
+        activePlayer.sendMsg("playerObjId = \"" + playerObjId + "\"");
+
         switch (command) {
             case GROUP_SET_LFG:
                 activePlayer.setLookingForGroup(playerObjId == 2);

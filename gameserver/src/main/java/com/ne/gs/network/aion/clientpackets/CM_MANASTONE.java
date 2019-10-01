@@ -77,7 +77,7 @@ public class CM_MANASTONE extends AionClientPacket {
                 if (action.canAct(player, manastone, targetItem)) {
                     Item supplement = player.getInventory().getItemByObjId(supplementUniqueId);
                     if (supplement != null) {
-                        if (supplement.getItemId() / 100000 != 1661) {
+                        if (supplement.getItemId() / 100000 != 1661) { // suppliment id check
                             return;
                         }
                     }
@@ -92,7 +92,7 @@ public class CM_MANASTONE extends AionClientPacket {
                 }
                 Item item = player.getInventory().getItemByObjId(targetItemUniqueId);
                 if (item == null) {
-                    player.sendMsg("Невозможно извлечь с используемого предмета.");
+                    player.sendMsg("Unable to remove from used item.");
                     return;
                 }
                 if (obj != null && obj instanceof Npc && MathUtil.isInRange(player, obj, 7)) {

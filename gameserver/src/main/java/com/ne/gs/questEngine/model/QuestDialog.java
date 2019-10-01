@@ -19,7 +19,7 @@ public enum QuestDialog {
     // default mapping
     // Quest selection
     USE_OBJECT(-1),
-    START_DIALOG(26),
+    START_DIALOG(31),
     NO_RIGHTS(27),
     FINISH_DIALOG(1008),
     ACCEPT_QUEST(1002),

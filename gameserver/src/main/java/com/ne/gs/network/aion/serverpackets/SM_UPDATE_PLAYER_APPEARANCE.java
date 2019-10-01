@@ -12,6 +12,7 @@ import java.util.List;
 
 import com.ne.gs.model.gameobjects.Item;
 import com.ne.gs.model.items.GodStone;
+import com.ne.gs.model.items.ItemSlot;
 import com.ne.gs.network.aion.AionConnection;
 import com.ne.gs.network.aion.AionServerPacket;
 
@@ -35,9 +36,19 @@ public class SM_UPDATE_PLAYER_APPEARANCE extends AionServerPacket {
         writeD(playerId);
 
         short mask = 0;
+
         for (Item item : items) {
-            mask |= item.getEquipmentSlot();
+            if (item.getItemTemplate().isTwoHandWeapon()) {
+                ItemSlot[] slots = ItemSlot.getSlotsFor(item.getEquipmentSlot());
+                mask |= slots[0].id();
+            } else {
+                mask |= item.getEquipmentSlot();
+            }
         }
+        // 3.0 code
+        /*for (Item item : items) {
+            mask |= item.getEquipmentSlot();
+        }*/
 
         writeH(mask);
 

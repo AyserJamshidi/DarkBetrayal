@@ -275,7 +275,9 @@ public class GameServer {
         ItemTimeTuningService.getInstance();
         KeyDropTuningService.getInstance();
 
-        Housing.load();
+        // LMFAOOWN house (blocked this because it overwrites packets in packets.cfg
+        //Housing.load();
+
         CustomRiftManager.REF.tell(new CustomRiftManager.Init());
         CustomLocManager.getInstance().tell(new CustomLocManager.Init());
         CustomRateManager.getInstance().tell(new CustomRateManager.Init());

@@ -37,7 +37,7 @@ public class SM_SUMMON_PANEL extends AionServerPacket {
         writeH(summon.getGameStats().getMResist().getCurrent());
         writeH(0);// unk
         writeH(0);// unk
-        writeD(summon.getLiveTime());
+        writeD(summon.getLiveTime()); // life time
     }
 
 }

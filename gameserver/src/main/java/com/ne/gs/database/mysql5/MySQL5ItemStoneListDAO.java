@@ -18,6 +18,7 @@ import com.ne.gs.database.dao.MySQL5DAOUtils;
 import com.ne.gs.model.gameobjects.Item;
 import com.ne.gs.model.gameobjects.PersistentState;
 import com.ne.gs.model.items.GodStone;
+import com.ne.gs.model.items.IdianStone;
 import com.ne.gs.model.items.ItemStone;
 import com.ne.gs.model.items.ItemStone.ItemStoneType;
 import com.ne.gs.model.items.ManaStone;
@@ -143,6 +144,11 @@ public class MySQL5ItemStoneListDAO extends ItemStoneListDAO {
     @Override
     public void storeFusionStone(Set<ManaStone> manaStones) {
         store(manaStones, ItemStoneType.FUSIONSTONE);
+    }
+
+    @Override
+    public void storeIdianStones(IdianStone idianStone) {
+
     }
 
     private void store(Set<? extends ItemStone> stones, ItemStoneType ist) {

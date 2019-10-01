@@ -177,6 +177,9 @@ public class ItemTemplate extends VisibleObjectTemplate {
     @XmlElement(name = "uselimits")
     private ItemUseLimits useLimits = new ItemUseLimits();
 
+    @XmlElement(name = "idian")
+    private Idian idianAction;
+
     private static final WeaponStats emptyWeaponStats = new WeaponStats();
 
     /**
@@ -519,5 +522,9 @@ public class ItemTemplate extends VisibleObjectTemplate {
 
     public int getPetExpire() {
         return petExpire;
+    }
+
+    public Idian getIdianAction() {
+        return idianAction;
     }
 }

@@ -96,7 +96,7 @@ public class FindGroup {
 
     public int getUnk() {
         if (object instanceof Player) {
-            return 65557;
+            return 268435457;
         } else {
             return 0;
         }

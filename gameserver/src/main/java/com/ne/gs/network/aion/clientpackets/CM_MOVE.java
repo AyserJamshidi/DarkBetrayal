@@ -80,9 +80,11 @@ public class CM_MOVE extends AionClientPacket {
                 z2 = readF();
             }
         }
+
         if ((type & MovementMask.GLIDE) == MovementMask.GLIDE) {
             glideFlag = (byte) readC();
         }
+
         if ((type & MovementMask.VEHICLE) == MovementMask.VEHICLE) {
             unk1 = readD();
             unk2 = readD();
@@ -97,15 +99,15 @@ public class CM_MOVE extends AionClientPacket {
         Player player = getConnection().getActivePlayer();
         // packet was not read correctly
         //mw: u absolutely right
-        if (player.getLifeStats().isAlreadyDead()) {
+        if (player == null || player.getLifeStats().isAlreadyDead())
             return;
-        }
 
-        if (player.getEffectController().isUnderFear()) {
+        if (player.getEffectController().isUnderFear())
             return;
-        }
+
         PlayerMoveController m = player.getMoveController();
         m.movementMask = type;
+
         if (x <= 50.0f && y <= 50.0f || x == 0.0f && y == 0.0f) {
             PacketSendUtility.sendPck(player, new SM_PLAYER_MOVE(player.getX(), player.getY(), player.getZ(), (byte) player.getHeading(), 3));
             PacketSendUtility.broadcastPacket(player, new SM_EMOTION(player, EmotionType.FLY_UNK, 1, 0), true);
@@ -113,6 +115,7 @@ public class CM_MOVE extends AionClientPacket {
             PacketSendUtility.sendWhiteMessage(player, "bag");
             return;
         }
+
         if (player.isRMLoc()) {
             player.setRMLoc(false);
             Coordinates save = player.getSaveCoordinates();
@@ -132,8 +135,13 @@ public class CM_MOVE extends AionClientPacket {
             World.getInstance().updatePosition(player, x2, y2, z2, heading);
             PacketSendUtility.broadcastPacketAndReceive(player, new SM_MOVE(player));
         }
+
+        player.sendMsg("type = " + type);
+        player.sendMsg("Bool = " + ((type & MovementMask.GLIDE) == MovementMask.GLIDE));
+
         float speed = player.getGameStats().getMovementSpeedFloat();
         if ((type & MovementMask.GLIDE) == MovementMask.GLIDE) {
+            player.sendMsg("Switching to glide!");
             m.glideFlag = glideFlag;
             player.getFlyController().switchToGliding();
         } else if (!player.isInsideZoneType(ZoneType.FLY) & player.getAfterFlying() > 0) {

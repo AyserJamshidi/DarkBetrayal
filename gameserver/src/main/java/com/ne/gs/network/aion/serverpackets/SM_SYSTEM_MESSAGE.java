@@ -25,6 +25,7 @@ import com.ne.gs.network.aion.SystemMessageId;
  * @author Simple :)
  * @author Sarynth
  */
+@SuppressWarnings("unused")
 public class SM_SYSTEM_MESSAGE extends AionServerPacket {
 
     private static DescId calculateNameId(int id) {
@@ -22079,6 +22080,7 @@ public class SM_SYSTEM_MESSAGE extends AionServerPacket {
 
     @Override
     protected void writeImpl(AionConnection con) {
+        Player player = con.getActivePlayer();
         writeC(textColorId);
         writeC(0x00); // to do for shoots text encoding (unk dialect)
         writeD(npcObjId);
@@ -22096,10 +22098,10 @@ public class SM_SYSTEM_MESSAGE extends AionServerPacket {
             }
         }
 
-        if (npcShout) {
+        writeC(npcShout ? 0x01 : 0x00);
+        /*if (npcShout)
             writeC(0x01);
-        } else {
-            writeC(0x00);
-        }
+        else
+            writeC(0x00);*/
     }
 }

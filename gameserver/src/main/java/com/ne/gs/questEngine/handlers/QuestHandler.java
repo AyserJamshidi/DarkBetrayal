@@ -12,6 +12,7 @@ import java.util.Collections;
 
 import com.ne.gs.ai2.event.AIEventType;
 import com.ne.gs.dataholders.DataManager;
+import com.ne.gs.model.DialogPage;
 import com.ne.gs.model.EmotionId;
 import com.ne.gs.model.EmotionType;
 import com.ne.gs.model.TaskId;
@@ -91,6 +92,35 @@ public abstract class QuestHandler extends AbstractQuestHandler {
      * Send dialog to the player
      */
     public boolean sendQuestDialog(QuestEnv env, int dialogId) {
+        //LMFAOOWN fix (Update this to 4.0 code so we can have more exploit protection.
+        /*boolean isExploitDialog = false;
+        if (DialogPage.getPageByAction(dialogId) != null) {
+            switch (DialogPage.getPageByAction(dialogId)) {
+                case SELECT_QUEST_REWARD_WINDOW1:
+                case SELECT_QUEST_REWARD_WINDOW2:
+                case SELECT_QUEST_REWARD_WINDOW3:
+                case SELECT_QUEST_REWARD_WINDOW4:
+                case SELECT_QUEST_REWARD_WINDOW5:
+                case SELECT_QUEST_REWARD_WINDOW6:
+                case SELECT_QUEST_REWARD_WINDOW7:
+                case SELECT_QUEST_REWARD_WINDOW8:
+                case SELECT_QUEST_REWARD_WINDOW9:
+                case SELECT_QUEST_REWARD_WINDOW10:
+                    isExploitDialog = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (isExploitDialog) { // reward packet exploitation fix
+            Player player = env.getPlayer();
+            QuestState qs = player.getQuestStateList().getQuestState(questId);
+            if (qs == null || qs.getStatus() != QuestStatus.REWARD) {
+                return false;
+            }
+        }
+        sendDialogPacket(env, dialogId);*/
+
         if (dialogId >= 5 && dialogId <= 8) { // reward packet exploitation fix
             Player player = env.getPlayer();
             QuestState qs = player.getQuestStateList().getQuestState(questId);
@@ -120,6 +150,7 @@ public abstract class QuestHandler extends AbstractQuestHandler {
      * Send default start quest dialog and start it (give the item on start)
      */
     public boolean sendQuestStartDialog(QuestEnv env, int itemId, int itemCount) {
+        env.getPlayer().sendMsg("dialog == " + env.getDialogId());
         switch (env.getDialog()) {
             case ASK_ACCEPTION: {
                 return sendQuestDialog(env, 4);

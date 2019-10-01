@@ -23,12 +23,12 @@ public class CM_VERSION_CHECK extends AionClientPacket {
      */
     @Override
     protected void readImpl() {
-        version = readH();
-        /*subversion = */
-        readH();
-        readD();
-        readD();
-        readD();
+        version = readH(); // Version
+        readH(); // Subversion
+        readD(); // windowsEncoding
+        readD(); // windowsVersion
+        readD(); // windowsSubversion
+        readC(); // unk (3.5)
     }
 
     /**

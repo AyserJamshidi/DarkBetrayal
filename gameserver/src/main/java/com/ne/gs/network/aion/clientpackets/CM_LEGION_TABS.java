@@ -45,10 +45,15 @@ public class CM_LEGION_TABS extends AionClientPacket {
                 return;
             }
             switch (tab) {
-                case 0:
-                case 2:
+				/**
+				 * History Tab
+				 */
+				case 0: // legion history
+				case 2: // legion WH history
                     Collection<LegionHistory> history = activePlayer.getLegion().getLegionHistoryByTabId(tab);
-
+					/**
+					 * If history size is less than page*8 return
+					 */
                     if (history.size() < page * 8) {
                         return;
                     }
@@ -56,7 +61,12 @@ public class CM_LEGION_TABS extends AionClientPacket {
                         activePlayer.sendPck(new SM_LEGION_TABS(history, page, tab));
                     }
                     break;
-                case 1:
+				/**
+				 * Reward Tab
+				 */
+				case 1:
+					//TODO Reward Tab Page
+					break;
             }
 
         } else {

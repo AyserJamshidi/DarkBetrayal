@@ -63,8 +63,6 @@ public class CM_EMOTION extends AionClientPacket {
             case RIDE:
             case RIDE_END:
             case DIE: // die
-            case ATTACKMODE: // get equip weapon
-            case NEUTRALMODE: // remove equip weapon
             case END_DUEL: // duel end
             case WALK: // walk on
             case RUN: // walk off
@@ -72,10 +70,13 @@ public class CM_EMOTION extends AionClientPacket {
                 // case CLOSE_DOOR: // close static doors
             case POWERSHARD_ON: // powershard on
             case POWERSHARD_OFF: // powershard off
+            case ATTACKMODE: // get equip weapon
             case ATTACKMODE2: // get equip weapon
+            case NEUTRALMODE: // remove equip weapon
             case NEUTRALMODE2: // remove equip weapon
-            case END_SPRINT:
             case START_SPRINT:
+            case END_SPRINT:
+            case WINDSTREAM_STRAFE:
                 break;
             case EMOTE:
                 emotion = readH();
@@ -98,12 +99,12 @@ public class CM_EMOTION extends AionClientPacket {
     protected void runImpl() {
         Player player = getConnection().getActivePlayer();
 
+        if (player.getLifeStats().isAlreadyDead())
+            return;
+
         if(player.getController().hasTask(TaskId.ITEM_USE))
             return;
 
-        if (player.getLifeStats().isAlreadyDead()) {
-            return;
-        }
         if (player.getState() == CreatureState.PRIVATE_SHOP.getId() || player.isAttackMode()
             && (emotionType == EmotionType.CHAIR_SIT || emotionType == EmotionType.JUMP)) {
             return;
@@ -120,6 +121,7 @@ public class CM_EMOTION extends AionClientPacket {
             EmotionType.ATTACKMODE2)) {
             player.getController().stopStance();
         }
+
         switch (emotionType) {
             case SELECT_TARGET:
                 return;

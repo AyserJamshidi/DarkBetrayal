@@ -44,7 +44,7 @@ public class SM_CHARACTER_LIST extends PlayerInfo {
      */
     @Override
     protected void writeImpl(AionConnection con) {
-        writeD(playOk2);
+        writeD(playOk2); // Account ID
 
         Account account = con.getAccount();
         writeC(account.size()); // characters count

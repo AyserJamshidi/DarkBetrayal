@@ -37,12 +37,9 @@ public class SM_RECIPE_LIST extends AionServerPacket {
     }
 
     public static void sendTo(final Player player) {
-        Partitioner.of(player.getRecipeList().getRecipeList(), 300).foreach(new Partitioner.Func<Integer>() {
-            @Override
-            public boolean apply(List<Integer> list) {
-                player.sendPck(new SM_RECIPE_LIST(list));
-                return true;
-            }
+        Partitioner.of(player.getRecipeList().getRecipeList(), 300).foreach(list -> {
+            player.sendPck(new SM_RECIPE_LIST(list));
+            return true;
         });
     }
 }

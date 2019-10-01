@@ -8,11 +8,7 @@
  */
 package com.ne.gs.model.stats.calc.functions;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 import com.ne.gs.model.stats.calc.Stat2;
 import com.ne.gs.model.stats.calc.StatOwner;
@@ -34,6 +30,8 @@ public class StatFunction implements IStatFunction {
     protected int value;
     @XmlElement(name = "conditions")
     private Conditions conditions;
+    @XmlTransient
+    private int rndNumber;
 
     public StatFunction() {
     }
@@ -97,4 +95,15 @@ public class StatFunction implements IStatFunction {
         return this;
     }
 
+    public boolean hasConditions() {
+        return conditions != null;
+    }
+
+    public int getRandomNumber() {
+        return rndNumber;
+    }
+
+    public void setRandomNumber(int rndNumber) {
+        this.rndNumber = rndNumber;
+    }
 }

@@ -108,10 +108,14 @@ public class SM_QUEST_ACTION extends AionServerPacket {
     @Override
     protected void writeImpl(AionConnection con) {
 
+        /*QuestTemplate questTemplate = DataManager.QUEST_DATA.getQuestById(questId);
+        if (questTemplate != null && questTemplate.getExtraCategory() != QuestExtraCategory.NONE)
+            return;*/
+
         writeC(action);
         writeD(questId);
         switch (action) {
-            case 1:
+            case 1: // LMFAOOWN check this case, different from 4.0 source
                 writeC(status);// quest status goes by ENUM value
                 writeC(0x0);
                 writeD(step);// current quest step
@@ -123,7 +127,7 @@ public class SM_QUEST_ACTION extends AionServerPacket {
                 writeD(step);// current quest step
                 writeH(0);
                 break;
-            case 3:
+            case 3: // LMFAOOWN check this case, different from 4.0 source
                 writeC(status);// quest status goes by ENUM value
                 writeC(0x0);
                 writeD(step);// current quest step

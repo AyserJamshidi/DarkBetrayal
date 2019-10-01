@@ -8,6 +8,7 @@
  */
 package com.ne.gs.network.loginserver.clientpackets;
 
+import com.ne.commons.Util;
 import com.ne.gs.model.gameobjects.player.Player;
 import com.ne.gs.network.loginserver.LoginServer;
 import com.ne.gs.network.loginserver.LsClientPacket;
@@ -43,20 +44,19 @@ public class CM_LS_CONTROL_RESPONSE extends LsClientPacket {
     @Override
     public void runImpl() {
         World world = World.getInstance();
-        Player admin = world.findPlayer(adminName);
-        Player player = world.findPlayer(playerName);
+        Player admin = world.findPlayer(Util.convertName(adminName));
+        Player player = world.findPlayer(Util.convertName(playerName));
         LoginServer.getInstance().accountUpdate(accountId, param, type);
         switch (type) {
             case 1:
                 if (result) {
-                    if (admin != null) {
+                    if (admin != null)
                         admin.sendMsg(playerName + " has been promoted Administrator with role " + param);
-                    }
-                    if (player != null) {
+                    if (player != null)
                         player.sendMsg("You have been promoted Administrator with role " + param + " by " + adminName);
-                    }
-                } else if (admin != null) {
-                    admin.sendMsg(" Abnormal, the operation failed! ");
+                } else {
+                    if (admin != null)
+                        admin.sendMsg(" Abnormal, the operation failed! ");
                 }
                 break;
             case 2:
@@ -66,10 +66,11 @@ public class CM_LS_CONTROL_RESPONSE extends LsClientPacket {
                     }
                     if (player != null) {
                         player.setRates(Rates.getRatesFor(param));
-                        player.sendMsg("Действие Вашего Премиум/VIP аккаунта окончено. Теперь у Вас стандартные рейты.");
+                        player.sendMsg("Your Premium/VIP account has expired. You now have standard rates.");
                     }
-                } else if (admin != null) {
-                    admin.sendMsg(" Abnormal, the operation failed! ");
+                } else {
+                    if (admin != null)
+                        admin.sendMsg(" Abnormal, the operation failed! ");
                 }
                 break;
         }

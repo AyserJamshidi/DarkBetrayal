@@ -36,8 +36,7 @@ public class SM_GS_AUTH extends LsServerPacket {
         List<IPRange> ranges = IPConfig.getRanges();
         int size = ranges.size();
         writeD(size);
-        for (int i = 0; i < size; i++) {
-            IPRange ipRange = ranges.get(i);
+        for (IPRange ipRange : ranges) {
             byte[] min = ipRange.getMinAsByteArray();
             byte[] max = ipRange.getMaxAsByteArray();
             writeC(min.length);

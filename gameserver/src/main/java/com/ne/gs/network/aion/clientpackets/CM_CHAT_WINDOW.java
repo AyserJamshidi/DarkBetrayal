@@ -11,6 +11,7 @@ package com.ne.gs.network.aion.clientpackets;
 import com.ne.gs.model.gameobjects.player.Player;
 import com.ne.gs.network.aion.AionClientPacket;
 import com.ne.gs.network.aion.serverpackets.SM_CHAT_WINDOW;
+import com.ne.gs.network.aion.serverpackets.SM_SYSTEM_MESSAGE;
 import com.ne.gs.world.World;
 
 /**
@@ -34,6 +35,7 @@ public class CM_CHAT_WINDOW extends AionClientPacket {
         Player target = World.getInstance().findPlayer(playerName);
 
         if (target == null) {
+            player.sendPck(SM_SYSTEM_MESSAGE.STR_MSG_ASK_PCINFO_LOGOFF);
             return;
         }
 

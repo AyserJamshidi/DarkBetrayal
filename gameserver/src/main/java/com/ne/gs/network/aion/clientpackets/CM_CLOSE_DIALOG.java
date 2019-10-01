@@ -11,11 +11,13 @@ package com.ne.gs.network.aion.clientpackets;
 import com.ne.gs.ai2.event.AIEventType;
 import com.ne.gs.model.gameobjects.Npc;
 import com.ne.gs.model.gameobjects.VisibleObject;
+import com.ne.gs.model.gameobjects.player.Mailbox;
 import com.ne.gs.model.gameobjects.player.Player;
 import com.ne.gs.network.aion.AionClientPacket;
 import com.ne.gs.network.aion.AionConnection;
 import com.ne.gs.network.aion.serverpackets.SM_HEADING_UPDATE;
 import com.ne.gs.services.DialogService;
+import com.ne.gs.services.player.PlayerMailboxState;
 import com.ne.gs.utils.ThreadPoolManager;
 
 public class CM_CLOSE_DIALOG extends AionClientPacket {
@@ -42,23 +44,26 @@ public class CM_CLOSE_DIALOG extends AionClientPacket {
 
         final VisibleObject obj = player.getKnownList().getObject(targetObjectId);
         final AionConnection client = getConnection();
-        if (obj == null) {
+
+        if (obj == null)
             return;
-        }
 
         if (obj instanceof Npc) {
             Npc npc = (Npc) obj;
             npc.getAi2().onCreatureEvent(AIEventType.DIALOG_FINISH, player);
             DialogService.onCloseDialog(npc, player);
-            ThreadPoolManager.getInstance().schedule(new Runnable() {
-                @Override
-                public void run() {
-                    client.sendPacket(new SM_HEADING_UPDATE(targetObjectId, obj.getHeading()));
-                }
-            }, 1200);
+            ThreadPoolManager.getInstance().schedule(() -> client.sendPacket(new SM_HEADING_UPDATE(targetObjectId, obj.getHeading())), 1200);
         }
-        if (player.getMailbox().mailBoxState != 0) {
+
+        /*if (player.getMailbox().mailBoxState != 0) {
             player.getMailbox().mailBoxState = 0;
+        }*/
+
+        // Fix by Lmfaoown
+        Mailbox mailBox = player.getMailbox();
+
+        if (mailBox != null && mailBox.mailBoxState != 0) {
+            player.getMailbox().mailBoxState = PlayerMailboxState.CLOSED;
         }
     }
 }

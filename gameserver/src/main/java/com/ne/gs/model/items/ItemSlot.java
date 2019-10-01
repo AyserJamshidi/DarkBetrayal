@@ -91,11 +91,11 @@ public enum ItemSlot {
         return _combo;
     }
 
-    public static boolean isAdvancedStigma(int slot) {
+    public static boolean isAdvancedStigma(long slot) {
         return (ADVANCED_STIGMAS._id & slot) == slot;
     }
 
-    public static boolean isRegularStigma(int slot) {
+    public static boolean isRegularStigma(long slot) {
         return (REGULAR_STIGMAS._id & slot) == slot;
     }
 
@@ -127,7 +127,7 @@ public enum ItemSlot {
         throw new IllegalArgumentException("Invalid provided id " + slotId);
     }
 
-    private static boolean satisfies(int slotId, ItemSlot slot) {
+    private static boolean satisfies(long slotId, ItemSlot slot) {
         return !slot.isCombo() && (slotId & slot._id) == slot._id;
     }
 }

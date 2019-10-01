@@ -9,10 +9,13 @@
 package com.ne.gs.model.gameobjects;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
+import com.ne.gs.model.items.*;
+import com.ne.gs.model.stats.calc.functions.StatFunction;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,10 +29,6 @@ import com.ne.gs.dataholders.DataManager;
 import com.ne.gs.model.DescId;
 import com.ne.gs.model.IExpirable;
 import com.ne.gs.model.gameobjects.player.Player;
-import com.ne.gs.model.items.ChargeInfo;
-import com.ne.gs.model.items.GodStone;
-import com.ne.gs.model.items.ItemMask;
-import com.ne.gs.model.items.ManaStone;
 import com.ne.gs.model.items.storage.IStorage;
 import com.ne.gs.model.items.storage.ItemStorage;
 import com.ne.gs.model.items.storage.StorageType;
@@ -51,12 +50,13 @@ public class Item extends AionObject implements IExpirable, StatOwner {
     private static final Logger log = LoggerFactory.getLogger(Item.class);
 
     private long itemCount = 1;
-    private int itemColor = 0;
+    private int itemColor;
+    private int colorExpireTime;
     private String itemCreator;
     private final ItemTemplate itemTemplate;
     private ItemTemplate itemSkinTemplate;
     private ItemTemplate fusionedItemTemplate;
-    private boolean isEquipped = false;
+    private boolean isEquipped;
     private int equipmentSlot = ItemStorage.FIRST_AVAILABLE_SLOT;
     private PersistentState persistentState;
     private Set<ManaStone> manaStones;
@@ -64,15 +64,22 @@ public class Item extends AionObject implements IExpirable, StatOwner {
     private int optionalSocket;
     private int optionalFusionSocket;
     private GodStone godStone;
-    private boolean isSoulBound = false;
+    private IdianStone idianStone;
+    private boolean isSoulBound;
     private int itemLocation;
     private int enchantLevel;
-    private int expireTime = 0;
+    private int expireTime;
     private volatile ExchangeTime _exchangeTime = ExchangeTimeImpl.DUMMY;
     private long repurchasePrice;
-    private int activationCount = 0;
+    private int activationCount;
     private ChargeInfo conditioningInfo;
     private Integer _ownerId; // WARN unreliable property, just quick hack for ExchangeTime
+
+    // 4.0
+    private int bonusNumber;
+    private List<StatFunction> currentModifiers;
+    private RandomStats randomStats;
+    private boolean configured;
 
     /**
      * Create simple item with minimum information
@@ -104,6 +111,49 @@ public class Item extends AionObject implements IExpirable, StatOwner {
     /**
      * This constructor should be called only from DAO while loading from DB
      */
+
+    public Item(int objId, int itemId, long itemCount, int itemColor, int colorExpireTime, String itemCreator, int expireTime,
+                int activationCount, boolean isEquipped, boolean isSoulBound, int equipmentSlot, int itemLocation, int enchant,
+                int itemSkin, int fusionedItem, int optionalSocket, int optionalFusionSocket, int charge, int randomBonus) {
+        super(objId);
+
+        itemTemplate = DataManager.ITEM_DATA.getItemTemplate(itemId);
+        this.itemCount = itemCount;
+        this.itemColor = itemColor;
+
+        // LMFAOOWN fix
+        this.colorExpireTime = colorExpireTime;
+        this.itemCreator = itemCreator;
+        this.expireTime = expireTime;
+        this.activationCount = activationCount;
+        this.isEquipped = isEquipped;
+        this.isSoulBound = isSoulBound;
+        this.equipmentSlot = equipmentSlot;
+        this.itemLocation = itemLocation;
+        this.enchantLevel = enchant;
+        this.fusionedItemTemplate = DataManager.ITEM_DATA.getItemTemplate(fusionedItem);
+        this.itemSkinTemplate = DataManager.ITEM_DATA.getItemTemplate(itemSkin);
+        this.optionalSocket = optionalSocket;
+        this.optionalFusionSocket = optionalFusionSocket;
+        this.bonusNumber = randomBonus;
+
+        if (itemTemplate.getRandomBonusId() != 0) {
+            if (bonusNumber > 0) {
+                randomStats = new RandomStats(itemTemplate.getRandomBonusId(), bonusNumber);
+                this.configured = true;
+            }
+        }
+
+        if (fusionedItemTemplate != null) {
+            if (!itemTemplate.isCanFuse() || !itemTemplate.isTwoHandWeapon() || !fusionedItemTemplate
+                    .isCanFuse() || !fusionedItemTemplate.isTwoHandWeapon()) {
+                fusionedItemTemplate = null;
+                this.optionalFusionSocket = 0;
+            }
+        }
+        updateChargeInfo(charge);
+    }
+
     public Item(int objId, int itemId, long itemCount, int itemColor, String itemCreator, int expireTime,
                 int activationCount, boolean isEquipped, boolean isSoulBound, int equipmentSlot, int itemLocation, int enchant,
                 int itemSkin, int fusionedItem, int optionalSocket, int optionalFusionSocket, int charge) {
@@ -119,11 +169,19 @@ public class Item extends AionObject implements IExpirable, StatOwner {
         this.isSoulBound = isSoulBound;
         this.equipmentSlot = equipmentSlot;
         this.itemLocation = itemLocation;
-        enchantLevel = enchant;
-        fusionedItemTemplate = DataManager.ITEM_DATA.getItemTemplate(fusionedItem);
-        itemSkinTemplate = DataManager.ITEM_DATA.getItemTemplate(itemSkin);
+        this.enchantLevel = enchant;
+        this.fusionedItemTemplate = DataManager.ITEM_DATA.getItemTemplate(fusionedItem);
+        this.itemSkinTemplate = DataManager.ITEM_DATA.getItemTemplate(itemSkin);
         this.optionalSocket = optionalSocket;
         this.optionalFusionSocket = optionalFusionSocket;
+        this.bonusNumber = 0;
+
+        if (itemTemplate.getRandomBonusId() != 0) {
+            if (bonusNumber > 0) {
+                randomStats = new RandomStats(itemTemplate.getRandomBonusId(), bonusNumber);
+                this.configured = true;
+            }
+        }
 
         if (fusionedItemTemplate != null) {
             if (!itemTemplate.isCanFuse() || !itemTemplate.isTwoHandWeapon() || !fusionedItemTemplate
@@ -803,6 +861,30 @@ public class Item extends AionObject implements IExpirable, StatOwner {
         int getRemainingSeconds();
 
         public void expireNow();
+    }
+
+    public IdianStone getIdianStone() {
+        return idianStone;
+    }
+
+    public void setIdianStone(IdianStone idianStone) {
+        this.idianStone = idianStone;
+    }
+
+    public RandomStats getRandomStats() {
+        return randomStats;
+    }
+
+    public void setRandomStats(RandomStats randomStats) {
+        this.randomStats = randomStats;
+    }
+
+    public void setBonusNumber(int bonusNumber) {
+        this.bonusNumber = bonusNumber;
+    }
+
+    public boolean isConfigured() {
+        return !itemTemplate.isArmor() && !itemTemplate.isWeapon() || this.configured;
     }
 
     public static final class ExchangeTimeImpl implements ExchangeTime {

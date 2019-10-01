@@ -56,7 +56,7 @@ public class GameConnectionFactoryImpl implements ConnectionFactory {
     public AConnection create(SocketChannel socket, Dispatcher dispatcher) throws IOException {
         if (NetworkConfig.ENABLE_FLOOD_CONNECTIONS) {
             String host = socket.socket().getInetAddress().getHostAddress();
-            Result isFlooding = floodAcceptor.isFlooding(host, true);
+            final Result isFlooding = floodAcceptor.isFlooding(host, true);
             switch (isFlooding) {
                 case REJECTED: {
                     log.warn("Rejected connection from " + host);

@@ -8,6 +8,7 @@
  */
 package com.ne.gs.model.team2.group;
 
+import com.ne.gs.model.team2.TeamType;
 import com.ne.gs.model.team2.TemporaryPlayerTeam;
 import com.ne.gs.utils.idfactory.IDFactory;
 
@@ -17,11 +18,13 @@ import com.ne.gs.utils.idfactory.IDFactory;
 public class PlayerGroup extends TemporaryPlayerTeam<PlayerGroupMember> {
 
     private final PlayerGroupStats playerGroupStats;
-    private int groupType = 0x3F;
+    //private int groupType = 0x3F;
+    private TeamType type;
 
-    public PlayerGroup(PlayerGroupMember leader) {
+    public PlayerGroup(PlayerGroupMember leader, TeamType type) {
         super(IDFactory.getInstance().nextId());
-        playerGroupStats = new PlayerGroupStats(this);
+        this.playerGroupStats = new PlayerGroupStats(this);
+        this.type = type;
         initializeTeam(leader);
     }
 
@@ -55,11 +58,15 @@ public class PlayerGroup extends TemporaryPlayerTeam<PlayerGroupMember> {
 
     }
 
-    public final int getGroupType() {
+    /*public final int getGroupType() {
         return groupType;
     }
 
     public void setGroupType(int groupType) {
         this.groupType = groupType;
+    }*/
+
+    public TeamType getTeamType() {
+        return type;
     }
 }

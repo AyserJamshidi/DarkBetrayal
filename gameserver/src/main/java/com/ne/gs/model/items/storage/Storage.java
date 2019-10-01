@@ -22,6 +22,7 @@ import com.ne.gs.services.item.ItemFactory;
 import com.ne.gs.services.item.ItemPacketService;
 import com.ne.gs.services.item.ItemPacketService.ItemDeleteType;
 import com.ne.gs.services.item.ItemPacketService.ItemUpdateType;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author KID, ATracer
@@ -268,6 +269,7 @@ public abstract class Storage implements IStorage {
 
     @Override
     public Item getItemByObjId(int itemObjId) {
+        LoggerFactory.getLogger(Storage.class).info("itemObjId in Storage.java == " + itemStorage.getItemByObjId(itemObjId));
         return itemStorage.getItemByObjId(itemObjId);
     }
 
